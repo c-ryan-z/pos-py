@@ -1,4 +1,4 @@
-SETUP------------------------------------------
+SETUP
 
 Git 3.9
 Pycharm Community Edition
