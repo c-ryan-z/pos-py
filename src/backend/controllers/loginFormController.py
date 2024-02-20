@@ -1,9 +1,15 @@
-from PyQt6 import QtWidgets as qtw
+from PyQt6 import QtWidgets as Qtw
+from PyQt6 import QtCore
+
+import hashlib
 
 from src.frontend.loginFormUi import Ui_Form
 from src.backend.database import loginUser
 
-class LoginForm(qtw.QWidget):
+
+class LoginForm(Qtw.QWidget):
+    userLoggedIn = QtCore.pyqtSignal(tuple)
+
     def __init__(self, main_app):
         super().__init__()
         self.ui = Ui_Form()
@@ -12,14 +18,16 @@ class LoginForm(qtw.QWidget):
 
         self.ui.pb_logIn.clicked.connect(self.handleLogin)
 
-
     def handleLogin(self):
         username = self.ui.le_username.text()
         password = self.ui.le_pass.text()
+        hashed_password = hashlib.sha256(password.encode()).hexdigest()
 
-        user = loginUser(username, password)
+        user = loginUser(username, hashed_password)
         if user is not None:
-            user_role = user[2]
-            self.main_app.setCurrentWidget(user_role)
+            self.ui.le_username.clear()
+            self.ui.le_pass.clear()
+
+            self.userLoggedIn.emit(user)
         else:
             print("Login Failed")
