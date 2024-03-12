@@ -4,25 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Included the ide settings">
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/inventoryControllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/salesController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/images/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/images/default.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/sales/salesForm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/ui/sales.ui" afterDir="false" />
+    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Cashier Image">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/controllers/Utility.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/userInfoController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/controllers/loginControllers/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/controllers/loginControllers/loginFormController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/controllers/loginControllers/otpController.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/database/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/database/auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/database/connection.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/database/employee.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/database/record_logins.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/mailer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/threads/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/backend/threads/otpThread.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/userInfoForm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/otpForm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/setup_paths.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Icons/Icons.qrc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/Icons/MINI-GRO.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/OTP.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ui/userInfoWidget.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/admin/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/admin/adminController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/adminController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/inventory_manager/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/inventory_manager/inventoryController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/inventoryControllers/inventoryController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/loginFormController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/loginFormController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/sales/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/loginFormController.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/salesController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/salesController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/database.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/images/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/images/default.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__image/default.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/loginFormUi.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/loginForm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/sales/salesForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/sales/salesForm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/ui/admin.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/admin.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/ui/inventory_manager.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/inventory_manager.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/ui/loginForm.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/loginForm.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/ui/sales.ui" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/sales.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +86,12 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/backend/controllers/customWidget/userInfoController.py" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -68,45 +106,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.database.executor": "Run",
-    "Python.loginFormController.executor": "Run",
-    "Python.loginFormUi.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/abarq/PycharmProjects/POS-PY/src/frontend/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.qodana",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.auth.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.emailtest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.loginFormController.executor&quot;: &quot;Run&quot;,
+    &quot;Python.loginFormUi.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logs.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.path.executor&quot;: &quot;Run&quot;,
+    &quot;Python.setup_paths.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.sht.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abarq/PycharmProjects/POS-PY&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;service.view.auto.scroll.from.source&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;sql.rename.search.for.storage.occurrences&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;,
+      &quot;postgresql&quot;
+    ],
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\images" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\salesControllers" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\inventoryControllers" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\sales" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\threads" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\login" />
     </key>
   </component>
   <component name="RunManager">
@@ -138,7 +187,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-5a2391486177-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13763.11" />
+        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
       </set>
     </attachedChunks>
   </component>
@@ -184,7 +233,94 @@
       <workItem from="1708245538926" duration="7339000" />
       <workItem from="1708410133749" duration="30000" />
       <workItem from="1708410176784" duration="2106000" />
-      <workItem from="1708415299654" duration="1315000" />
+      <workItem from="1708415299654" duration="1588000" />
+      <workItem from="1708433102059" duration="656000" />
+      <workItem from="1708433771455" duration="1721000" />
+      <workItem from="1708435514359" duration="504000" />
+      <workItem from="1708517531034" duration="2984000" />
+      <workItem from="1708653957081" duration="1106000" />
+      <workItem from="1708655072051" duration="1415000" />
+      <workItem from="1708656510777" duration="568000" />
+      <workItem from="1708657090560" duration="513000" />
+      <workItem from="1708661738877" duration="2595000" />
+      <workItem from="1708664448805" duration="465000" />
+      <workItem from="1708770412130" duration="1343000" />
+      <workItem from="1708771835398" duration="70000" />
+      <workItem from="1708788389580" duration="1906000" />
+      <workItem from="1708844911998" duration="2743000" />
+      <workItem from="1708858549759" duration="2467000" />
+      <workItem from="1708869526530" duration="698000" />
+      <workItem from="1709013739475" duration="155000" />
+      <workItem from="1709014004634" duration="740000" />
+      <workItem from="1709014871227" duration="3552000" />
+      <workItem from="1709018457108" duration="1185000" />
+      <workItem from="1709022331410" duration="13494000" />
+      <workItem from="1709040235388" duration="1212000" />
+      <workItem from="1709105899934" duration="7926000" />
+      <workItem from="1709118722813" duration="1627000" />
+      <workItem from="1709123730629" duration="726000" />
+      <workItem from="1709126934509" duration="826000" />
+      <workItem from="1709135425912" duration="1506000" />
+      <workItem from="1709139533468" duration="1414000" />
+      <workItem from="1709183059732" duration="669000" />
+      <workItem from="1709183743994" duration="3474000" />
+      <workItem from="1709191204150" duration="3014000" />
+      <workItem from="1709194372991" duration="495000" />
+      <workItem from="1709194879008" duration="826000" />
+      <workItem from="1709195716244" duration="2000" />
+      <workItem from="1709195801478" duration="722000" />
+      <workItem from="1709199519551" duration="1698000" />
+      <workItem from="1709205082880" duration="790000" />
+      <workItem from="1709209179491" duration="1047000" />
+      <workItem from="1709210240460" duration="130000" />
+      <workItem from="1709210382147" duration="1151000" />
+      <workItem from="1709214522588" duration="5109000" />
+      <workItem from="1709219673660" duration="1210000" />
+      <workItem from="1709223179283" duration="5994000" />
+      <workItem from="1709291809971" duration="728000" />
+      <workItem from="1709292551172" duration="3780000" />
+      <workItem from="1709305776854" duration="4193000" />
+      <workItem from="1709313394186" duration="2984000" />
+      <workItem from="1709351041033" duration="95000" />
+      <workItem from="1709351289292" duration="888000" />
+      <workItem from="1709372994532" duration="452000" />
+      <workItem from="1709382240075" duration="682000" />
+      <workItem from="1709383498953" duration="1473000" />
+      <workItem from="1709389367584" duration="576000" />
+      <workItem from="1709390204500" duration="132000" />
+      <workItem from="1709398991051" duration="4418000" />
+      <workItem from="1709438908389" duration="9209000" />
+      <workItem from="1709452948417" duration="11107000" />
+      <workItem from="1709466932297" duration="639000" />
+      <workItem from="1709544253937" duration="155000" />
+      <workItem from="1709546690442" duration="6058000" />
+      <workItem from="1709561927327" duration="1138000" />
+      <workItem from="1709566735079" duration="3744000" />
+      <workItem from="1709627690821" duration="792000" />
+      <workItem from="1709646032293" duration="1988000" />
+      <workItem from="1709652638635" duration="3201000" />
+      <workItem from="1709796942411" duration="68000" />
+      <workItem from="1709797022557" duration="367000" />
+      <workItem from="1709797401785" duration="5269000" />
+      <workItem from="1709805979948" duration="5193000" />
+      <workItem from="1709818976685" duration="881000" />
+      <workItem from="1709827860278" duration="6239000" />
+      <workItem from="1709834490706" duration="173000" />
+      <workItem from="1709834741606" duration="593000" />
+      <workItem from="1709886829515" duration="43000" />
+      <workItem from="1709886885237" duration="8339000" />
+      <workItem from="1709903732629" duration="1115000" />
+      <workItem from="1709905969203" duration="51000" />
+      <workItem from="1709920954749" duration="158000" />
+      <workItem from="1709921668227" duration="1926000" />
+      <workItem from="1709968387715" duration="3812000" />
+      <workItem from="1709972736771" duration="4255000" />
+      <workItem from="1709979510431" duration="4803000" />
+      <workItem from="1710061181305" duration="81000" />
+      <workItem from="1710061524247" duration="6844000" />
+      <workItem from="1710237102714" duration="889000" />
+      <workItem from="1710240392898" duration="1107000" />
+      <workItem from="1710254432886" duration="994000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -202,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706843403696</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Cashier Image">
+      <option name="closed" value="true" />
+      <created>1708416793380</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1708416793380</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,13 +367,31 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Included the ide settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Included the ide settings" />
+    <MESSAGE value="Cashier Image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cashier Image" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/POS_PY$auth.coverage" NAME="auth Coverage Results" MODIFIED="1709797604676" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend/database" />
+    <SUITE FILE_PATH="coverage/POS_PY$sht.coverage" NAME="sht Coverage Results" MODIFIED="1709463618834" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/POS_PY$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1706764200328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/POS_PY$emailtest.coverage" NAME="emailtest Coverage Results" MODIFIED="1709139550560" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/POS_PY$loginFormUi.coverage" NAME="loginFormUi Coverage Results" MODIFIED="1706768220295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/frontend" />
-    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1708416458385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/POS_PY$path.coverage" NAME="path Coverage Results" MODIFIED="1709018419545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1710255102059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/POS_PY$database.coverage" NAME="database Coverage Results" MODIFIED="1706767322294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend" />
     <SUITE FILE_PATH="coverage/POS_PY$loginFormController.coverage" NAME="loginFormController Coverage Results" MODIFIED="1706777794262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/frontend" />
+    <SUITE FILE_PATH="coverage/POS_PY$setup_paths.coverage" NAME="setup_paths Coverage Results" MODIFIED="1709017356859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/POS_PY$logs.coverage" NAME="logs Coverage Results" MODIFIED="1709463931079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend/database" />
   </component>
 </project>

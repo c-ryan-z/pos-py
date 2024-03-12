@@ -1,2 +1,2 @@
 #__init__.py
-from .loginFormUi import Ui_Form
+from .loginForm import Ui_Form

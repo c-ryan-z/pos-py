@@ -1,35 +1,45 @@
 import sys
 
 from PyQt6 import QtWidgets as Qtw
+from PyQt6 import QtCore
+from dotenv import load_dotenv
 
 from src.backend.controllers.adminControllers.adminController import AdminController
-from src.backend.controllers.inventoryControllers.inventoryController import InventoryController
+from src.backend.controllers.__customWidget.userInfoController import UserInfoWidget
 from src.backend.controllers.salesControllers.salesController import SalesController
-from src.backend.controllers.loginFormController import LoginForm
+from src.backend.controllers.loginControllers.otpController import OTPForm
+from src.backend.controllers.loginControllers.loginFormController import LoginForm
 
 
 class MainApp(Qtw.QWidget):
+    mainLoggedIn = QtCore.pyqtSignal(tuple)
+
     def __init__(self):
         super().__init__()
+        # todo handle the printing and add a loading to all instances
         self.userInfo = None
-        self.setMinimumSize(1300, 900)
+        self.setMinimumSize(1920, 1040)
+        self.setWindowTitle("Point Of Sales")
+
+        self.userInfoController = UserInfoWidget(self)
 
         self.stacked_widget = Qtw.QStackedWidget()
+        self.stacked_widget.setStyleSheet("font-family: 'Inter';")
         self.widgets = {}
 
         self.login_form = LoginForm(self)
-        self.login_form.userLoggedIn.connect(self.handleUserLoggedIn)  # Connect signal to slot
+        self.login_form.userLoggedIn.connect(self.otp_verify)
         self.addWidget(self.login_form, 'login')
-        self.stacked_widget.setStyleSheet("border: 1px solid black;")
+
+        self.otpController = OTPForm(self, self.login_form)
+        self.otpController.OtpVerified.connect(self.setCurrentWidget)
+        self.addWidget(self.otpController, 'otp')
 
         self.admin = AdminController()
         self.addWidget(self.admin, 'admin')
 
-        self.inventory_manager = InventoryController()
-        self.addWidget(self.inventory_manager, 'inventory_manager')
-
-        self.salesController = SalesController(self)
-        self.addWidget(self.salesController, 'sales')
+        self.salesController = SalesController(self, self.userInfoController)
+        self.addWidget(self.salesController, 'cashier')
 
         layout = Qtw.QVBoxLayout()
 
@@ -47,21 +57,19 @@ class MainApp(Qtw.QWidget):
     def nextWidget(self):
         self.stacked_widget.setCurrentIndex((self.stacked_widget.currentIndex() + 1) % self.stacked_widget.count())
 
-    def handleUserLoggedIn(self, user_info):
+    def otp_verify(self, user_info):
         self.userInfo = user_info
-        user_role = user_info[2]
+        if user_info[3]:
+            self.setCurrentWidget('otp')
+            return
 
-        if user_role == 'sales':
-            self.setCurrentWidget('sales')
-            self.salesController.initialize_user_info(user_info)
-        # elif user_role == 'admin':
-        #     self.admin.setUserId(user_id)
-        # elif user_role == 'inventory_manager':
-        #     self.inventory_manager.setUserId(user_id)kf
+        self.setCurrentWidget(user_info[2])
+        self.mainLoggedIn.emit(user_info)
 
 
 if __name__ == '__main__':
     app = Qtw.QApplication(sys.argv)
     main_app = MainApp()
-    main_app.show()
+    load_dotenv()
+    main_app.showMaximized()
     sys.exit(app.exec())
