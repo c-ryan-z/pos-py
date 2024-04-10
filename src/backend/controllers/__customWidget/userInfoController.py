@@ -1,30 +1,30 @@
 from PyQt6 import QtWidgets as Qtw
-from PyQt6.QtGui import QPixmap, QImage, QBitmap, QPainter
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPixmap, QImage, QBitmap, QPainter
 
-from src.backend.controllers.Utility import confirmAction
-from src.backend.database.employee import getEmployeeImage, uploadEmployeeImage
+from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
+from src.backend.database.employee import get_employee_img, uploadEmployeeImage
 from src.frontend.__custom_widgets.userInfoForm import Ui_Form
-
 from src.setup_paths import Paths
 
 
 class UserInfoWidget(Qtw.QWidget):
+
     def __init__(self, main_app, parent=None):
         super().__init__(parent)
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.main_app = main_app
-        self.userId = None
+        self.user_info = None
 
         self.ui.pb_setImage.clicked.connect(self.uploadImage)
         self.ui.pb_logout.clicked.connect(self.handleLogout)
 
     def initialize_user_info(self, user_info):
-        self.userId = user_info[0]
+        self.user_info = user_info
         self.ui.lb_username.setText(user_info[1])
         self.ui.lb_role.setText(user_info[2].capitalize())
-        self.getEmployeeImage()
+        self.initialize_img(self.user_info[0])
 
     def process_image(self, image):
         pixmap = QPixmap.fromImage(image)
@@ -44,8 +44,8 @@ class UserInfoWidget(Qtw.QWidget):
 
         self.ui.lb_userImage.setPixmap(scaled_pixmap)
 
-    def getEmployeeImage(self):
-        image_data = getEmployeeImage(self.userId)
+    def initialize_img(self, user_id):
+        image_data = get_employee_img(user_id)
         if image_data is not None:
             image = QImage()
             image.loadFromData(image_data)
@@ -59,14 +59,18 @@ class UserInfoWidget(Qtw.QWidget):
         file_name, _ = Qtw.QFileDialog.getOpenFileName(self, "Upload Image", "", "Images (*.png *.jpeg *.jpg)")
         if file_name:
             print(file_name)
-            uploadEmployeeImage(self.userId, file_name)
-            self.getEmployeeImage()
+            uploadEmployeeImage(self.user_info[0], file_name)
+            self.initialize_img(self.user_info[0])
 
     def handleLogout(self):
-        if confirmAction(self, 'Confirm Logout', 'Logout', 'Are you sure you want to logout?'):
-            self.main_app.setCurrentWidget('login')
-            self.userId = None
+        message_box = CustomMessageBox(self, main_app=self.main_app)
+        if message_box.confirmAction("Logout", "Are you sure you want to logout?"):
+            self.logout()
 
-            self.ui.lb_username.clear()
-            self.ui.lb_role.clear()
-            self.ui.lb_userImage.clear()
+    def logout(self):
+        self.main_app.setCurrentWidget('login')
+        self.user_info = None
+
+        self.ui.lb_username.clear()
+        self.ui.lb_role.clear()
+        self.ui.lb_userImage.clear()

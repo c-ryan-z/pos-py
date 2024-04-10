@@ -1,34 +1,42 @@
 import json
-import platform
 import requests
 import os
 from dotenv import load_dotenv
+from src.backend.Utilities import email_infos
 
 load_dotenv()
-
 
 domain = os.getenv('MG_DOMAIN')
 api_key = os.getenv('MG_API_KEY')
 
 
-def two_factor_auth(user_name, email, code):
-    ip_address = requests.get('https://api64.ipify.org').text
-    ip_info = requests.get(f'https://ipinfo.io/{ip_address}/json').json()
-    location = f"{ip_info['city']}, {ip_info['region']}, {ip_info['country']}"
-
-    device_info = platform.system() + " " + platform.release()
+def send_email(user_name, email, code, subject, template):
+    location, os_info = email_infos()
 
     api_vars = {
-        "TFA": code,
+        "code": code,
         "ip-add": location,
-        "location": device_info
+        "location": os_info
     }
+
+    if template == "2fa-test":
+        email_name = "Login Attempt"
+    else:
+        email_name = "Password Reset"
 
     return requests.post(
         f"https://api.mailgun.net/v3/{domain}/messages",
         auth=("api", api_key),
-        data={"from": f"Login Attempt <info@{domain}>",
+        data={"from": f"{email_name} <info@{domain}>",
               "to": f"{user_name} <{email}>",
-              "subject": "2FA Code",
-              "template": "2fa-test",
+              "subject": subject,
+              "template": template,
               "h:X-Mailgun-Variables": json.dumps(api_vars)})
+
+
+def two_factor_auth(user_name, email, code):
+    return send_email(user_name, email, code, "2FA Code", "2fa-test")
+
+
+def password_reset(user_name, email, code):
+    return send_email(user_name, email, code, "Password Reset Code", "forgot-password")

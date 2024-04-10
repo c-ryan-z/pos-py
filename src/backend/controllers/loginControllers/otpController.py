@@ -1,19 +1,18 @@
 from PyQt6 import QtWidgets as Qtw
-from PyQt6 import QtCore
 import hashlib
 
-from src.frontend.otpForm import Ui_OTP
-
 from src.backend.mailer import two_factor_auth
-from src.backend.database.auth import (create_codes, verifyLoginOtp, check_user_otp, increment_otp_attempts,
-                                       setOtpAttempt)
-from src.backend.database.record_logins import record_session
-from src.backend.controllers.Utility import generate_code, generate_session_id
-from src.backend.threads.otpThread import OTPThread
+from src.frontend.login.otpForm import Ui_OTP
+
+from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
+from src.backend.database.login.auth import (create_codes, verify_login_otp, check_user_otp, increment_otp_attempts,
+                                             setOtpAttempt)
+from src.backend.database.login.record_logins import record_session, activity_log
+from src.backend.controllers.controller_utility import generate_code, generate_session_id
+from src.backend.threads.login.otpThread import OTPThread
 
 
 class OTPForm(Qtw.QWidget):
-    OtpVerified = QtCore.pyqtSignal(str)
 
     def __init__(self, main_app, login_form):
         super().__init__()
@@ -24,9 +23,15 @@ class OTPForm(Qtw.QWidget):
         self.user = None
 
         self.ui.pb_otp.clicked.connect(self.handleOTP)
+        self.ui.le_otp.setTextMargins(20, 25, 20, 25)
+        self.ui.le_otp.setStyleSheet("""
+            QLineEdit {
+                border-radius: 16px;
+            }
+        """)
         self.ui.pb_otp.setEnabled(False)
 
-        self.login_form.userLoggedIn.connect(self.initialize_class)
+        self.login_form.otp_signal.connect(self.initialize_class)
 
         self.otp_thread = OTPThread(self)
         self.otp_thread.finished.connect(self.on_processOTP_finished)
@@ -43,13 +48,14 @@ class OTPForm(Qtw.QWidget):
         create_codes(hashed_code, self.user[0], 'OTP')
 
     def on_processOTP_finished(self):
-        # todo: Implementing the loading animation
+        message = CustomMessageBox(self, self.main)
+        if message.notifyAction("Email Sent", "Please check your email for the OTP code", "email.gif"):
+            print("Acknowledged")
         self.ui.pb_otp.setEnabled(True)
 
     def handleOTP(self):
         hashed_le_otp = hashlib.sha256(self.ui.le_otp.text().encode()).hexdigest()
         otp = check_user_otp(self.user[0])
-        query = verifyLoginOtp(self.user[0], hashed_le_otp)
 
         if otp is None:
             print("OTP EXPIRED // RESEND CODE?")
@@ -59,15 +65,23 @@ class OTPForm(Qtw.QWidget):
             print("Too many attempts LIMIT? OR RESEND CODE?")
             return
 
+        query = verify_login_otp(self.user[0], hashed_le_otp)
         if query is None:
             self.ui.le_otp.clear()
             print("Invalid OTP")
             increment_otp_attempts(self.user[0])
             return
 
-        self.OtpVerified.emit(self.user[2])
-        login_id = setOtpAttempt(self.user[0])
-
+        setOtpAttempt(self.user[5])
         session_id = generate_session_id()
-        record_session(session_id, self.user[0], login_id)
+        print(self.user[5])
+        record_session(session_id, self.user[0], self.user[5])
+        activity_log(self.user[0], "Log In", "Account", "Login Attempt from", session_id)
 
+        info = self.user + (session_id, )
+
+        self.main.setCurrentWidget(self.user[2])
+        self.main.mainLoggedIn.emit(info)
+        self.ui.le_otp.clear()
+        self.ui.pb_otp.setEnabled(False)
+        self.user = None

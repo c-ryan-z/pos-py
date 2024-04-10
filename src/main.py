@@ -1,14 +1,17 @@
-import sys
+import sys, time
 
-from PyQt6 import QtWidgets as Qtw
-from PyQt6 import QtCore
+from PyQt6 import QtWidgets as Qtw, QtCore
 from dotenv import load_dotenv
+from pyqt6_plugins.examplebuttonplugin import QtGui
+
+from src.setup_paths import Paths
 
 from src.backend.controllers.adminControllers.adminController import AdminController
 from src.backend.controllers.__customWidget.userInfoController import UserInfoWidget
 from src.backend.controllers.salesControllers.salesController import SalesController
 from src.backend.controllers.loginControllers.otpController import OTPForm
 from src.backend.controllers.loginControllers.loginFormController import LoginForm
+from src.backend.controllers.loginControllers.pw_resetController import PasswordReset
 
 
 class MainApp(Qtw.QWidget):
@@ -20,19 +23,22 @@ class MainApp(Qtw.QWidget):
         self.userInfo = None
         self.setMinimumSize(1920, 1040)
         self.setWindowTitle("Point Of Sales")
+        self.setWindowIcon(QtGui.QIcon(Paths.image("logo_u2.png")))
 
         self.userInfoController = UserInfoWidget(self)
 
         self.stacked_widget = Qtw.QStackedWidget()
+        self.stacked_widget.setSizePolicy(Qtw.QSizePolicy.Policy.Expanding, Qtw.QSizePolicy.Policy.Expanding)
         self.stacked_widget.setStyleSheet("font-family: 'Inter';")
         self.widgets = {}
 
         self.login_form = LoginForm(self)
-        self.login_form.userLoggedIn.connect(self.otp_verify)
         self.addWidget(self.login_form, 'login')
 
+        self.password_reset = PasswordReset(self)
+        self.addWidget(self.password_reset, 'password_reset')
+
         self.otpController = OTPForm(self, self.login_form)
-        self.otpController.OtpVerified.connect(self.setCurrentWidget)
         self.addWidget(self.otpController, 'otp')
 
         self.admin = AdminController()
@@ -41,11 +47,21 @@ class MainApp(Qtw.QWidget):
         self.salesController = SalesController(self, self.userInfoController)
         self.addWidget(self.salesController, 'cashier')
 
-        layout = Qtw.QVBoxLayout()
+        self.darkener = Qtw.QWidget(self.stacked_widget)
+        self.darkener.setGeometry(self.rect())
+        self.darkener.setStyleSheet("background-color: rgba(0, 0, 0, 0.5);")
+        self.darkener.hide()
 
-        layout.addWidget(self.stacked_widget)
+        self.layout = Qtw.QVBoxLayout()
+        self.layout.setContentsMargins(0, 0, 0, 0)
+        self.layout.addWidget(self.stacked_widget)
 
-        self.setLayout(layout)
+        self.darkener.raise_()
+
+        self.setLayout(self.layout)
+
+        self.key_sequence = ""
+        self.last_key_time = time.time()
 
     def addWidget(self, widget, identifier):
         self.widgets[identifier] = self.stacked_widget.addWidget(widget)
@@ -54,17 +70,12 @@ class MainApp(Qtw.QWidget):
         if identifier in self.widgets:
             self.stacked_widget.setCurrentIndex(self.widgets[identifier])
 
-    def nextWidget(self):
-        self.stacked_widget.setCurrentIndex((self.stacked_widget.currentIndex() + 1) % self.stacked_widget.count())
+    def showDarkener(self):
+        self.darkener.show()
+        self.darkener.raise_()
 
-    def otp_verify(self, user_info):
-        self.userInfo = user_info
-        if user_info[3]:
-            self.setCurrentWidget('otp')
-            return
-
-        self.setCurrentWidget(user_info[2])
-        self.mainLoggedIn.emit(user_info)
+    def hideDarkener(self):
+        self.darkener.hide()
 
 
 if __name__ == '__main__':

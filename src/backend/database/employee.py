@@ -17,7 +17,7 @@ def uploadEmployeeImage(cashier_id, path):
     connection.close()
 
 
-def getEmployeeImage(employee_id):
+def get_employee_img(employee_id):
     connection = connectionDB()
     cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
 

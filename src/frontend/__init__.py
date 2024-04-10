@@ -1,2 +1,2 @@
 #__init__.py
-from .loginForm import Ui_Form
+from src.frontend.login.loginForm import Ui_login_form
