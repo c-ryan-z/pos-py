@@ -5,86 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Login with OTP">
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/CustomCashierItem.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/CustomMessageBox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/loginControllers/pw_resetController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/cashierDashboard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/login/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/login/forgot_pw.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/query_executor.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/sales/cashier.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/threads/login/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/threads/login/login_thread.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/CustomCashierItems.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/CustomMessageBox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/circle-xmark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/gif_elements/email.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/gif_elements/loading 2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/gif_elements/loading1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/gif_elements/right-decision 1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/gif_elements/success 1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/gif_elements/work-in-progress 1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/gif_elements/wrong-decision_1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/login_elements/Image 49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/login_elements/Image 51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/login_elements/lock.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/login_elements/user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/logo_u1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/logo_u2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/otp_elements/Image 50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/otp_elements/Image 51-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/otp_elements/Image 51.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/login/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/login/loginForm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/login/otpForm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/login/pass_reset.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/sales/cashierDashboard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/CustomCashierItems.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/CustomMessageBox.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/cashierDashboard.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/pass_reset.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/salesForm.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/information_schema.FNRwLQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/pg_catalog.0S1ZNQ.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/postgres.edMnLQ/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/Utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/controller_utility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/__customWidget/userInfoController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/userInfoController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/inventoryControllers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/Utilities.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/inventoryControllers/inventoryController.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/loginControllers/loginFormController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/loginControllers/loginFormController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/loginControllers/otpController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/loginControllers/otpController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/salesController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/salesController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/database/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/login/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/database/employee.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/employee.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/database/record_logins.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/login/record_logins.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/mailer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/mailer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/threads/otpThread.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/threads/login/otpThread.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/inventory_manager/inventoryForm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/loginForm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/otpForm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/sales/salesForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/sales/salesForm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setup_paths.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/setup_paths.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Icons/Icons.qrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/Icons/MINI-GRO.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/OTP.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/otpForm.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/admin.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/admin.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/inventory_manager.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/loginForm.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/loginForm.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/sales.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/userInfoWidget.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/userInfoWidget.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/database/login/record_logins.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/login/record_logins.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,49 +59,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.Utilities.executor": "Run",
-    "Python.auth.executor": "Run",
-    "Python.controller_utility.executor": "Debug",
-    "Python.database.executor": "Run",
-    "Python.emailtest.executor": "Run",
-    "Python.loginFormController.executor": "Run",
-    "Python.loginFormUi.executor": "Run",
-    "Python.logs.executor": "Run",
-    "Python.main (1).executor": "Run",
-    "Python.main.executor": "Debug",
-    "Python.path.executor": "Run",
-    "Python.setup_paths.executor": "Run",
-    "Python.sht.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/abarq/PycharmProjects/POS-PY/src/frontend/__image/otp_elements",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "service.view.auto.scroll.from.source": "true",
-    "service.view.auto.scroll.to.source": "true",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
-    "sql.rename.search.for.storage.occurrences": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.Utilities.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auth.executor&quot;: &quot;Run&quot;,
+    &quot;Python.controller_utility.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.emailtest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.loginFormController.executor&quot;: &quot;Run&quot;,
+    &quot;Python.loginFormUi.executor&quot;: &quot;Run&quot;,
+    &quot;Python.logs.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.path.executor&quot;: &quot;Run&quot;,
+    &quot;Python.setup_paths.executor&quot;: &quot;Run&quot;,
+    &quot;Python.sht.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abarq/PycharmProjects/POS-PY/src/frontend/__image/otp_elements&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;service.view.auto.scroll.from.source&quot;: &quot;true&quot;,
+    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;,
+    &quot;sql.rename.search.for.storage.occurrences&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "oracle",
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;oracle&quot;,
+      &quot;postgresql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "PostgreSQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;PostgreSQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__image\otp_elements" />
@@ -435,7 +361,9 @@
       <workItem from="1712722190151" duration="1441000" />
       <workItem from="1712733445300" duration="348000" />
       <workItem from="1712740279180" duration="2996000" />
-      <workItem from="1712745991587" duration="1513000" />
+      <workItem from="1712745991587" duration="2625000" />
+      <workItem from="1712824570491" duration="93000" />
+      <workItem from="1712851484373" duration="375000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -469,7 +397,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710255493084</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Login with OTP">
+      <option name="closed" value="true" />
+      <created>1712747829666</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1712747829666</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -496,13 +432,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/backend/threads/login/login_thread.py</url>
-          <line>51</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -513,12 +442,12 @@
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="self.objectNameChanged" />
+        <watch expression="self.objectNameChanged" language="Python" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1712747508090" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1712851591737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/POS_PY$database.coverage" NAME="database Coverage Results" MODIFIED="1706767322294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend" />
     <SUITE FILE_PATH="coverage/POS_PY$setup_paths.coverage" NAME="setup_paths Coverage Results" MODIFIED="1712084210125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/POS_PY$loginFormUi.coverage" NAME="loginFormUi Coverage Results" MODIFIED="1706768220295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/frontend" />

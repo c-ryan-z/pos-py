@@ -30,13 +30,16 @@ def update_attempt(cursor, user_id, initial_login, attempt_id, wrong_pw_attempts
             UPDATE loginattempts
             SET wrong_pw_attempts = %s
             WHERE user_id = %s AND initial_login = %s AND id = %s
+            RETURNING id
         """, (wrong_pw_attempts, user_id, initial_login, attempt_id))
     else:
         cursor.execute("""
             UPDATE loginattempts
             SET initial_login = %s
             WHERE user_id = %s AND initial_login = %s AND id = %s
+            RETURNING id
         """, (True, user_id, initial_login, attempt_id))
+    return cursor.fetchone()[0]
 
 
 def record_login_attempt(user_id, success, ip_add):
@@ -49,10 +52,10 @@ def record_login_attempt(user_id, success, ip_add):
                     if attempt is None or attempt[0] < datetime.now() - timedelta(minutes=15):
                         attempt_id = insert_attempt(cursor, user_id, success, ip_add, 1)
                     else:
-                        update_attempt(cursor, user_id, False, attempt[2], attempt[1] + 1)
+                        attempt_id = update_attempt(cursor, user_id, False, attempt[2], attempt[1] + 1)
                 else:
                     if attempt is not None:
-                        update_attempt(cursor, user_id, False, attempt[2])
+                        attempt_id = update_attempt(cursor, user_id, False, attempt[2])
                     else:
                         attempt_id = insert_attempt(cursor, user_id, success, ip_add, 0)
                 connection.commit()
