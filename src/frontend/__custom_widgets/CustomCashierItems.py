@@ -12,48 +12,160 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_cashier_item(object):
     def setupUi(self, cashier_item):
         cashier_item.setObjectName("cashier_item")
-        cashier_item.resize(1000, 150)
+        cashier_item.setEnabled(True)
+        cashier_item.resize(1000, 221)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(cashier_item.sizePolicy().hasHeightForWidth())
         cashier_item.setSizePolicy(sizePolicy)
-        cashier_item.setMinimumSize(QtCore.QSize(1000, 0))
-        self.lb_image = QtWidgets.QLabel(parent=cashier_item)
-        self.lb_image.setGeometry(QtCore.QRect(0, 0, 150, 150))
+        cashier_item.setMinimumSize(QtCore.QSize(1000, 221))
+        cashier_item.setWindowOpacity(1.0)
+        cashier_item.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        cashier_item.setAutoFillBackground(False)
+        cashier_item.setStyleSheet("QGroupBox#gb_item {\n"
+"    background: #FFFFFF;\n"
+"    border: 2px solid #20242c;\n"
+"    border-radius: 8px;\n"
+"}")
+        self.gb_item = QtWidgets.QGroupBox(parent=cashier_item)
+        self.gb_item.setGeometry(QtCore.QRect(0, 0, 1000, 221))
+        self.gb_item.setTitle("")
+        self.gb_item.setObjectName("gb_item")
+        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.gb_item)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 0, 191, 221))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.lb_image = QtWidgets.QLabel(parent=self.verticalLayoutWidget)
+        self.lb_image.setMaximumSize(QtCore.QSize(187, 169))
+        self.lb_image.setStyleSheet("QLabel {\n"
+"    border: 3px solid #20242c;\n"
+"    border-radius: 12px;\n"
+"}")
         self.lb_image.setText("")
         self.lb_image.setPixmap(QtGui.QPixmap("C:\\Users\\abarq\\PycharmProjects\\POS-PY\\ui\\../src/frontend/__image/default.jpg"))
         self.lb_image.setScaledContents(True)
         self.lb_image.setObjectName("lb_image")
-        self.lb_name = QtWidgets.QLabel(parent=cashier_item)
-        self.lb_name.setGeometry(QtCore.QRect(150, 0, 311, 31))
+        self.verticalLayout.addWidget(self.lb_image)
+        self.lb_name = QtWidgets.QLabel(parent=self.gb_item)
+        self.lb_name.setGeometry(QtCore.QRect(230, 30, 531, 31))
         font = QtGui.QFont()
-        font.setFamily("Inter Black")
+        font.setFamily("Inter")
         font.setPointSize(28)
         font.setBold(True)
         self.lb_name.setFont(font)
+        self.lb_name.setStyleSheet("QLabel {\n"
+"    color: #181c1c;\n"
+"}")
         self.lb_name.setObjectName("lb_name")
-        self.lb_description = QtWidgets.QLabel(parent=cashier_item)
-        self.lb_description.setGeometry(QtCore.QRect(150, 50, 321, 41))
-        self.lb_description.setObjectName("lb_description")
-        self.pb_del = QtWidgets.QPushButton(parent=cashier_item)
-        self.pb_del.setGeometry(QtCore.QRect(860, 100, 141, 51))
-        self.pb_del.setObjectName("pb_del")
-        self.sb_quantity = QtWidgets.QSpinBox(parent=cashier_item)
-        self.sb_quantity.setGeometry(QtCore.QRect(240, 120, 61, 31))
-        self.sb_quantity.setObjectName("sb_quantity")
-        self.label = QtWidgets.QLabel(parent=cashier_item)
-        self.label.setGeometry(QtCore.QRect(180, 120, 61, 21))
-        self.label.setObjectName("label")
-        self.lb_price = QtWidgets.QLabel(parent=cashier_item)
-        self.lb_price.setGeometry(QtCore.QRect(868, 0, 131, 31))
+        self.lb_category = QtWidgets.QLabel(parent=self.gb_item)
+        self.lb_category.setGeometry(QtCore.QRect(230, 70, 141, 21))
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setPointSize(12)
+        font.setPointSize(10)
+        self.lb_category.setFont(font)
+        self.lb_category.setStyleSheet("QLabel {\n"
+"    color: #383c44;\n"
+"}")
+        self.lb_category.setObjectName("lb_category")
+        self.gb_desc_bg = QtWidgets.QGroupBox(parent=self.gb_item)
+        self.gb_desc_bg.setGeometry(QtCore.QRect(230, 110, 291, 81))
+        self.gb_desc_bg.setStyleSheet("QGroupBox {\n"
+"    background: #f8f4f4;\n"
+"    border: 2px solid #9894a4;\n"
+"    border-radius: 9px;\n"
+"}")
+        self.gb_desc_bg.setTitle("")
+        self.gb_desc_bg.setObjectName("gb_desc_bg")
+        self.lb_description = QtWidgets.QLabel(parent=self.gb_desc_bg)
+        self.lb_description.setGeometry(QtCore.QRect(10, 10, 271, 71))
+        font = QtGui.QFont()
+        font.setFamily("Inter")
+        font.setPointSize(10)
+        font.setBold(False)
+        self.lb_description.setFont(font)
+        self.lb_description.setStyleSheet("QLabel {\n"
+"    color: #181c1c;\n"
+"}")
+        self.lb_description.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.lb_description.setFrameShadow(QtWidgets.QFrame.Shadow.Plain)
+        self.lb_description.setText("Argentina Corned Beef MADALINGArgentina Corned Beef MADALINGArgentina Corned Argentina Corned Beef MADALINGArgent")
+        self.lb_description.setTextFormat(QtCore.Qt.TextFormat.AutoText)
+        self.lb_description.setScaledContents(False)
+        self.lb_description.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
+        self.lb_description.setWordWrap(True)
+        self.lb_description.setObjectName("lb_description")
+        self.pb_del = QtWidgets.QPushButton(parent=self.gb_item)
+        self.pb_del.setGeometry(QtCore.QRect(580, 170, 145, 32))
+        font = QtGui.QFont()
+        font.setFamily("Inter")
+        font.setPointSize(11)
+        font.setBold(True)
+        self.pb_del.setFont(font)
+        self.pb_del.setStyleSheet("QPushButton {\n"
+"    background: #ff9494;\n"
+"    border: 1px solid #20242c;\n"
+"    border-radius:6px;\n"
+"}")
+        self.pb_del.setDefault(False)
+        self.pb_del.setFlat(False)
+        self.pb_del.setObjectName("pb_del")
+        self.lb_quant = QtWidgets.QLabel(parent=self.gb_item)
+        self.lb_quant.setGeometry(QtCore.QRect(760, 170, 100, 32))
+        font = QtGui.QFont()
+        font.setFamily("Inter")
+        font.setPointSize(14)
+        font.setBold(True)
+        self.lb_quant.setFont(font)
+        self.lb_quant.setObjectName("lb_quant")
+        self.lb_price = QtWidgets.QLabel(parent=self.gb_item)
+        self.lb_price.setGeometry(QtCore.QRect(850, 30, 151, 31))
+        font = QtGui.QFont()
+        font.setFamily("Inter SemiBold")
+        font.setPointSize(28)
         font.setBold(True)
         self.lb_price.setFont(font)
-        self.lb_price.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lb_price.setStyleSheet("QLabel {\n"
+"    color: #20d45c;\n"
+"}")
+        self.lb_price.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.lb_price.setObjectName("lb_price")
+        self.sb_quantity = CustomSpinBox(parent=self.gb_item)
+        self.sb_quantity.setGeometry(QtCore.QRect(860, 170, 111, 40))
+        self.sb_quantity.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.ActionsContextMenu)
+        self.sb_quantity.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.sb_quantity.setAutoFillBackground(False)
+        self.sb_quantity.setStyleSheet("QSpinBox {\n"
+"    border:  2px solid #20242c;\n"
+"    border-radius: 6px;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button, QSpinBox::down-button { \n"
+"    width: 0px;\n"
+"    height: 0px;\n"
+"}\n"
+"\n"
+"QSpinBox::up-button {\n"
+"    subcontrol-position: right;\n"
+"    border-radius: 4px;\n"
+"    background: #f044bc;\n"
+"}\n"
+"\n"
+"QSpinBox::down-button {\n"
+"    subcontrol-position: left;\n"
+"}\n"
+"")
+        self.sb_quantity.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.sb_quantity.setButtonSymbols(QtWidgets.QAbstractSpinBox.ButtonSymbols.UpDownArrows)
+        self.sb_quantity.setObjectName("sb_quantity")
+        self.label = QtWidgets.QLabel(parent=self.gb_item)
+        self.label.setGeometry(QtCore.QRect(810, 30, 31, 31))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("C:\\Users\\abarq\\PycharmProjects\\POS-PY\\ui\\../src/frontend/__image/sales_elements/peso-green.svg"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
 
         self.retranslateUi(cashier_item)
         QtCore.QMetaObject.connectSlotsByName(cashier_item)
@@ -62,10 +174,11 @@ class Ui_cashier_item(object):
         _translate = QtCore.QCoreApplication.translate
         cashier_item.setWindowTitle(_translate("cashier_item", "Form"))
         self.lb_name.setText(_translate("cashier_item", "PRODUCT NAME"))
-        self.lb_description.setText(_translate("cashier_item", "SHORT DESCRIPTION: LOREM "))
+        self.lb_category.setText(_translate("cashier_item", "Category"))
         self.pb_del.setText(_translate("cashier_item", "VOID ITEM"))
-        self.label.setText(_translate("cashier_item", "Quantity:"))
+        self.lb_quant.setText(_translate("cashier_item", "Quantity:"))
         self.lb_price.setText(_translate("cashier_item", "Price"))
+from src.backend.controllers.__customWidget.CustomSpinBox import CustomSpinBox
 
 
 if __name__ == "__main__":

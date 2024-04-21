@@ -81,7 +81,7 @@ def verify_login_otp(user_id, otp):
     return execute_query(query, (user_id, otp), fetch=True)
 
 
-def setOtpAttempt(login_id):
+def otp_attempt_true(login_id):
     query = """
     UPDATE loginattempts 
     SET otp_success = TRUE

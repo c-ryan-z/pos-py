@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 
 import psycopg2.extras
 
+from src.backend.Utilities import get_ip_info
 from src.backend.database.connection import connectionDB
 
 
@@ -67,11 +68,12 @@ def record_login_attempt(user_id, success, ip_add):
 def record_session(session_id, user_id, login_id):
     connection = connectionDB()
     cursor = connection.cursor()
+    ip, location = get_ip_info()
 
     cursor.execute("""
-        INSERT INTO sessions (session_id, user_id, login_id)
-        VALUES (%s, %s, %s)
-    """, (str(session_id), user_id, login_id))
+        INSERT INTO sessions (session_id, user_id, login_id, ip_add)
+        VALUES (%s, %s, %s, %s)
+    """, (str(session_id), user_id, login_id, str(ip)))
     connection.commit()
     cursor.close()
     connection.close()
@@ -85,6 +87,20 @@ def activity_log(user_id, activity_type, activity_category, details, session_id)
         INSERT INTO activity_logs (user_id, timestamp, activity_type, activity_category, details, session_id)
         VALUES (%s, %s, %s, %s, %s, %s)
     """, (user_id, datetime.now(), activity_type, activity_category, details, str(session_id)))
+    connection.commit()
+    cursor.close()
+    connection.close()
+
+
+def logout_session(session_id):
+    connection = connectionDB()
+    cursor = connection.cursor()
+    # todo solve the logout issue here
+    cursor.execute("""
+        UPDATE sessions
+        SET logout_time = %s
+        WHERE session_id = %s
+    """, (datetime.now(), str(session_id),))
     connection.commit()
     cursor.close()
     connection.close()

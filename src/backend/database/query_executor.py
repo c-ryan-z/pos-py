@@ -2,12 +2,15 @@ from src.backend.database.connection import connectionDB
 import psycopg2
 
 
-def execute_query(query, params, commit=False, fetch=False):
+def execute_query(query, params, commit=False, fetch=False, executemany=False):
     connection = connectionDB()
     cursor = connection.cursor()
 
     try:
-        cursor.execute(query, params)
+        if executemany:
+            cursor.executemany(query, params)
+        else:
+            cursor.execute(query, params)
         if commit:
             connection.commit()
             if fetch:

@@ -78,6 +78,6 @@ class LoginThread(QThread):
         session_id = generate_session_id()
         record_session(session_id, self.login_form.user[0], self.login_form.login_id)
         activity_log(self.login_form.user[0], "Log In", "Account", "Login Attempt from", session_id)
-        info = self.login_form.user + (session_id,)
+        info = self.login_form.user + (self.login_form.login_id, session_id,)
         self.login_form.main_app.mainLoggedIn.emit(info)
         self.login_form.main_app.setCurrentWidget(self.login_form.user[2])

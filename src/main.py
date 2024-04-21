@@ -1,17 +1,17 @@
-import sys, time
+import sys
+import time
 
 from PyQt6 import QtWidgets as Qtw, QtCore
 from dotenv import load_dotenv
 from pyqt6_plugins.examplebuttonplugin import QtGui
 
-from src.setup_paths import Paths
-
-from src.backend.controllers.adminControllers.adminController import AdminController
 from src.backend.controllers.__customWidget.userInfoController import UserInfoWidget
-from src.backend.controllers.salesControllers.salesController import SalesController
-from src.backend.controllers.loginControllers.otpController import OTPForm
+from src.backend.controllers.adminControllers.adminController import AdminController
 from src.backend.controllers.loginControllers.loginFormController import LoginForm
+from src.backend.controllers.loginControllers.otpController import OTPForm
 from src.backend.controllers.loginControllers.pw_resetController import PasswordReset
+from src.backend.controllers.salesControllers.SalesController import SalesController
+from src.setup_paths import Paths
 
 
 class MainApp(Qtw.QWidget):
@@ -76,6 +76,13 @@ class MainApp(Qtw.QWidget):
 
     def hideDarkener(self):
         self.darkener.hide()
+
+    def closeEvent(self, event):
+        if self.userInfoController is not None and self.userInfoController.user_info is not None:
+            if not self.userInfoController.handleLogout():
+                event.ignore()
+                return
+        super().closeEvent(event)
 
 
 if __name__ == '__main__':

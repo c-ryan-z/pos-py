@@ -19,3 +19,4 @@ setuptools==68.2.0
 urllib3==2.2.1
 wheel==0.41.2
 zipp==3.18.1
+pillow~=10.3.0

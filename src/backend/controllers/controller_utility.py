@@ -1,7 +1,10 @@
+import io
 import random
 import uuid
+from typing import Union
 
-from PyQt6.QtGui import QColor
+from PIL import Image, ImageDraw, ImageQt
+from PyQt6.QtGui import QColor, QPixmap, QImage
 from PyQt6.QtWidgets import QGraphicsDropShadowEffect
 
 
@@ -14,6 +17,31 @@ def shadow_effect(widget):
     shadow.setYOffset(0)
     shadow.setColor(QColor(0, 0, 0, 80))
     widget.setGraphicsEffect(shadow)
+
+
+def img_radius(ipt: Union[str, bytes], radius: int):
+    if isinstance(ipt, str):
+        image = Image.open(ipt)
+    else:
+        image = Image.open(io.BytesIO(ipt))
+
+    circle = Image.new('L', (radius * 2, radius * 2), 0)
+    draw = ImageDraw.Draw(circle)
+    draw.ellipse((0, 0, radius * 2, radius * 2), fill=255)
+
+    alpha = Image.new('L', image.size, 255)
+    w, h = image.size
+    alpha.paste(circle.crop((0, 0, radius, radius)), (0, 0))
+    alpha.paste(circle.crop((0, radius, radius, radius * 2)), (0, h - radius))
+    alpha.paste(circle.crop((radius, 0, radius * 2, radius)), (w - radius, 0))
+    alpha.paste(circle.crop((radius, radius, radius * 2, radius * 2)), (w - radius, h - radius))
+
+    image.putalpha(alpha)
+
+    qim = ImageQt.ImageQt(image)
+    qImage = QImage(qim)
+    pixmap = QPixmap.fromImage(qImage)
+    return pixmap
 
 
 # ------------------------- FUNCTIONS

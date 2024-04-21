@@ -6,7 +6,7 @@ from src.frontend.login.otpForm import Ui_OTP
 
 from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
 from src.backend.database.login.auth import (create_codes, verify_login_otp, check_user_otp, increment_otp_attempts,
-                                             setOtpAttempt)
+                                             otp_attempt_true)
 from src.backend.database.login.record_logins import record_session, activity_log
 from src.backend.controllers.controller_utility import generate_code, generate_session_id
 from src.backend.threads.login.otpThread import OTPThread
@@ -72,9 +72,9 @@ class OTPForm(Qtw.QWidget):
             increment_otp_attempts(self.user[0])
             return
 
-        setOtpAttempt(self.user[5])
+        otp_attempt_true(self.user[5])
         session_id = generate_session_id()
-        print(self.user[5])
+        print(str(self.user[5]) + " OTP SUCCESS")
         record_session(session_id, self.user[0], self.user[5])
         activity_log(self.user[0], "Log In", "Account", "Login Attempt from", session_id)
 

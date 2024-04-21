@@ -72,6 +72,11 @@
       <height>150</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+	border-radius: 48px;
+}</string>
+    </property>
     <property name="text">
      <string>IMAGE PLACE HOLDER</string>
     </property>

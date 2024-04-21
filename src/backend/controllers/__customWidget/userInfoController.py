@@ -4,7 +4,8 @@ from PyQt6.QtGui import QPixmap, QImage, QBitmap, QPainter
 
 from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
 from src.backend.database.employee import get_employee_img, uploadEmployeeImage
-from src.frontend.__custom_widgets.userInfoForm import Ui_Form
+from src.backend.database.login.record_logins import logout_session, activity_log
+from src.frontend.__custom_widgets.userInfoWidget import Ui_Form
 from src.setup_paths import Paths
 
 
@@ -16,15 +17,20 @@ class UserInfoWidget(Qtw.QWidget):
         self.ui.setupUi(self)
         self.main_app = main_app
         self.user_info = None
+        self.user_id = None
+        self.session_id = None
 
         self.ui.pb_setImage.clicked.connect(self.uploadImage)
         self.ui.pb_logout.clicked.connect(self.handleLogout)
 
     def initialize_user_info(self, user_info):
         self.user_info = user_info
+        self.user_id = user_info[0]
+        self.session_id = user_info[6]
         self.ui.lb_username.setText(user_info[1])
         self.ui.lb_role.setText(user_info[2].capitalize())
         self.initialize_img(self.user_info[0])
+        print(self.user_info)
 
     def process_image(self, image):
         pixmap = QPixmap.fromImage(image)
@@ -66,11 +72,15 @@ class UserInfoWidget(Qtw.QWidget):
         message_box = CustomMessageBox(self, main_app=self.main_app)
         if message_box.confirmAction("Logout", "Are you sure you want to logout?"):
             self.logout()
+            return True
+        return False
 
     def logout(self):
-        self.main_app.setCurrentWidget('login')
-        self.user_info = None
+        logout_session(self.user_info[6])
+        activity_log(self.user_info[0], 'Log Out', 'Account', 'User logged out', self.user_info[6])
 
+        self.user_info = None
         self.ui.lb_username.clear()
         self.ui.lb_role.clear()
         self.ui.lb_userImage.clear()
+        self.main_app.setCurrentWidget('login')
