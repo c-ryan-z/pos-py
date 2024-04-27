@@ -49,7 +49,7 @@ class MainApp(Qtw.QWidget):
 
         self.darkener = Qtw.QWidget(self.stacked_widget)
         self.darkener.setGeometry(self.rect())
-        self.darkener.setStyleSheet("background-color: rgba(0, 0, 0, 0.5);")
+        self.darkener.setStyleSheet("background-color: rgba(180,180,180,0.78);")
         self.darkener.hide()
 
         self.layout = Qtw.QVBoxLayout()

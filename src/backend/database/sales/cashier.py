@@ -45,3 +45,22 @@ def log_transaction(user_id, activity_type, details, session_id):
     """
     return execute_query(query, (user_id, datetime.now(), activity_type, "Sales", details, session_id),
                          commit=True)
+
+
+def transactions_query():
+    query = """
+        SELECT id, date_time, is_successful, total, amount_paid FROM transactions
+        WHERE cashier_id = %s
+        ORDER BY id
+    """
+    return query
+
+
+def retrieve_transaction(transaction_id):
+    query = """
+        SELECT id, date_time, is_successful, total, amount_paid FROM transactions
+        WHERE CAST(id AS TEXT) LIKE %s
+        ORDER BY id
+        LIMIT 20
+    """
+    return execute_query(query, (f"{transaction_id}%",), fetch=True, fetchall=True)

@@ -35,9 +35,7 @@ class SalesController(Qtw.QWidget):
         self.ui.pb_history.clicked.connect(lambda: self.tab_change(1))
 
     def tab_change(self, index):
-        print(index)
         self.ui.sw_sales.setCurrentIndex(index)
-        print(f"Current index after change: {self.ui.sw_sales.currentIndex()}")
 
     def keyPressEvent(self, event):
         current_time = time.time()
