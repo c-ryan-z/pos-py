@@ -1,6 +1,6 @@
 from PyQt6 import QtWidgets as Qtw, QtGui
 
-from src.backend.controllers.adminControllers.admin_models import AccountModel
+from src.backend.controllers.adminControllers.admin_models.AccountModel import AccountModel
 from src.backend.database.admin.accounts import get_user_accounts, get_user_info
 from src.frontend.admin.AdminAccounts import Ui_admin_accounts
 

@@ -4,77 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Login Bug Fixed">
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/History.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Inventory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Reports.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Tax.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_models/AccountModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_models/HistoryModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_models/InventoryModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_models/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/AccountEditPopUp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/InventoryPopUp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/admin/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/admin/accounts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/admin/history.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/admin/inventory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/admin/reports.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/admin/tax.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/sales/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/calculator-math-tax.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/chart-histogram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/reports/photo_6156872775034322207_m.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/reports/photo_6156872775034322208_m.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/reports/photo_6156872775034322209_m.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/reports/photo_6156872775034322210_m.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/supplier-alt.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/tax/Group2_SurveyQuestionnaire.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/tax/edit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/users.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/login_elements/user.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/AccountEdit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/AdminAccounts.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/AdminController.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/AdminHistory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/AdminInventory.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/AdminReports.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/AdminTax.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/admin/InventoryPopUp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/AccountEdit.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/AdminAccounts.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/AdminController.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/AdminHistory.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/AdminInventory.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/AdminReports.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/AdminTax.ui" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/InventoryPopUp.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/__customWidget/userInfoController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/userInfoController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/adminController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/AdminController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/controller_utility.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/controller_utility.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierDashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierDashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierHistory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierHistory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/SalesController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/SalesController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/database/sales/cashier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/sales/cashier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/threads/login/login_thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/threads/login/login_thread.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/__custom_widgets/CustomMessageBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/CustomMessageBox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/__image/login_elements/lock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__image/login_elements/lock.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/__image/login_elements/user.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/admin/adminForm.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/login/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Accounts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/frontend/login/loginForm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/login/loginForm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/CustomMessageBox.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/CustomMessageBox.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/admin.ui" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/loginForm.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/loginForm.ui" afterDir="false" />
-    </list>
+    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Admin Side Half Implemented" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -500,7 +430,7 @@
       <workItem from="1714920912956" duration="3599000" />
       <workItem from="1715022713002" duration="90000" />
       <workItem from="1715022817693" duration="6210000" />
-      <workItem from="1715058717214" duration="405000" />
+      <workItem from="1715058717214" duration="896000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -550,7 +480,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712852084504</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Admin Side Half Implemented">
+      <option name="closed" value="true" />
+      <created>1715059613515</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715059613515</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +512,8 @@
     <MESSAGE value="Cashier Image" />
     <MESSAGE value="Login with OTP" />
     <MESSAGE value="Login Bug Fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login Bug Fixed" />
+    <MESSAGE value="Admin Side Half Implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Side Half Implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

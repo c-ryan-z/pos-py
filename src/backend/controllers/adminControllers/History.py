@@ -1,7 +1,7 @@
 from PyQt6 import QtWidgets as Qtw, QtCore, QtGui
 
 from src.backend.controllers.__customWidget.Receipt import Receipt
-from src.backend.controllers.adminControllers.admin_models import HistoryModel
+from src.backend.controllers.adminControllers.admin_models.HistoryModel import HistoryModel
 from src.backend.controllers.controller_utility import process_data
 from src.backend.database.Scroll_Paginator import ScrollPaginator
 from src.backend.database.admin.history import cashier_transactions, retrieve_admin_transaction
