@@ -3,10 +3,19 @@ from datetime import datetime
 from src.backend.database.query_executor import execute_query
 
 
+def initialize_tax():
+    query = """
+        SELECT setting_value FROM system_settings
+        WHERE id = %s
+    """
+    result = execute_query(query, (1,), fetch=True)
+    return result[0] if result else None
+
+
 def retrieve_product(product_id):
     query = """
         SELECT * FROM products
-        WHERE id = %s
+        WHERE id = %s AND is_active = TRUE
     """
     return execute_query(query, (product_id,), fetch=True)
 
@@ -56,11 +65,11 @@ def transactions_query():
     return query
 
 
-def retrieve_transaction(transaction_id):
+def retrieve_transaction(transaction_id, cashier_id):
     query = """
         SELECT id, date_time, is_successful, total, amount_paid FROM transactions
-        WHERE CAST(id AS TEXT) LIKE %s
+        WHERE CAST(id AS TEXT) LIKE %s AND cashier_id = %s
         ORDER BY id
         LIMIT 20
     """
-    return execute_query(query, (f"{transaction_id}%",), fetch=True, fetchall=True)
+    return execute_query(query, (f"{transaction_id}%", cashier_id), fetch=True, fetchall=True)

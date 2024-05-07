@@ -21,7 +21,6 @@ class LoginThread(QThread):
 
     def handleLogin(self):
         if self.login_form.ui.le_username.text() == "" or self.login_form.ui.le_pass.text() == "":
-            print("Please fill in all fields")
             self.error_signal.emit("Empty Fields")
             return
 
@@ -33,7 +32,6 @@ class LoginThread(QThread):
         user_exists = check_db_for_user(username)
 
         if user_exists is None:
-            print("No user found")
             self.error_signal.emit("No User Found")
             self.login_form.ui.le_pass.clear()
             return
@@ -48,16 +46,13 @@ class LoginThread(QThread):
 
         if user is None:
             self.login_form.login_id = record_login_attempt(user_exists[0], False, ip)
-            print(str(self.login_form.login_id) + "" + "NGI LOGIN")
             self.error_signal.emit("Wrong Password")
-            print("Wrong password")
             self.login_form.ui.le_pass.clear()
             return
 
         otp_count = otp_attempts(user[0])
 
         if user[3] and otp_count is not None and otp_count >= 3:
-            print("Too many OTP attempts")
             self.error_signal.emit("Too Many OTP Attempts")
             self.login_form.ui.le_pass.clear()
             return

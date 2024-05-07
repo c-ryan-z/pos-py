@@ -317,7 +317,7 @@ QCheckBox:indicator {
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>../src/frontend/__image/login_elements/user.png</pixmap>
+         <pixmap>../src/frontend/__image/login_elements/user.svg</pixmap>
         </property>
         <property name="scaledContents">
          <bool>true</bool>

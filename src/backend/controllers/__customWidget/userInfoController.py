@@ -11,11 +11,12 @@ from src.setup_paths import Paths
 
 class UserInfoWidget(Qtw.QWidget):
 
-    def __init__(self, main_app, parent=None):
+    def __init__(self, main_app, instance, parent=None):
         super().__init__(parent)
         self.ui = Ui_Form()
         self.ui.setupUi(self)
         self.main_app = main_app
+        self.instance = instance
         self.user_info = None
         self.user_id = None
         self.session_id = None
@@ -24,6 +25,8 @@ class UserInfoWidget(Qtw.QWidget):
         self.ui.pb_logout.clicked.connect(self.handleLogout)
 
     def initialize_user_info(self, user_info):
+        if user_info[2] != self.instance:
+            return
         self.user_info = user_info
         self.user_id = user_info[0]
         self.session_id = user_info[6]

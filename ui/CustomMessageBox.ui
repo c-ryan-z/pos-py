@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>399</width>
-    <height>500</height>
+    <width>503</width>
+    <height>565</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -29,7 +29,7 @@ QPushButton {
   <widget class="QPushButton" name="pb_close">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>450</x>
      <y>10</y>
      <width>30</width>
      <height>30</height>
@@ -59,8 +59,8 @@ QPushButton {
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>430</y>
-     <width>401</width>
+     <y>470</y>
+     <width>501</width>
      <height>40</height>
     </rect>
    </property>
@@ -118,33 +118,11 @@ QPushButton {
     <rect>
      <x>40</x>
      <y>20</y>
-     <width>321</width>
-     <height>411</height>
+     <width>421</width>
+     <height>451</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="vl_elements">
-    <item>
-     <widget class="QLabel" name="lb_element">
-      <property name="minimumSize">
-       <size>
-        <width>300</width>
-        <height>300</height>
-       </size>
-      </property>
-      <property name="maximumSize">
-       <size>
-        <width>319</width>
-        <height>319</height>
-       </size>
-      </property>
-      <property name="text">
-       <string>PLACEHOLDER</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
     <item>
      <widget class="QLabel" name="lb_message">
       <property name="maximumSize">
@@ -168,14 +146,36 @@ QPushButton {
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="QLabel" name="lb_element">
+      <property name="minimumSize">
+       <size>
+        <width>300</width>
+        <height>300</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>421</width>
+        <height>421</height>
+       </size>
+      </property>
+      <property name="text">
+       <string>PLACEHOLDER</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QLabel" name="lb_title">
    <property name="geometry">
     <rect>
-     <x>10</x>
+     <x>20</x>
      <y>10</y>
-     <width>111</width>
+     <width>241</width>
      <height>31</height>
     </rect>
    </property>
@@ -190,13 +190,13 @@ QPushButton {
     <string>Title</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>40</x>
+     <x>90</x>
      <y>90</y>
      <width>321</width>
      <height>101</height>

@@ -4,7 +4,7 @@ from pyqt6_plugins.examplebuttonplugin import QtGui
 
 from src.backend.controllers.__customWidget.CustomCashierItem import CustomCashierItem
 from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
-from src.backend.database.sales.cashier import retrieve_product, transaction_checkout
+from src.backend.database.sales.cashier import retrieve_product, transaction_checkout, initialize_tax
 from src.frontend.sales.CashierDashboard import Ui_cashier_dashboard
 
 
@@ -20,6 +20,8 @@ class CashierDashboard(Qtw.QWidget):
         self.quantity_labels = {}
         self.overview_layouts = {}
         self.sub_total = 0
+        self.system_tax = initialize_tax()
+        self.total = 0
 
         self.ui.list_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop | QtCore.Qt.AlignmentFlag.AlignHCenter)
         self.ui.overview_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop | QtCore.Qt.AlignmentFlag.AlignHCenter)
@@ -116,7 +118,11 @@ class CashierDashboard(Qtw.QWidget):
         for item_id, item_widget in self.scanned_widgets.items():
             total += item_widget.price * item_widget.ui.sb_quantity.value()
         self.sub_total = total
-        self.ui.lb_subtotal.setText(str(total))
+        self.ui.lb_subtotal.setText("{:.2f}".format(total))
+        tax = total * self.system_tax / 100
+        self.ui.lb_tax.setText("{:.2f}".format(tax))
+        self.total += tax
+        self.ui.lb_total.setText("{:.2f}".format(total))
 
     def handle_checkout(self):
         cash, change = self.handle_cash()
@@ -128,8 +134,8 @@ class CashierDashboard(Qtw.QWidget):
             print(item_id, item_widget.ui.sb_quantity.value())
             checkout_items.append((item_id, item_widget.ui.sb_quantity.value()))
 
-        total = self.sub_total
-        transaction_checkout(self.user_widget.user_id, self.sub_total, 0, 0, total, cash, change,
+        total = self.sub_total + (self.sub_total * self.system_tax / 100)
+        transaction_checkout(self.user_widget.user_id, self.sub_total, self.system_tax, 0, total, cash, change,
                              checkout_items, self.user_widget.session_id)
 
         self.clear_transaction()
@@ -144,7 +150,7 @@ class CashierDashboard(Qtw.QWidget):
         else:
             change = cash - float(self.sub_total)
             message = CustomMessageBox(self, self.main_app)
-            message.notifyAction("Change", f"Change: {change}")
+            message.notifyAction("Change", f"Change: {change:.2f}")
             return cash, change
 
     def clear_transaction(self):

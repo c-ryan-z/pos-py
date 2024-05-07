@@ -54,3 +54,13 @@ def generate_code():
 
 def generate_session_id():
     return uuid.uuid4()
+
+
+def process_data(tbl_data, col):
+    processed_data = []
+    for row in tbl_data:
+        row = list(row)
+        row[col] = "Done" if row[col] else "Voided"
+        row.append("Detail")
+        processed_data.append(tuple(row))
+    return processed_data

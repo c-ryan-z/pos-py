@@ -25,7 +25,7 @@ class SalesController(Qtw.QWidget):
         self.dashboard = CashierDashboard(self, self.main_app, self.user_info_widget)
         self.ui.sw_sales.addWidget(self.dashboard)
 
-        self.history = CashierHistory(self, self.main_app)
+        self.history = CashierHistory(self, self.main_app, user_widget)
         self.ui.sw_sales.addWidget(self.history)
 
         self.last_key_time = time.time()

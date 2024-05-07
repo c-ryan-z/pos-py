@@ -1,6 +1,7 @@
 from PyQt6 import QtWidgets as Qtw, QtCore, QtGui
 
 from src.backend.controllers.__customWidget.Receipt import Receipt
+from src.backend.controllers.controller_utility import process_data
 from src.backend.controllers.salesControllers.CashierHistoryModel import CashierHistoryModel
 from src.backend.database.Scroll_Paginator import ScrollPaginator
 from src.backend.database.sales.cashier import transactions_query, retrieve_transaction
@@ -8,7 +9,7 @@ from src.frontend.sales.CashierHistory import Ui_cashier_history
 
 
 class CashierHistory(Qtw.QWidget):
-    def __init__(self, sales_controller, main_app):
+    def __init__(self, sales_controller, main_app, user_info_widget):
         super().__init__()
         self.model = None
         self.paginator = None
@@ -16,6 +17,7 @@ class CashierHistory(Qtw.QWidget):
         self.ui.setupUi(self)
         self.sales_controller = sales_controller
         self.main_app = main_app
+        self.user_info_widget = user_info_widget
 
         self.main_app.mainLoggedIn.connect(self.initialize_table)
 
@@ -69,7 +71,7 @@ class CashierHistory(Qtw.QWidget):
         params = (cashier_id,)
         self.paginator = ScrollPaginator(query, params, name="cashier_transactions")
         data = self.paginator.get_next_page()
-        data = self.process_data(data)
+        data = process_data(data, 2)
         self.model = CashierHistoryModel(data)
         self.ui.tv_history.setModel(self.model)
         self.set_column_sizes()
@@ -80,7 +82,7 @@ class CashierHistory(Qtw.QWidget):
         scroll_trigger = max_val * 0.80
         if val >= scroll_trigger and self.paginator.has_next():
             new_data = self.paginator.get_next_page()
-            new_data = self.process_data(new_data)
+            new_data = process_data(new_data, 2)
             self.update_table(new_data)
 
     def update_table(self, new_data):
@@ -110,15 +112,6 @@ class CashierHistory(Qtw.QWidget):
 
         self.ui.tv_history.verticalHeader().setDefaultSectionSize(60)
 
-    def process_data(self, tbl_data):
-        processed_data = []
-        for row in tbl_data:
-            row = list(row)
-            row[2] = "Done" if row[2] else "Voided"
-            row.append("Detail")
-            processed_data.append(tuple(row))
-        return processed_data
-
     def star_timer(self):
         self.timer.start(500)
 
@@ -130,9 +123,10 @@ class CashierHistory(Qtw.QWidget):
 
         filtered_data = self.model.filter_by_id(transaction_id)
         if not filtered_data:
-            transaction = retrieve_transaction(transaction_id)
+            user_id = self.user_info_widget.user_id
+            transaction = retrieve_transaction(transaction_id, user_id)
             if transaction:
-                filtered_data = self.process_data(transaction)
+                filtered_data = process_data(transaction, 2)
         new_model = CashierHistoryModel(filtered_data)
         self.ui.tv_history.setModel(new_model)
         self.set_column_sizes(True)

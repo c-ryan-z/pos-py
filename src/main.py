@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from pyqt6_plugins.examplebuttonplugin import QtGui
 
 from src.backend.controllers.__customWidget.userInfoController import UserInfoWidget
-from src.backend.controllers.adminControllers.adminController import AdminController
+from src.backend.controllers.adminControllers.AdminController import AdminController
 from src.backend.controllers.loginControllers.loginFormController import LoginForm
 from src.backend.controllers.loginControllers.otpController import OTPForm
 from src.backend.controllers.loginControllers.pw_resetController import PasswordReset
@@ -25,7 +25,8 @@ class MainApp(Qtw.QWidget):
         self.setWindowTitle("Point Of Sales")
         self.setWindowIcon(QtGui.QIcon(Paths.image("logo_u2.png")))
 
-        self.userInfoController = UserInfoWidget(self)
+        self.userInfoControllerAdmin = UserInfoWidget(self, "admin")
+        self.userInfoControllerSales = UserInfoWidget(self, "cashier")
 
         self.stacked_widget = Qtw.QStackedWidget()
         self.stacked_widget.setSizePolicy(Qtw.QSizePolicy.Policy.Expanding, Qtw.QSizePolicy.Policy.Expanding)
@@ -41,10 +42,10 @@ class MainApp(Qtw.QWidget):
         self.otpController = OTPForm(self, self.login_form)
         self.addWidget(self.otpController, 'otp')
 
-        self.admin = AdminController()
+        self.admin = AdminController(self, self.userInfoControllerAdmin)
         self.addWidget(self.admin, 'admin')
 
-        self.salesController = SalesController(self, self.userInfoController)
+        self.salesController = SalesController(self, self.userInfoControllerSales)
         self.addWidget(self.salesController, 'cashier')
 
         self.darkener = Qtw.QWidget(self.stacked_widget)
@@ -78,10 +79,20 @@ class MainApp(Qtw.QWidget):
         self.darkener.hide()
 
     def closeEvent(self, event):
-        if self.userInfoController is not None and self.userInfoController.user_info is not None:
-            if not self.userInfoController.handleLogout():
+        if self.userInfoControllerAdmin is not None and self.userInfoControllerAdmin.user_info is not None:
+            if not self.userInfoControllerAdmin.handleLogout():
                 event.ignore()
                 return
+            else:
+                self.userInfoControllerAdmin.user_info = None
+
+        if self.userInfoControllerSales is not None and self.userInfoControllerSales.user_info is not None:
+            if not self.userInfoControllerSales.handleLogout():
+                event.ignore()
+                return
+            else:
+                self.userInfoControllerSales.user_info = None
+
         super().closeEvent(event)
 
 
