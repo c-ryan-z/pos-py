@@ -74,7 +74,11 @@ class Ui_admin_history(object):
         self.le_sort.setCursorMoveStyle(QtCore.Qt.CursorMoveStyle.VisualMoveStyle)
         self.le_sort.setObjectName("le_sort")
         self.receipt_placeholder = QtWidgets.QWidget(parent=self.admin_MainContainer)
-        self.receipt_placeholder.setGeometry(QtCore.QRect(1180, 170, 360, 754))
+        self.receipt_placeholder.setGeometry(QtCore.QRect(1190, 170, 360, 754))
+        self.receipt_placeholder.setStyleSheet("QWidget#receipt_placeholder {\n"
+"    border: 4px dashed rgba(255,102,183,1);\n"
+"    border-radius: 4px;\n"
+"}")
         self.receipt_placeholder.setObjectName("receipt_placeholder")
 
         self.retranslateUi(admin_history)

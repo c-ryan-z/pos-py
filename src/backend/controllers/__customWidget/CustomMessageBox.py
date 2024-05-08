@@ -1,3 +1,4 @@
+from src.backend.controllers.__customWidget.Receipt import Receipt
 from src.frontend.__custom_widgets.CustomMessageBox import Ui_custom_modal
 from src.backend.controllers.controller_utility import shadow_effect
 from PyQt6 import QtWidgets as Qtw, QtGui, QtCore as Qtc
@@ -10,6 +11,7 @@ class CustomMessageBox(Qtw.QDialog):
         self.ui = Ui_custom_modal()
         self.ui.setupUi(self)
         self.movie = None
+        self.receipt = None
         self.main_app = main_app
 
         self.ui.pb_yes.clicked.connect(self.accept)
@@ -36,6 +38,9 @@ class CustomMessageBox(Qtw.QDialog):
                 self.main_app.showDarkener()
 
     def confirmAction(self, title, question, movie=None):
+        self.setFixedHeight(565)
+        self.ui.sw_messagebox.setFixedHeight(551)
+        self.ui.sw_messagebox.setCurrentIndex(0)
         self.disableChoices()
 
         self.ui.pb_yes.setText("Yes")
@@ -54,6 +59,9 @@ class CustomMessageBox(Qtw.QDialog):
         return self.exec() == Qtw.QDialog.DialogCode.Accepted
 
     def notifyAction(self, title, message, movie=None):
+        self.setFixedHeight(565)
+        self.ui.sw_messagebox.setFixedHeight(551)
+        self.ui.sw_messagebox.setCurrentIndex(0)
         self.disableChoices()
 
         self.ui.pb_yes.setText("OK")
@@ -74,6 +82,9 @@ class CustomMessageBox(Qtw.QDialog):
         return self.exec() == Qtw.QDialog.DialogCode.Accepted
 
     def multipleChoices(self, title, question, choices):
+        self.setFixedHeight(565)
+        self.ui.sw_messagebox.setFixedHeight(551)
+        self.ui.sw_messagebox.setCurrentIndex(0)
         self.ui.lb_title.setText(title)
         self.ui.lb_message.setText(question)
         self.ui.lb_element.setVisible(False)
@@ -97,3 +108,14 @@ class CustomMessageBox(Qtw.QDialog):
         self.ui.pb_choice_2.setVisible(False)
         self.ui.pb_choice_3.setVisible(False)
         self.ui.pb_choice_4.setVisible(False)
+
+    def show_receipt(self, transaction_id):
+        self.setFixedHeight(681)
+        self.ui.sw_messagebox.setCurrentIndex(1)
+        self.receipt = Receipt(self)
+        self.receipt.set_data(transaction_id)
+
+        self.ui.receipt_layout.addWidget(self.receipt)
+        self.ui.receipt_layout.setContentsMargins(0, 0, 0, 0)
+
+        return self.exec()

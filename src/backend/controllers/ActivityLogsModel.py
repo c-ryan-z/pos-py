@@ -25,10 +25,10 @@ class ActivityLogsModel(QtCore.QAbstractTableModel):
         if role != QtCore.Qt.ItemDataRole.DisplayRole:
             return None
         if orientation == QtCore.Qt.Orientation.Horizontal:
-            if self.columnCount() == 4:
-                return ("Session ID", "Timestamp", "Activity Category", "Activity Type")[section]
-            elif self.columnCount() == 5:
-                return ("User ID", "Session ID", "Timestamp", "Activity Category", "Activity Type")[section]
+            if self.columnCount() == 5:
+                return ("Id", "Session ID", "Timestamp", "Activity Category", "Activity Type")[section]
+            elif self.columnCount() == 6:
+                return ("Id", "User ID", "Session ID", "Timestamp", "Activity Category", "Activity Type")[section]
         return None
 
     def sort(self, column, order):
@@ -37,3 +37,9 @@ class ActivityLogsModel(QtCore.QAbstractTableModel):
         if order == QtCore.Qt.SortOrder.DescendingOrder:
             self._data.reverse()
         self.layoutChanged.emit()
+
+    def filter_by_user_id(self, user_id):
+        return [log for log in self._data if log[1] == user_id]
+
+    def filter_by_activity_type(self, activity_type):
+        return [log for log in self._data if log[4] == activity_type]

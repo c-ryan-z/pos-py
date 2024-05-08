@@ -2,8 +2,9 @@ from PyQt6 import QtWidgets as Qtw
 from PyQt6.QtCharts import QLineSeries, QChart, QChartView, QValueAxis, QBarCategoryAxis, QScatterSeries, QPieSlice, \
     QPieSeries
 from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QPainter
+from PyQt6.QtGui import QPainter, QColor
 
+from src.backend.controllers.controller_utility import shadow_effect
 from src.backend.database.admin.reports import get_monthly_sales, get_weekly_sales, get_daily_sales, get_annual_sales, \
     get_unique_years, get_yearly_sum, get_top_products
 from src.frontend.admin.AdminReports import Ui_admin_reports
@@ -19,6 +20,7 @@ class Reports(Qtw.QWidget):
 
         main_app.mainLoggedIn.connect(self.initialize_report)
         self.ui.cb_linechart.currentIndexChanged.connect(self.update_linechart)
+        shadow_effect(self.ui.gb_PieChart)
 
     def initialize_report(self, user_info):
         if user_info[2] != "admin":
@@ -84,10 +86,18 @@ class Reports(Qtw.QWidget):
     def top_products(self, data=None):
         series = QPieSeries()
 
-        for product, sales in data:
+        # Define your colors
+        colors = [QColor(173, 216, 230),  # light blue
+                  QColor(144, 238, 144),  # light green
+                  QColor(255, 165, 0),  # orangy yellow
+                  QColor(255, 182, 193),  # light red
+                  QColor(75, 0, 130)]  # dark purple
+
+        for i, (product, sales) in enumerate(data):
             pie_element = QPieSlice()
             pie_element.setLabel(product)
             pie_element.setValue(sales)
+            pie_element.setColor(colors[i % len(colors)])  # Set color
             series.append(pie_element)
 
         series.setLabelsPosition(QPieSlice.LabelPosition.LabelOutside)

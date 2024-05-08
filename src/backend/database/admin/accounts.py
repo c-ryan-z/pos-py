@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import psycopg2
 
 from src.backend.database.query_executor import execute_query
@@ -90,3 +92,12 @@ def deactivate_user(user_id):
         WHERE id = %s
     """
     return execute_query(query, (user_id,), commit=True)
+
+
+def log_accounts(user_id, activity_type, details, session_id):
+    query = """
+        INSERT INTO activity_logs (user_id, timestamp, activity_type, activity_category, details, session_id)
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """
+    return execute_query(query, (user_id, datetime.now(), activity_type, "Accounts", details, session_id),
+                         commit=True)

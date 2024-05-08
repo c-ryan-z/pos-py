@@ -49,9 +49,8 @@ class InventoryModel(QtCore.QAbstractTableModel):
 
         self.sort(sort_column, sort_order)
 
-    def filter_by_id(self, item_id):
-        filtered_data = [row for row in self._data if row[0] == item_id]
-        return filtered_data
+    def filter_by_name(self, item_name):
+        return [item for item in self._data if item_name.lower() in item[0].lower()]
 
     def update_data_with_id(self, new_data):
         self.beginResetModel()

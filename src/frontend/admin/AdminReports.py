@@ -27,6 +27,14 @@ class Ui_admin_reports(object):
         self.admin_MainContainer.setObjectName("admin_MainContainer")
         self.gb_LineChart = QtWidgets.QGroupBox(parent=self.admin_MainContainer)
         self.gb_LineChart.setGeometry(QtCore.QRect(30, 300, 1171, 661))
+        self.gb_LineChart.setStyleSheet("QGroupBox {\n"
+"      background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */\n"
+"}")
         self.gb_LineChart.setTitle("")
         self.gb_LineChart.setObjectName("gb_LineChart")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.gb_LineChart)
@@ -47,9 +55,21 @@ class Ui_admin_reports(object):
         self.cb_linechart.setGeometry(QtCore.QRect(990, 20, 141, 31))
         font = QtGui.QFont()
         font.setFamily("Inter")
-        font.setPointSize(16)
+        font.setPointSize(-1)
         font.setBold(False)
         self.cb_linechart.setFont(font)
+        self.cb_linechart.setStyleSheet("QComboBox {\n"
+"  font-family: Inter; \n"
+"  font-size: 16px; \n"
+"  color: rgba(23,26,31,1); \n"
+"  background: rgba(243,244,246,1);\n"
+"    border-radius: 8px;\n"
+"    border: 2px solid rgba(50, 50,50, 0.7)\n"
+"}\n"
+"\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"}")
         self.cb_linechart.setObjectName("cb_linechart")
         self.layoutWidget = QtWidgets.QWidget(parent=self.admin_MainContainer)
         self.layoutWidget.setGeometry(QtCore.QRect(20, 50, 1591, 201))
@@ -65,6 +85,12 @@ class Ui_admin_reports(object):
         self.gb_Monthly.setSizePolicy(sizePolicy)
         self.gb_Monthly.setMinimumSize(QtCore.QSize(341, 150))
         self.gb_Monthly.setMaximumSize(QtCore.QSize(341, 150))
+        self.gb_Monthly.setStyleSheet("QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}")
         self.gb_Monthly.setTitle("")
         self.gb_Monthly.setObjectName("gb_Monthly")
         self.label_monthly = QtWidgets.QLabel(parent=self.gb_Monthly)
@@ -91,8 +117,12 @@ class Ui_admin_reports(object):
         self.peso.setObjectName("peso")
         self.label = QtWidgets.QLabel(parent=self.gb_Monthly)
         self.label.setGeometry(QtCore.QRect(220, 20, 100, 100))
+        self.label.setStyleSheet("QLabel {\n"
+"    background: rgba(0,0,0,0);\n"
+"}")
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/reports/photo_6156872775034322209_m.jpg"))
+        self.label.setPixmap(QtGui.QPixmap(
+            "./src/frontend/__image/admin_elements/reports/photo_6156872775034322209_m.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.gb_Monthly)
@@ -104,6 +134,12 @@ class Ui_admin_reports(object):
         self.gb_Weekly.setSizePolicy(sizePolicy)
         self.gb_Weekly.setMinimumSize(QtCore.QSize(341, 150))
         self.gb_Weekly.setMaximumSize(QtCore.QSize(341, 150))
+        self.gb_Weekly.setStyleSheet("QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}")
         self.gb_Weekly.setTitle("")
         self.gb_Weekly.setObjectName("gb_Weekly")
         self.peso_2 = QtWidgets.QLabel(parent=self.gb_Weekly)
@@ -130,8 +166,12 @@ class Ui_admin_reports(object):
         self.label_weekly.setObjectName("label_weekly")
         self.label_2 = QtWidgets.QLabel(parent=self.gb_Weekly)
         self.label_2.setGeometry(QtCore.QRect(230, 20, 100, 100))
+        self.label_2.setStyleSheet("QLabel {\n"
+"    background: rgba(0,0,0,0);\n"
+"}")
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/reports/photo_6156872775034322207_m.jpg"))
+        self.label_2.setPixmap(QtGui.QPixmap(
+            "./src/frontend/__image/admin_elements/reports/photo_6156872775034322207_m.jpg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout.addWidget(self.gb_Weekly)
@@ -143,6 +183,12 @@ class Ui_admin_reports(object):
         self.gb_Daily.setSizePolicy(sizePolicy)
         self.gb_Daily.setMinimumSize(QtCore.QSize(341, 150))
         self.gb_Daily.setMaximumSize(QtCore.QSize(341, 150))
+        self.gb_Daily.setStyleSheet("QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}")
         self.gb_Daily.setTitle("")
         self.gb_Daily.setObjectName("gb_Daily")
         self.peso_3 = QtWidgets.QLabel(parent=self.gb_Daily)
@@ -169,8 +215,12 @@ class Ui_admin_reports(object):
         self.label_daily.setObjectName("label_daily")
         self.label_3 = QtWidgets.QLabel(parent=self.gb_Daily)
         self.label_3.setGeometry(QtCore.QRect(230, 20, 100, 100))
+        self.label_3.setStyleSheet("QLabel {\n"
+"    background: rgba(0,0,0,0);\n"
+"}")
         self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/reports/photo_6156872775034322208_m.jpg"))
+        self.label_3.setPixmap(QtGui.QPixmap(
+            "./src/frontend/__image/admin_elements/reports/photo_6156872775034322208_m.jpg"))
         self.label_3.setScaledContents(True)
         self.label_3.setObjectName("label_3")
         self.horizontalLayout.addWidget(self.gb_Daily)
@@ -182,6 +232,12 @@ class Ui_admin_reports(object):
         self.gb_Annual.setSizePolicy(sizePolicy)
         self.gb_Annual.setMinimumSize(QtCore.QSize(341, 150))
         self.gb_Annual.setMaximumSize(QtCore.QSize(341, 150))
+        self.gb_Annual.setStyleSheet("QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}")
         self.gb_Annual.setTitle("")
         self.gb_Annual.setObjectName("gb_Annual")
         self.peso_4 = QtWidgets.QLabel(parent=self.gb_Annual)
@@ -208,13 +264,22 @@ class Ui_admin_reports(object):
         self.label_annual.setObjectName("label_annual")
         self.label_4 = QtWidgets.QLabel(parent=self.gb_Annual)
         self.label_4.setGeometry(QtCore.QRect(230, 20, 100, 100))
+        self.label_4.setStyleSheet("QLabel {\n"
+"    background: rgba(0,0,0,0);\n"
+"}")
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/reports/photo_6156872775034322210_m.jpg"))
+        self.label_4.setPixmap(QtGui.QPixmap(
+            "./src/frontend/__image/admin_elements/reports/photo_6156872775034322210_m.jpg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout.addWidget(self.gb_Annual)
         self.gb_PieChart = QtWidgets.QGroupBox(parent=self.admin_MainContainer)
         self.gb_PieChart.setGeometry(QtCore.QRect(1230, 300, 411, 481))
+        self.gb_PieChart.setStyleSheet("QGroupBox {\n"
+"      background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  box-shadow: 0px 17px 35px rgba(23, 26, 31, 0.24), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xl */\n"
+"}")
         self.gb_PieChart.setTitle("")
         self.gb_PieChart.setObjectName("gb_PieChart")
         self.verticalLayoutWidget_2 = QtWidgets.QWidget(parent=self.gb_PieChart)
@@ -230,7 +295,31 @@ class Ui_admin_reports(object):
         font.setPointSize(18)
         font.setBold(True)
         self.label_6.setFont(font)
+        self.label_6.setStyleSheet("QGroupBox {\n"
+"      background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  box-shadow: 0px 17px 35px rgba(23, 26, 31, 0.24), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xl */\n"
+"}")
         self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(parent=self.admin_MainContainer)
+        self.label_7.setGeometry(QtCore.QRect(890, 190, 491, 461))
+        self.label_7.setMinimumSize(QtCore.QSize(1, 0))
+        self.label_7.setText("")
+        self.label_7.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/reports/img2.png"))
+        self.label_7.setScaledContents(True)
+        self.label_7.setObjectName("label_7")
+        self.label_8 = QtWidgets.QLabel(parent=self.admin_MainContainer)
+        self.label_8.setGeometry(QtCore.QRect(-110, 700, 491, 461))
+        self.label_8.setMinimumSize(QtCore.QSize(1, 0))
+        self.label_8.setText("")
+        self.label_8.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/reports/img.png"))
+        self.label_8.setScaledContents(True)
+        self.label_8.setObjectName("label_8")
+        self.label_8.raise_()
+        self.label_7.raise_()
+        self.gb_LineChart.raise_()
+        self.layoutWidget.raise_()
+        self.gb_PieChart.raise_()
 
         self.retranslateUi(admin_reports)
         QtCore.QMetaObject.connectSlotsByName(admin_reports)

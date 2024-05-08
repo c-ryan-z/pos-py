@@ -6,11 +6,12 @@ from src.frontend.admin.AdminTax import Ui_admin_tax
 
 
 class Tax(Qtw.QWidget):
-    def __init__(self, main_app):
+    def __init__(self, main_app, user_widget):
         super().__init__()
         self.ui = Ui_admin_tax()
         self.ui.setupUi(self)
         self.main_app = main_app
+        self.user_widget = user_widget
         self.tax_rate = 0
 
         self.ui.verticalLayout.setAlignment(QtCore.Qt.AlignmentFlag.AlignHCenter | QtCore.Qt.AlignmentFlag.AlignVCenter)
@@ -36,6 +37,7 @@ class Tax(Qtw.QWidget):
                 message = CustomMessageBox(self, self.main_app)
                 if message.confirmAction("Edit Tax", "Are you sure you want to edit the tax rate?"):
                     update_tax(float(self.ui.le_tax.text()))
+                    log_tax(self.user_widget.user_id, "Edit", f"Tax rate changed to {self.ui.le_tax.text()}", str(self.user_widget.session_id))
                     self.tax_rate = str(self.ui.le_tax.text())
                     self.ui.le_tax.setEnabled(False)
             else:

@@ -4,41 +4,57 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Image Reference fixed">
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/ActivityLogsModel.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/AdminActivities.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierLogs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/backend/database/activity_logs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/ActivityLogs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/__image/list-timeline.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/frontend/sales/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui/ActivityLogs.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/123c531b-84c4-4fc3-a4b3-222686e9feda/storage_v2/_src_/database/POS.NDYBAA/schema/public.abK9xQ.meta" afterDir="false" />
+    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Added Activity Logs and Logout Handling">
+      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/accounts/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/accounts/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/reports/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/__image/admin_elements/reports/img2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/__image/login_elements/sign-out-alt.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/__image/sales_elements/box-open-full.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/ActivityLogsModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/ActivityLogsModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/__customWidget/CustomCashierItem.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/CustomCashierItem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/__customWidget/CustomMessageBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/CustomMessageBox.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/__customWidget/Receipt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/Receipt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/__customWidget/userInfoController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/__customWidget/userInfoController.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/AdminActivities.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/AdminActivities.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/AdminController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/AdminController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/History.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/History.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Inventory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Reports.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Reports.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Tax.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Tax.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_models/InventoryModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_models/InventoryModel.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/AccountPopUp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/AccountPopUp.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/loginControllers/loginFormController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/loginControllers/loginFormController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/InventoryPopUp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/InventoryPopUp.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierDashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierDashboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierHistory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierHistory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierLogs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/CashierLogs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/controllers/salesControllers/SalesController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/salesControllers/SalesController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/database/activity_logs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/activity_logs.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/backend/database/admin/accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/admin/accounts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/database/login/auth.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/login/auth.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backend/database/login/forgot_pw.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/login/forgot_pw.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/database/admin/inventory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/admin/inventory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/database/admin/tax.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/admin/tax.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/database/sales/cashier.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/sales/cashier.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/__custom_widgets/ActivityLogs.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/ActivityLogs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/__custom_widgets/CustomMessageBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/CustomMessageBox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/__custom_widgets/userInfoWidget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/__custom_widgets/userInfoWidget.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/admin/AccountEdit.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/admin/AccountEdit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/admin/AdminController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/admin/AdminController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/admin/AdminHistory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/admin/AdminHistory.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/admin/AdminReports.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/admin/AdminReports.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/sales/CashierDashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/sales/CashierDashboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/sales/CashierHistory.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/sales/CashierHistory.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/frontend/sales/SalesController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/sales/SalesController.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/AccountEdit.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/AccountEdit.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/ActivityLogs.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/ActivityLogs.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ui/AdminController.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/AdminController.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui/SaleController.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/SalesController.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/AdminHistory.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/AdminHistory.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/AdminReports.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/AdminReports.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/CashierDashboard.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/CashierDashboard.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/CashierHistory.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/CashierHistory.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/CustomMessageBox.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/CustomMessageBox.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/Receipt.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/Receipt.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/SalesController.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/SalesController.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/userInfoWidget.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/userInfoWidget.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,11 +156,11 @@
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__image\otp_elements" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\adminControllers" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\sales" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\admin" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__custom_widgets" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\sales" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend" />
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\adminControllers" />
     </key>
   </component>
   <component name="RunManager">
@@ -475,7 +491,8 @@
       <workItem from="1715129538479" duration="5059000" />
       <workItem from="1715145064758" duration="9630000" />
       <workItem from="1715171294330" duration="5869000" />
-      <workItem from="1715178851265" duration="5155000" />
+      <workItem from="1715178851265" duration="28131000" />
+      <workItem from="1715207097825" duration="321000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -549,7 +566,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715130307779</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Activity Logs and Logout Handling">
+      <option name="closed" value="true" />
+      <created>1715184589275</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715184589275</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -576,7 +601,8 @@
     <MESSAGE value="Admin Side Half Implemented" />
     <MESSAGE value="Imports Fixed" />
     <MESSAGE value="Image Reference fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Image Reference fixed" />
+    <MESSAGE value="Added Activity Logs and Logout Handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Activity Logs and Logout Handling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -597,7 +623,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1715183299378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1715206944727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/POS_PY$database.coverage" NAME="database Coverage Results" MODIFIED="1706767322294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend" />
     <SUITE FILE_PATH="coverage/POS_PY$setup_paths.coverage" NAME="setup_paths Coverage Results" MODIFIED="1712084210125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/POS_PY$cashier.coverage" NAME="cashier Coverage Results" MODIFIED="1712939758115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend/database/sales" />

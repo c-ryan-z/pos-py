@@ -34,9 +34,13 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background: #ff7cdc;
-	border: 1px solid #c0c4cc;
+	background: rgba(0,0,0,0);
+	border: 1px solid rgba(0,0,0,0);
 	border-radius: 37px;
+}
+
+QGroupBox#gb_sidebar {
+	border:none;
 }</string>
    </property>
    <property name="title">
@@ -232,7 +236,7 @@
       <x>10</x>
       <y>670</y>
       <width>221</width>
-      <height>311</height>
+      <height>341</height>
      </rect>
     </property>
    </widget>
@@ -240,7 +244,7 @@
   <widget class="QStackedWidget" name="sw_sales">
    <property name="geometry">
     <rect>
-     <x>280</x>
+     <x>290</x>
      <y>10</y>
      <width>1631</width>
      <height>1040</height>

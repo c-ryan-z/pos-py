@@ -1,9 +1,10 @@
-from PyQt6 import QtWidgets as Qtw, QtGui
+from PyQt6 import QtWidgets as Qtw, QtGui, QtCore
 
+from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
 from src.backend.controllers.adminControllers.admin_models.InventoryModel import InventoryModel
 from src.backend.controllers.adminControllers.admin_popups.InventoryPopUp import InventoryPopUp
 from src.backend.database.admin.inventory import get_inventory, get_inventory_by_name, get_inventory_by_id, \
-    delete_product
+    delete_product, log_delete
 from src.frontend.admin.AdminInventory import Ui_admin_inventory
 
 
@@ -16,11 +17,42 @@ class Inventory(Qtw.QWidget):
         self.model = None
         self.main_app.mainLoggedIn.connect(self.initialize_table)
         self.item_data = None
+        self.user_info = None
 
         self.ui.pb_add.clicked.connect(self.handle_add)
         self.ui.pb_remove.clicked.connect(self.handle_remove)
 
+        self.timer = QtCore.QTimer()
+        self.timer.setSingleShot(True)
+        self.timer.timeout.connect(lambda: self.search_by_name(self.ui.le_sort.text()))
+
+        self.ui.le_sort.textChanged.connect(self.start_timer)
+
+        self.ui.tv_items.setStyleSheet("""
+            QTableView QTableCornerButton::section {
+                background-color: #FCCCF4;
+            }
+        """)
+
+        self.ui.tv_items.horizontalHeader().setStyleSheet("""
+            QHeaderView::section {
+                background-color: #FCCCF4;
+                border: none;
+                height: 60px;
+                font-weight: 500;
+                font-size: 14px;
+            }
+        """)
+
+        self.ui.tv_items.verticalHeader().setStyleSheet("""
+            QHeaderView::section {
+                background-color: #FFFFFF;
+                border: none;
+            }
+""")
+
     def initialize_table(self, user_info):
+        self.user_info = user_info
         user_role = user_info[2]
         if user_role != "admin":
             return
@@ -57,7 +89,7 @@ class Inventory(Qtw.QWidget):
     def popup_update(self):
         self.item_data = get_inventory_by_id(self.item_data[5])
         self.set_item_details(self.item_data)
-        self.initialize_table()
+        self.initialize_table(self.user_info)
 
     def set_item_details(self, item_data):
         self.ui.le_name.setText(item_data[0])
@@ -79,8 +111,11 @@ class Inventory(Qtw.QWidget):
 
     def handle_remove(self):
         item_name = self.ui.le_name.text()
-        delete_product(item_name)
-        self.initialize_table()
+        message = CustomMessageBox(self, self.main_app)
+        if message.confirmAction("Delete", "Are you sure you want to delete this item?"):
+            delete_product(item_name)
+            log_delete(self.user_info[0], "Delete", f"Deleted item: {item_name}", str(self.user_info[6]))
+            self.initialize_table(self.user_info)
 
     def clear_data(self):
         self.model.clear_data()
@@ -93,3 +128,20 @@ class Inventory(Qtw.QWidget):
         self.ui.lb_itemImg.clear()
 
         self.item_data = None
+
+    def start_timer(self):
+        self.timer.start(500)
+
+    def search_by_name(self, item_name):
+        if item_name == "":
+            self.ui.tv_items.setModel(self.model)
+            self.set_column_sizes()
+            return
+
+        filtered_data = self.model.filter_by_name(item_name)
+        if not filtered_data:
+            item = get_inventory_by_name(item_name)
+            if item:
+                filtered_data = [item]
+        new_model = InventoryModel(filtered_data)
+        self.ui.tv_items.setModel(new_model)

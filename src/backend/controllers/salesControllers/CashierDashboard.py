@@ -4,7 +4,7 @@ from pyqt6_plugins.examplebuttonplugin import QtGui
 
 from src.backend.controllers.__customWidget.CustomCashierItem import CustomCashierItem
 from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
-from src.backend.database.sales.cashier import retrieve_product, transaction_checkout, initialize_tax
+from src.backend.database.sales.cashier import retrieve_product, transaction_checkout, initialize_tax, void_transaction
 from src.frontend.sales.CashierDashboard import Ui_cashier_dashboard
 
 
@@ -21,6 +21,7 @@ class CashierDashboard(Qtw.QWidget):
         self.overview_layouts = {}
         self.sub_total = 0
         self.system_tax = initialize_tax()
+        self.discount = 0
         self.total = 0
 
         self.ui.list_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop | QtCore.Qt.AlignmentFlag.AlignHCenter)
@@ -40,7 +41,7 @@ class CashierDashboard(Qtw.QWidget):
         self.sales_controller.barcodeSignal.connect(self.handle_barcode)
 
         self.ui.pb_discount.clicked.connect(self.handle_discount)
-        self.ui.pb_void_transac.clicked.connect(self.clear_transaction)
+        self.ui.pb_void_transac.clicked.connect(self.void)
         self.ui.pb_checkout.clicked.connect(self.handle_checkout)
 
     def handle_barcode(self, barcode):
@@ -110,16 +111,21 @@ class CashierDashboard(Qtw.QWidget):
 
     def handle_discount(self):
         message = CustomMessageBox(self, self.main_app)
-        discount = message.multipleChoices("Discount", "Choose discount type", (5, 10, 15, 20))
-        return discount
+        self.discount = message.multipleChoices("Discount", "Choose discount type", (5, 10, 15, 20))
+        self.ui.lb_discountP.setText(f"{self.discount}%")
+        self.calculate_total()
+        return self.discount
 
     def calculate_total(self):
         total = 0
         for item_id, item_widget in self.scanned_widgets.items():
             total += item_widget.price * item_widget.ui.sb_quantity.value()
-        self.sub_total = total
+        self.sub_total = float(total)  # Convert total to float
         self.ui.lb_subtotal.setText("{:.2f}".format(total))
-        tax = total * self.system_tax / 100
+        discount_amount = total * self.discount / 100
+        self.ui.lb_discount.setText("{:.2f}".format(discount_amount))
+        total -= discount_amount
+        tax = float(total) * float(self.system_tax) / 100  # Convert total and self.system_tax to float
         self.ui.lb_tax.setText("{:.2f}".format(tax))
         self.total += tax
         self.ui.lb_total.setText("{:.2f}".format(total))
@@ -134,9 +140,13 @@ class CashierDashboard(Qtw.QWidget):
             print(item_id, item_widget.ui.sb_quantity.value())
             checkout_items.append((item_id, item_widget.ui.sb_quantity.value()))
 
-        total = self.sub_total + (self.sub_total * self.system_tax / 100)
-        transaction_checkout(self.user_widget.user_id, self.sub_total, self.system_tax, 0, total, cash, change,
+        total = self.sub_total + (self.sub_total * float(self.system_tax) / 100)
+        transaction_id = transaction_checkout(self.user_widget.user_id, self.sub_total, self.system_tax, self.discount, total, cash, change,
                              checkout_items, self.user_widget.session_id)
+
+        if transaction_id is not None:
+            message = CustomMessageBox(self, self.main_app)
+            message.show_receipt(transaction_id)
 
         self.clear_transaction()
         self.ui.le_cash.clear()
@@ -199,4 +209,11 @@ class CashierDashboard(Qtw.QWidget):
         self.ui.lb_tax.setText("0.00")
         self.ui.lb_total.setText("0.00")
 
+        self.ui.le_cash.clear()
+
+    def void(self):
+        voided_product_ids = list(self.scanned_widgets.keys())
+        voided_product_ids_str = ', '.join(map(str, voided_product_ids))
+        void_transaction(self.user_widget.user_id, "Void Items", voided_product_ids_str, str(self.user_widget.session_id))
+        self.clear_transaction()
         self.ui.le_cash.clear()

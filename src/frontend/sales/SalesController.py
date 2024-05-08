@@ -20,9 +20,13 @@ class Ui_w_cashier(object):
         self.gb_sidebar.setGeometry(QtCore.QRect(30, 0, 231, 1040))
         self.gb_sidebar.setMinimumSize(QtCore.QSize(0, 1040))
         self.gb_sidebar.setStyleSheet("QPushButton {\n"
-"    background: #ff7cdc;\n"
-"    border: 1px solid #c0c4cc;\n"
+"    background: rgba(0,0,0,0);\n"
+"    border: 1px solid rgba(0,0,0,0);\n"
 "    border-radius: 37px;\n"
+"}\n"
+"\n"
+"QGroupBox#gb_sidebar {\n"
+"    border:none;\n"
 "}")
         self.gb_sidebar.setTitle("")
         self.gb_sidebar.setObjectName("gb_sidebar")
@@ -89,10 +93,10 @@ class Ui_w_cashier(object):
         self.pb_activity_logs.setObjectName("pb_activity_logs")
         self.verticalLayout.addWidget(self.pb_activity_logs)
         self.userPlaceholder = QtWidgets.QWidget(parent=self.gb_sidebar)
-        self.userPlaceholder.setGeometry(QtCore.QRect(10, 670, 221, 311))
+        self.userPlaceholder.setGeometry(QtCore.QRect(10, 670, 221, 341))
         self.userPlaceholder.setObjectName("userPlaceholder")
         self.sw_sales = QtWidgets.QStackedWidget(parent=w_cashier)
-        self.sw_sales.setGeometry(QtCore.QRect(280, 10, 1631, 1040))
+        self.sw_sales.setGeometry(QtCore.QRect(290, 10, 1631, 1040))
         self.sw_sales.setObjectName("sw_sales")
 
         self.retranslateUi(w_cashier)

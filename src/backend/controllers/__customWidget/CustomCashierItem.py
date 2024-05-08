@@ -1,4 +1,4 @@
-from PyQt6 import QtWidgets as Qtw, QtCore
+from PyQt6 import QtWidgets as Qtw, QtCore, QtGui
 
 from src.backend.controllers.controller_utility import img_radius
 from src.frontend.__custom_widgets.CustomCashierItems import Ui_cashier_item
@@ -25,12 +25,8 @@ class CustomCashierItem(Qtw.QWidget):
                 }
                 """)
 
-        image = Paths.image("default.jpg")
-        self.handle_image(image)
-
-        print(product_details[2])
-
         self.ui.lb_name.setText(str(product_details[1]))
+        self.handle_image(product_details[2])
         self.ui.lb_price.setText(str(product_details[4]))
         self.ui.lb_description.setText(str(product_details[6]) + " " + str(product_details[3]))
         self.ui.sb_quantity.setMinimum(1)
@@ -47,4 +43,15 @@ class CustomCashierItem(Qtw.QWidget):
         self.quantity_changed.emit()
 
     def handle_image(self, image):
-        self.ui.lb_image.setPixmap(img_radius(image, 14))
+        if image is None:
+            image = Paths.getSalesElements("box-open-full.png")
+            pixmap = QtGui.QPixmap(image)
+            self.ui.lb_image.setPixmap(pixmap)
+            self.ui.lb_image.setScaledContents(True)
+        else:
+            img_data = image.tobytes()
+            new_img = QtGui.QImage.fromData(img_data)
+            pixmap = QtGui.QPixmap.fromImage(new_img)
+            self.ui.lb_image.setPixmap(pixmap)
+
+        self.ui.lb_image.setPixmap(img_radius(image, 20))

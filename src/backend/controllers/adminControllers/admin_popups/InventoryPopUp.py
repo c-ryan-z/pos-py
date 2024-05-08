@@ -1,6 +1,6 @@
 from PyQt6 import QtWidgets as Qtw, QtCore as Qtc, QtGui
 
-from src.backend.database.admin.inventory import upsert_product
+from src.backend.database.admin.inventory import upsert_product, log_add_edit
 from src.frontend.admin.InventoryPopUp import Ui_inventory_popup
 
 
@@ -108,6 +108,7 @@ class InventoryPopUp(Qtw.QDialog):
         stock = self.ui.le_stock.text()
 
         upsert_product(name, price, category, stock, image=self.image_path)
+        log_add_edit(self.parent().user_info[0], "Add / Edit", f"Add / Edited {name}", str(self.parent().user_info[6]))
         self.close()
         self.ui.pb_save.setEnabled(False)
         self.parent().popup_update()

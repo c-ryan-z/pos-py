@@ -12,6 +12,7 @@ class Receipt(Qtw.QWidget):
         self.data = None
 
         self.ui.list_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop | QtCore.Qt.AlignmentFlag.AlignHCenter)
+        self.ui.items_list.setStyleSheet("border: none;")
 
     def set_data(self, transaction_id):
         self.data = retrieve_receipt(transaction_id)

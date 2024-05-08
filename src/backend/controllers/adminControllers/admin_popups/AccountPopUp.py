@@ -3,14 +3,15 @@ import re
 
 from PyQt6 import QtWidgets as Qtw, QtCore as Qtc, QtGui
 
-from src.backend.database.admin.accounts import get_max_user_id, add_user, set_user_image, edit_initial_data, edit_user
+from src.backend.database.admin.accounts import get_max_user_id, add_user, set_user_image, edit_initial_data, edit_user, \
+    log_accounts
 from src.frontend.admin.AccountEdit import Ui_account_popup
 from src.setup_paths import Paths
 
 
 class AccountPopUp(Qtw.QDialog):
 
-    def __init__(self, parent=None, main_app=None):
+    def __init__(self, parent=None, main_app=None, user_widget=None):
         super().__init__(parent, Qtc.Qt.WindowType.FramelessWindowHint)
         self.ui = Ui_account_popup()
         self.ui.setupUi(self)
@@ -19,6 +20,7 @@ class AccountPopUp(Qtw.QDialog):
         self.image_path = None
         self.user_id = None
         self.mode = None
+        self.user_widget = user_widget
 
         self.setModal(True)
         self.ui.le_userId.setEnabled(False)
@@ -229,6 +231,9 @@ class AccountPopUp(Qtw.QDialog):
         if self.image_path:
             set_user_image(user_id, self.image_path)
 
+        log_accounts(self.user_widget.user_id, "Add", f"Added Account ID: {user_id}",
+                     str(self.user_widget.session_id))
+
         self.close()
         self.image_path = None
         self.ui.pb_save.setEnabled(False)
@@ -262,6 +267,9 @@ class AccountPopUp(Qtw.QDialog):
 
         if self.image_path:
             set_user_image(self.user_id, self.image_path)
+
+        log_accounts(self.user_widget.user_id, "Edit", f"Edited Account ID: {self.user_id} Edit Details: {fields}",
+                     str(self.user_widget.session_id))
 
         self.close()
         self.ui.pb_save.setEnabled(False)

@@ -3,6 +3,7 @@ from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap, QImage, QBitmap, QPainter
 
 from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
+from src.backend.controllers.controller_utility import shadow_effect
 from src.backend.database.employee import get_employee_img, uploadEmployeeImage
 from src.backend.database.login.record_logins import logout_session, activity_log
 from src.frontend.__custom_widgets.userInfoWidget import Ui_Form
@@ -24,6 +25,8 @@ class UserInfoWidget(Qtw.QWidget):
 
         self.ui.pb_setImage.clicked.connect(self.uploadImage)
         self.ui.pb_logout.clicked.connect(self.handleLogout)
+
+        shadow_effect(self.ui.lb_userImage)
 
     def initialize_user_info(self, user_info):
         if user_info[2] != self.instance:

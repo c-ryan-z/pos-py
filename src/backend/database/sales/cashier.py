@@ -45,6 +45,7 @@ def transaction_checkout(cashier_id, subtotal, tax, discount, total, amount_paid
 
     record_transaction_items(transaction_id, items)
     log_transaction(cashier_id, "Transaction", f"Transaction ID: {transaction_id}", str(session_id))
+    return transaction_id
 
 
 def log_transaction(user_id, activity_type, details, session_id):
@@ -72,4 +73,13 @@ def retrieve_transaction(transaction_id, cashier_id):
         ORDER BY id
         LIMIT 20
     """
-    return execute_query(query, (f"{transaction_id}%", cashier_id), fetch=True, fetchall=True)
+    return execute_query(query, (f"%{transaction_id}%", cashier_id), fetch=True, fetchall=True)
+
+
+def void_transaction(user_id, activity_type, details, session_id):
+    query = """
+        INSERT INTO activity_logs (user_id, timestamp, activity_type, activity_category, details, session_id)
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """
+    return execute_query(query, (user_id, datetime.now(), activity_type, "Sales", details, session_id),
+                         commit=True)

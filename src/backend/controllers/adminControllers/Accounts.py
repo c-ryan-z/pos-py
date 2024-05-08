@@ -3,19 +3,20 @@ from PyQt6 import QtWidgets as Qtw, QtGui
 from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
 from src.backend.controllers.adminControllers.admin_models.AccountModel import AccountModel
 from src.backend.controllers.adminControllers.admin_popups.AccountPopUp import AccountPopUp
-from src.backend.database.admin.accounts import get_user_accounts, get_user_info, deactivate_user
+from src.backend.database.admin.accounts import get_user_accounts, get_user_info, deactivate_user, log_accounts
 from src.frontend.admin.AdminAccounts import Ui_admin_accounts
 from src.setup_paths import Paths
 
 
 class Accounts(Qtw.QWidget):
-    def __init__(self, main_app):
+    def __init__(self, main_app, user_widget):
         super().__init__()
         self.ui = Ui_admin_accounts()
         self.ui.setupUi(self)
         self.main_app = main_app
         self.current_user = None
         self.model = None
+        self.user_widget = user_widget
 
         self.main_app.mainLoggedIn.connect(self.initialize_table)
         self.ui.pb_add.clicked.connect(self.handle_add)
@@ -66,12 +67,12 @@ class Accounts(Qtw.QWidget):
         self.initialize_user()
 
     def handle_add(self):
-        pop_up = AccountPopUp(self, self.main_app)
+        pop_up = AccountPopUp(self, self.main_app, self.user_widget)
         pop_up.finished.connect(self.update_table)
         pop_up.add_user()
 
     def handle_edit(self):
-        pop_up = AccountPopUp(self, self.main_app)
+        pop_up = AccountPopUp(self, self.main_app, self.user_widget)
         pop_up.finished.connect(self.update_table)
         pop_up.edit_user(self.current_user)
 
@@ -81,6 +82,8 @@ class Accounts(Qtw.QWidget):
         message = CustomMessageBox(self, self.main_app)
         if message.confirmAction("Delete User", "Are you sure you want to delete this user?"):
             deactivate_user(user_id)
+            log_accounts(self.user_widget.user_id, "Deleted user", f"Deactivated user with ID: "
+                                                                   f"{user_id}", str(self.user_widget.session_id))
             self.initialize_table()
             self.initialize_user()
             self.update_table()

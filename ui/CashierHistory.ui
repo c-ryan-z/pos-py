@@ -153,6 +153,12 @@
      <height>754</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#receipt_placeholder {
+	border: 4px dashed rgba(255,102,183,1);
+	border-radius: 4px;
+}</string>
+   </property>
   </widget>
  </widget>
  <resources/>

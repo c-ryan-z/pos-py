@@ -50,6 +50,16 @@
       <height>661</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+	  background: rgba(243,244,246,1); /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 3px; 
+  border-color: rgba(29,33,40,1); /* neutral-800 */
+  border-style: solid; 
+  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */
+}</string>
+    </property>
     <property name="title">
      <string/>
     </property>
@@ -96,9 +106,23 @@
      <property name="font">
       <font>
        <family>Inter</family>
-       <pointsize>16</pointsize>
+       <pointsize>-1</pointsize>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QComboBox {
+  font-family: Inter; 
+  font-size: 16px; 
+  color: rgba(23,26,31,1); 
+  background: rgba(243,244,246,1);
+	border-radius: 8px;
+	border: 2px solid rgba(50, 50,50, 0.7)
+}
+
+QComboBox::drop-down {
+    border: none;
+}</string>
      </property>
     </widget>
    </widget>
@@ -131,6 +155,14 @@
          <width>341</width>
          <height>150</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 3px; 
+  border-color: rgba(29,33,40,1); /* neutral-800 */
+  border-style: solid; 
+  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}</string>
        </property>
        <property name="title">
         <string/>
@@ -203,6 +235,11 @@
           <height>100</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: rgba(0,0,0,0);
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -234,6 +271,14 @@
          <width>341</width>
          <height>150</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 3px; 
+  border-color: rgba(29,33,40,1); /* neutral-800 */
+  border-style: solid; 
+  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}</string>
        </property>
        <property name="title">
         <string/>
@@ -306,6 +351,11 @@
           <height>100</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: rgba(0,0,0,0);
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -337,6 +387,14 @@
          <width>341</width>
          <height>150</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 3px; 
+  border-color: rgba(29,33,40,1); /* neutral-800 */
+  border-style: solid; 
+  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}</string>
        </property>
        <property name="title">
         <string/>
@@ -409,6 +467,11 @@
           <height>100</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: rgba(0,0,0,0);
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -440,6 +503,14 @@
          <width>341</width>
          <height>150</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QGroupBox {  background: rgba(243,244,246,1); /* neutral-200 */
+  border-radius: 8px; /* border-xl */
+  border-width: 3px; 
+  border-color: rgba(29,33,40,1); /* neutral-800 */
+  border-style: solid; 
+  box-shadow: 0px 17px 35px rgba(243, 244, 246, 0.24), 0px 0px 2px rgba(243, 244, 246, 0.12); /* shadow-xl */}</string>
        </property>
        <property name="title">
         <string/>
@@ -512,6 +583,11 @@
           <height>100</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+	background: rgba(0,0,0,0);
+}</string>
+        </property>
         <property name="text">
          <string/>
         </property>
@@ -534,6 +610,13 @@
       <width>411</width>
       <height>481</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+	  background: rgba(243,244,246,1); /* neutral-200 */
+  border-radius: 6px; /* border-l */
+  box-shadow: 0px 17px 35px rgba(23, 26, 31, 0.24), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xl */
+}</string>
     </property>
     <property name="title">
      <string/>
@@ -565,11 +648,73 @@
        <bold>true</bold>
       </font>
      </property>
+     <property name="styleSheet">
+      <string notr="true">QGroupBox {
+	  background: rgba(243,244,246,1); /* neutral-200 */
+  border-radius: 6px; /* border-l */
+  box-shadow: 0px 17px 35px rgba(23, 26, 31, 0.24), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xl */
+}</string>
+     </property>
      <property name="text">
       <string>Top Selling Categories</string>
      </property>
     </widget>
    </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>890</x>
+      <y>190</y>
+      <width>491</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/frontend/__image/admin_elements/reports/img2.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>-110</x>
+      <y>700</y>
+      <width>491</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../src/frontend/__image/admin_elements/reports/img.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label_8</zorder>
+   <zorder>label_7</zorder>
+   <zorder>gb_LineChart</zorder>
+   <zorder>layoutWidget</zorder>
+   <zorder>gb_PieChart</zorder>
   </widget>
  </widget>
  <resources/>

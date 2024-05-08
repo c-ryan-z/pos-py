@@ -43,128 +43,105 @@
    <property name="title">
     <string/>
    </property>
-   <widget class="QTabWidget" name="tw_actvitylogs">
+   <widget class="QLineEdit" name="le_sort">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>1111</width>
-      <height>881</height>
+      <x>290</x>
+      <y>30</y>
+      <width>491</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="currentIndex">
-     <number>0</number>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>12</pointsize>
+     </font>
     </property>
-    <widget class="QWidget" name="tab">
-     <attribute name="title">
-      <string>Tab 1</string>
-     </attribute>
-     <widget class="QLabel" name="lb_logs">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>221</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Inter</family>
-        <pointsize>24</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="text">
-       <string>Activity Logs</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="le_sort">
-      <property name="geometry">
-       <rect>
-        <x>260</x>
-        <y>10</y>
-        <width>491</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Inter</family>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
+    <property name="styleSheet">
+     <string notr="true">QLineEdit {
 	background: rgba(255,255,255,1); /* white */
   border-radius: 20px; 
   border-width: 3px; 
   border-color: rgba(29,33,40,1); /* neutral-800 */
   border-style: solid; 
 }</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-      </property>
-      <property name="placeholderText">
-       <string>Search Here</string>
-      </property>
-      <property name="cursorMoveStyle">
-       <enum>Qt::VisualMoveStyle</enum>
-      </property>
-     </widget>
-     <widget class="QTableView" name="tv_activity_logs">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>60</y>
-        <width>1081</width>
-        <height>791</height>
-       </rect>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="defaultDropAction">
-       <enum>Qt::IgnoreAction</enum>
-      </property>
-      <property name="alternatingRowColors">
-       <bool>false</bool>
-      </property>
-      <property name="selectionMode">
-       <enum>QAbstractItemView::SingleSelection</enum>
-      </property>
-      <property name="selectionBehavior">
-       <enum>QAbstractItemView::SelectRows</enum>
-      </property>
-      <property name="textElideMode">
-       <enum>Qt::ElideMiddle</enum>
-      </property>
-      <property name="showGrid">
-       <bool>false</bool>
-      </property>
-      <property name="sortingEnabled">
-       <bool>true</bool>
-      </property>
-      <attribute name="horizontalHeaderMinimumSectionSize">
-       <number>0</number>
-      </attribute>
-      <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>300</number>
-      </attribute>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_2">
-     <attribute name="title">
-      <string>Tab 2</string>
-     </attribute>
-    </widget>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>Search Here</string>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::VisualMoveStyle</enum>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tv_activity_logs">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>80</y>
+      <width>1081</width>
+      <height>791</height>
+     </rect>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="defaultDropAction">
+     <enum>Qt::IgnoreAction</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>false</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::SingleSelection</enum>
+    </property>
+    <property name="selectionBehavior">
+     <enum>QAbstractItemView::SelectRows</enum>
+    </property>
+    <property name="textElideMode">
+     <enum>Qt::ElideMiddle</enum>
+    </property>
+    <property name="showGrid">
+     <bool>false</bool>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>300</number>
+    </attribute>
+   </widget>
+   <widget class="QLabel" name="lb_logs">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>30</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>24</pointsize>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Activity Logs</string>
+    </property>
    </widget>
   </widget>
   <widget class="QGroupBox" name="gb_logdetails">
@@ -175,6 +152,12 @@
      <width>421</width>
      <height>541</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QGroupBox#gb_logdetails {
+	border: 4px dashed rgba(255,102,183,1);
+	border-radius: 4px;
+}</string>
    </property>
    <property name="title">
     <string/>
@@ -197,6 +180,232 @@
     </property>
     <property name="text">
      <string>Log Details</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_logs_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>31</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>ID:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_id">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>70</y>
+      <width>341</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>ID:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_logs_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>100</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>User:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_user_id">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>100</y>
+      <width>341</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>User Id</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_timestamp">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>130</y>
+      <width>361</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Timestamp</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_logs_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Date:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_type">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>200</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Type</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_category">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>200</y>
+      <width>181</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Category</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_session">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>160</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Session Id</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_logs_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Session:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lb_details">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>250</y>
+      <width>391</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Inter</family>
+      <pointsize>11</pointsize>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Type</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

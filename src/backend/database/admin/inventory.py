@@ -1,3 +1,5 @@
+from datetime import datetime
+
 import psycopg2
 
 from src.backend.database.query_executor import execute_query
@@ -10,6 +12,16 @@ def get_inventory():
         ORDER BY name
     """
     return execute_query(query, (1,), fetch=True, fetchall=True)
+
+
+def search_inventory(search):
+    query = """
+        SELECT name, price, category, stock, is_active
+        FROM products
+        WHERE name ILIKE %s
+        ORDER BY name
+    """
+    return execute_query(query, (f"%{search}%",), fetch=True, fetchall=True)
 
 
 def get_inventory_by_name(item_name):
@@ -87,3 +99,19 @@ def delete_product(name):
         WHERE name = %s
     """
     return execute_query(query, (name,), commit=True)
+
+
+def log_delete(user_id, activity_type, details, session_id):
+    query = """
+        INSERT INTO activity_logs (user_id, timestamp, activity_type, activity_category, details, session_id)
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """
+    return execute_query(query, (user_id, datetime.now(), activity_type, "Inventory", details, session_id), commit=True)
+
+
+def log_add_edit(user_id, activity_type, details, session_id):
+    query = """
+        INSERT INTO activity_logs (user_id, timestamp, activity_type, activity_category, details, session_id)
+        VALUES (%s, %s, %s, %s, %s, %s)
+    """
+    return execute_query(query, (user_id, datetime.now(), activity_type, "Inventory", details, session_id), commit=True)

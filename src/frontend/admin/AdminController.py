@@ -40,13 +40,18 @@ class Ui_w_admin(object):
         self.Logo_2.setObjectName("Logo_2")
         self.verticalLayout_2.addWidget(self.Logo_2)
         self.pb_reports = QtWidgets.QPushButton(parent=self.layoutWidget_2)
-        self.pb_reports.setMinimumSize(QtCore.QSize(220, 50))
+        self.pb_reports.setMinimumSize(QtCore.QSize(220, 60))
         self.pb_reports.setMaximumSize(QtCore.QSize(16777215, 46))
         font = QtGui.QFont()
         font.setFamily("Inter")
         font.setPointSize(16)
         font.setBold(True)
         self.pb_reports.setFont(font)
+        self.pb_reports.setStyleSheet("QPushButton {\n"
+"    background: rgba(0,0,0,0);\n"
+"    border: 1px solid rgba(255,0,0,0);\n"
+"    border-radius: 30px;\n"
+"}")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/chart-histogram.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_reports.setIcon(icon1)
@@ -55,13 +60,18 @@ class Ui_w_admin(object):
         self.pb_reports.setObjectName("pb_reports")
         self.verticalLayout_2.addWidget(self.pb_reports)
         self.pb_inventory = QtWidgets.QPushButton(parent=self.layoutWidget_2)
-        self.pb_inventory.setMinimumSize(QtCore.QSize(80, 50))
+        self.pb_inventory.setMinimumSize(QtCore.QSize(80, 60))
         self.pb_inventory.setMaximumSize(QtCore.QSize(16777215, 46))
         font = QtGui.QFont()
         font.setFamily("Inter")
         font.setPointSize(16)
         font.setBold(True)
         self.pb_inventory.setFont(font)
+        self.pb_inventory.setStyleSheet("QPushButton {\n"
+"    background: rgba(0,0,0,0);\n"
+"    border: 1px solid rgba(255,0,0,0);\n"
+"    border-radius: 30px;\n"
+"}")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/supplier-alt.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_inventory.setIcon(icon2)
@@ -69,13 +79,18 @@ class Ui_w_admin(object):
         self.pb_inventory.setObjectName("pb_inventory")
         self.verticalLayout_2.addWidget(self.pb_inventory)
         self.pb_tax = QtWidgets.QPushButton(parent=self.layoutWidget_2)
-        self.pb_tax.setMinimumSize(QtCore.QSize(80, 50))
+        self.pb_tax.setMinimumSize(QtCore.QSize(80, 60))
         self.pb_tax.setMaximumSize(QtCore.QSize(16777215, 46))
         font = QtGui.QFont()
         font.setFamily("Inter")
         font.setPointSize(16)
         font.setBold(True)
         self.pb_tax.setFont(font)
+        self.pb_tax.setStyleSheet("QPushButton {\n"
+"    background: rgba(0,0,0,0);\n"
+"    border: 1px solid rgba(255,0,0,0);\n"
+"    border-radius: 30px;\n"
+"}")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/calculator-math-tax.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_tax.setIcon(icon3)
@@ -83,13 +98,18 @@ class Ui_w_admin(object):
         self.pb_tax.setObjectName("pb_tax")
         self.verticalLayout_2.addWidget(self.pb_tax)
         self.pb_accounts = QtWidgets.QPushButton(parent=self.layoutWidget_2)
-        self.pb_accounts.setMinimumSize(QtCore.QSize(80, 50))
+        self.pb_accounts.setMinimumSize(QtCore.QSize(80, 60))
         self.pb_accounts.setMaximumSize(QtCore.QSize(16777215, 46))
         font = QtGui.QFont()
         font.setFamily("Inter")
         font.setPointSize(16)
         font.setBold(True)
         self.pb_accounts.setFont(font)
+        self.pb_accounts.setStyleSheet("QPushButton {\n"
+"    background: rgba(0,0,0,0);\n"
+"    border: 1px solid rgba(255,0,0,0);\n"
+"    border-radius: 30px;\n"
+"}")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/users.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_accounts.setIcon(icon4)
@@ -97,13 +117,18 @@ class Ui_w_admin(object):
         self.pb_accounts.setObjectName("pb_accounts")
         self.verticalLayout_2.addWidget(self.pb_accounts)
         self.pb_history = QtWidgets.QPushButton(parent=self.layoutWidget_2)
-        self.pb_history.setMinimumSize(QtCore.QSize(80, 50))
+        self.pb_history.setMinimumSize(QtCore.QSize(80, 60))
         self.pb_history.setMaximumSize(QtCore.QSize(16777215, 46))
         font = QtGui.QFont()
         font.setFamily("Inter")
         font.setPointSize(16)
         font.setBold(True)
         self.pb_history.setFont(font)
+        self.pb_history.setStyleSheet("QPushButton {\n"
+"    background: rgba(0,0,0,0);\n"
+"    border: 1px solid rgba(255,0,0,0);\n"
+"    border-radius: 30px;\n"
+"}")
         icon5 = QtGui.QIcon()
         icon5.addPixmap(QtGui.QPixmap("./src/frontend/__image/sales_elements/time-past.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_history.setIcon(icon5)
@@ -111,13 +136,18 @@ class Ui_w_admin(object):
         self.pb_history.setObjectName("pb_history")
         self.verticalLayout_2.addWidget(self.pb_history)
         self.pb_activity_logs = QtWidgets.QPushButton(parent=self.layoutWidget_2)
-        self.pb_activity_logs.setMinimumSize(QtCore.QSize(80, 50))
+        self.pb_activity_logs.setMinimumSize(QtCore.QSize(80, 60))
         self.pb_activity_logs.setMaximumSize(QtCore.QSize(16777215, 46))
         font = QtGui.QFont()
         font.setFamily("Inter")
         font.setPointSize(16)
         font.setBold(True)
         self.pb_activity_logs.setFont(font)
+        self.pb_activity_logs.setStyleSheet("QPushButton {\n"
+"    background: rgba(0,0,0,0);\n"
+"    border: 1px solid rgba(255,0,0,0);\n"
+"    border-radius: 30px;\n"
+"}")
         icon6 = QtGui.QIcon()
         icon6.addPixmap(QtGui.QPixmap("./src/frontend/__image/list-timeline.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_activity_logs.setIcon(icon6)
@@ -125,7 +155,7 @@ class Ui_w_admin(object):
         self.pb_activity_logs.setObjectName("pb_activity_logs")
         self.verticalLayout_2.addWidget(self.pb_activity_logs)
         self.w_UserPlaceholder = QtWidgets.QWidget(parent=self.gb_sidebar)
-        self.w_UserPlaceholder.setGeometry(QtCore.QRect(10, 670, 221, 311))
+        self.w_UserPlaceholder.setGeometry(QtCore.QRect(10, 670, 221, 341))
         self.w_UserPlaceholder.setObjectName("w_UserPlaceholder")
         self.sw_admin = QtWidgets.QStackedWidget(parent=w_admin)
         self.sw_admin.setGeometry(QtCore.QRect(259, 0, 1701, 1040))

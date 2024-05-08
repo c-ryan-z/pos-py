@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_account_popup(object):
     def setupUi(self, account_popup):
         account_popup.setObjectName("account_popup")
-        account_popup.resize(971, 565)
+        account_popup.resize(1522, 972)
         account_popup.setStyleSheet("QWidget#custom_modal {\n"
 "    background-color: #FFFFFF;\n"
 "    border: 4px solid rgba(29,33,41,1);\n"
@@ -24,8 +24,294 @@ class Ui_account_popup(object):
 "    border: 1px solid #5E5E5E;\n"
 "    padding: 5px 5px;\n"
 "}")
+        self.gb_main = QtWidgets.QGroupBox(parent=account_popup)
+        self.gb_main.setGeometry(QtCore.QRect(510, 130, 951, 728))
+        self.gb_main.setStyleSheet("QGroupBox#gb_main {\n"
+"      background: rgba(255,255,255,1); \n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 4px; \n"
+"  border-color: rgba(29,33,40,1);\n"
+"  border-style: solid; \n"
+"\n"
+"}")
+        self.gb_main.setTitle("")
+        self.gb_main.setObjectName("gb_main")
+        self.le_confirmPw = QtWidgets.QLineEdit(parent=self.gb_main)
+        self.le_confirmPw.setGeometry(QtCore.QRect(120, 590, 448, 46))
+        self.le_confirmPw.setStyleSheet(" background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */")
+        self.le_confirmPw.setObjectName("le_confirmPw")
+        self.le_password = QtWidgets.QLineEdit(parent=self.gb_main)
+        self.le_password.setGeometry(QtCore.QRect(120, 500, 448, 46))
+        self.le_password.setStyleSheet(" background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */")
+        self.le_password.setObjectName("le_password")
+        self.lb_6 = QtWidgets.QLabel(parent=self.gb_main)
+        self.lb_6.setGeometry(QtCore.QRect(120, 570, 371, 16))
+        self.lb_6.setStyleSheet("\n"
+"  font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1);\n"
+"font-family: Inter;")
+        self.lb_6.setObjectName("lb_6")
+        self.lb_5 = QtWidgets.QLabel(parent=self.gb_main)
+        self.lb_5.setGeometry(QtCore.QRect(120, 480, 191, 16))
+        self.lb_5.setStyleSheet("\n"
+"  font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1);\n"
+"font-family: Inter;")
+        self.lb_5.setObjectName("lb_5")
+        self.le_username = QtWidgets.QLineEdit(parent=self.gb_main)
+        self.le_username.setGeometry(QtCore.QRect(120, 400, 448, 46))
+        self.le_username.setStyleSheet(" background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */")
+        self.le_username.setObjectName("le_username")
+        self.lb_1 = QtWidgets.QLabel(parent=self.gb_main)
+        self.lb_1.setGeometry(QtCore.QRect(120, 380, 211, 16))
+        self.lb_1.setStyleSheet("\n"
+"  font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1);\n"
+"font-family: Inter;")
+        self.lb_1.setObjectName("lb_1")
+        self.le_phone = QtWidgets.QLineEdit(parent=self.gb_main)
+        self.le_phone.setGeometry(QtCore.QRect(120, 290, 770, 41))
+        self.le_phone.setStyleSheet(" background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */")
+        self.le_phone.setObjectName("le_phone")
+        self.lb_7 = QtWidgets.QLabel(parent=self.gb_main)
+        self.lb_7.setGeometry(QtCore.QRect(120, 270, 201, 16))
+        self.lb_7.setStyleSheet("\n"
+"  font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1);\n"
+"font-family: Inter;")
+        self.lb_7.setObjectName("lb_7")
+        self.le_email = QtWidgets.QLineEdit(parent=self.gb_main)
+        self.le_email.setGeometry(QtCore.QRect(120, 200, 770, 41))
+        self.le_email.setStyleSheet(" background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */")
+        self.le_email.setObjectName("le_email")
+        self.lb_3 = QtWidgets.QLabel(parent=self.gb_main)
+        self.lb_3.setGeometry(QtCore.QRect(120, 180, 61, 16))
+        self.lb_3.setStyleSheet("\n"
+"  font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1);\n"
+"font-family: Inter;")
+        self.lb_3.setObjectName("lb_3")
+        self.le_userId = QtWidgets.QLineEdit(parent=self.gb_main)
+        self.le_userId.setGeometry(QtCore.QRect(120, 110, 227, 46))
+        self.le_userId.setStyleSheet(" background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */")
+        self.le_userId.setText("")
+        self.le_userId.setObjectName("le_userId")
+        self.lb_2 = QtWidgets.QLabel(parent=self.gb_main)
+        self.lb_2.setGeometry(QtCore.QRect(130, 80, 61, 16))
+        self.lb_2.setStyleSheet("\n"
+"  font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1);\n"
+"font-family: Inter;")
+        self.lb_2.setObjectName("lb_2")
+        self.le_name = QtWidgets.QLineEdit(parent=self.gb_main)
+        self.le_name.setGeometry(QtCore.QRect(430, 110, 453, 46))
+        self.le_name.setStyleSheet(" background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */")
+        self.le_name.setText("")
+        self.le_name.setObjectName("le_name")
+        self.lb_4 = QtWidgets.QLabel(parent=self.gb_main)
+        self.lb_4.setGeometry(QtCore.QRect(430, 80, 81, 16))
+        self.lb_4.setStyleSheet("\n"
+"  font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1);\n"
+"font-family: Inter;")
+        self.lb_4.setObjectName("lb_4")
+        self.gb_2fa = QtWidgets.QGroupBox(parent=self.gb_main)
+        self.gb_2fa.setGeometry(QtCore.QRect(640, 420, 277, 134))
+        self.gb_2fa.setStyleSheet("QGroupBox {\n"
+"      background: rgba(243,244,246,1); /* neutral-200 */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */\n"
+"}")
+        self.gb_2fa.setTitle("")
+        self.gb_2fa.setObjectName("gb_2fa")
+        self.rb_false = QtWidgets.QRadioButton(parent=self.gb_2fa)
+        self.rb_false.setGeometry(QtCore.QRect(40, 80, 89, 20))
+        self.rb_false.setStyleSheet("QRadioButton {\n"
+"    color: rgba(23,26,31,1);\n"
+"    opacity: 1;\n"
+"}\n"
+"QRadioButton::indicator {\n"
+"    width: 15px;\n"
+"    height: 15px;\n"
+"    border: 1px solid rgba(86,94,108,1);\n"
+"    border-radius: 8px;\n"
+"}\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: rgba(0,189,214,1);\n"
+"}\n"
+"QRadioButton::indicator:hover {\n"
+"    border: 1px solid rgba(0,189,214,1);\n"
+"}")
+        self.rb_false.setObjectName("rb_false")
+        self.rb_bg = QtWidgets.QButtonGroup(account_popup)
+        self.rb_bg.setObjectName("rb_bg")
+        self.rb_bg.addButton(self.rb_false)
+        self.rb_true = QtWidgets.QRadioButton(parent=self.gb_2fa)
+        self.rb_true.setGeometry(QtCore.QRect(40, 50, 89, 20))
+        self.rb_true.setStyleSheet("QRadioButton {\n"
+"    color: rgba(23,26,31,1);\n"
+"    opacity: 1;\n"
+"}\n"
+"QRadioButton::indicator {\n"
+"    width: 15px;\n"
+"    height: 15px;\n"
+"    border: 1px solid rgba(86,94,108,1);\n"
+"    border-radius: 8px;\n"
+"}\n"
+"QRadioButton::indicator:checked {\n"
+"    background-color: rgba(0,189,214,1);\n"
+"}\n"
+"QRadioButton::indicator:hover {\n"
+"    border: 1px solid rgba(0,189,214,1);\n"
+"}")
+        self.rb_true.setObjectName("rb_true")
+        self.rb_bg.addButton(self.rb_true)
+        self.lb_2fa = QtWidgets.QLabel(parent=self.gb_2fa)
+        self.lb_2fa.setGeometry(QtCore.QRect(30, 20, 181, 16))
+        self.lb_2fa.setStyleSheet(" font-size: 18px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1); /* neutral-900 */")
+        self.lb_2fa.setObjectName("lb_2fa")
+        self.pb_save = QtWidgets.QPushButton(parent=account_popup)
+        self.pb_save.setGeometry(QtCore.QRect(1290, 890, 171, 51))
+        self.pb_save.setStyleSheet(" font-family: Inter; \n"
+"  font-size: 16px; \n"
+"  line-height: 26px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(6,46,19,1); \n"
+"  background: rgba(69,232,123,1); \n"
+"  opacity: 1; \n"
+"  border: none; \n"
+"  border-radius: 6px; /* border-l */")
+        self.pb_save.setObjectName("pb_save")
+        self.pb_img = QtWidgets.QPushButton(parent=account_popup)
+        self.pb_img.setGeometry(QtCore.QRect(300, 660, 160, 44))
+        self.pb_img.setStyleSheet("font-family: Inter; \n"
+"  font-size: 16px; \n"
+"  line-height: 26px; \n"
+"  font-weight: 400; \n"
+"  color: rgba(255,255,255,1); \n"
+"background: rgba(144,149,160,1); \n"
+"  opacity: 1; \n"
+"  border: none; \n"
+"  border-radius: 4px; /* border-m */")
+        self.pb_img.setObjectName("pb_img")
+        self.lb_userImg = QtWidgets.QLabel(parent=account_popup)
+        self.lb_userImg.setGeometry(QtCore.QRect(40, 220, 425, 425))
+        self.lb_userImg.setStyleSheet("border: 3px solid rgba(50,50,50 , 0.8);\n"
+"border-radius: 6px; /*")
+        self.lb_userImg.setScaledContents(True)
+        self.lb_userImg.setObjectName("lb_userImg")
+        self.cb_role = QtWidgets.QComboBox(parent=account_popup)
+        self.cb_role.setGeometry(QtCore.QRect(40, 90, 209, 52))
+        self.cb_role.setStyleSheet("QComboBox {\n"
+"    padding-left: 20px;\n"
+"    padding-right: 52px;\n"
+"    font-family: Inter;\n"
+"    font-size: 18px;\n"
+"    color: rgba(23,26,31,1);\n"
+"    background: rgba(255,127,223,0.46);\n"
+"    border-radius: 6px;\n"
+"    border-width: 1px;\n"
+"    border-color: rgba(23,26,31,1);\n"
+"}\n"
+"QComboBox:hover {\n"
+"    color: rgba(23,26,31,1);\n"
+"    background: rgba(255,127,223,0.46);\n"
+"    border-color: rgba(23,26,31,1);\n"
+"}\n"
+"QComboBox::drop-down {\n"
+"    width: 52px;\n"
+"    height: 52px;\n"
+"}\n"
+"QComboBox:focus {\n"
+"    color: rgba(23,26,31,1);\n"
+"    background: rgba(255,127,223,0.46);\n"
+"    border-color: rgba(23,26,31,1);\n"
+"}\n"
+"QComboBox:disabled {\n"
+"    color: rgba(23,26,31,1);\n"
+"    background: rgba(255,127,223,0.46);\n"
+"    border-color: rgba(23,26,31,1);\n"
+"}")
+        self.cb_role.setObjectName("cb_role")
+        self.cb_role.addItem("")
+        self.cb_role.addItem("")
+        self.lb_action = QtWidgets.QLabel(parent=account_popup)
+        self.lb_action.setGeometry(QtCore.QRect(40, 60, 121, 21))
+        self.lb_action.setAutoFillBackground(False)
+        self.lb_action.setStyleSheet(" font-size: 14px; \n"
+"  line-height: 36px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(23,26,31,1); ")
+        self.lb_action.setObjectName("lb_action")
+        self.label = QtWidgets.QLabel(parent=account_popup)
+        self.label.setGeometry(QtCore.QRect(220, 50, 381, 361))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/accounts/img.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(parent=account_popup)
+        self.label_2.setGeometry(QtCore.QRect(-70, 440, 381, 361))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/accounts/img_1.png"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setObjectName("label_2")
         self.pb_close = QtWidgets.QPushButton(parent=account_popup)
-        self.pb_close.setGeometry(QtCore.QRect(930, 10, 30, 30))
+        self.pb_close.setGeometry(QtCore.QRect(1480, 10, 30, 30))
         self.pb_close.setStyleSheet("QPushButton {\n"
 "    background: #00000000;\n"
 "    border: none;\n"
@@ -36,81 +322,15 @@ class Ui_account_popup(object):
         self.pb_close.setIcon(icon)
         self.pb_close.setIconSize(QtCore.QSize(30, 30))
         self.pb_close.setObjectName("pb_close")
-        self.lb_userImg = QtWidgets.QLabel(parent=account_popup)
-        self.lb_userImg.setGeometry(QtCore.QRect(100, 100, 211, 211))
-        self.lb_userImg.setScaledContents(True)
-        self.lb_userImg.setObjectName("lb_userImg")
-        self.pb_img = QtWidgets.QPushButton(parent=account_popup)
-        self.pb_img.setGeometry(QtCore.QRect(110, 330, 171, 51))
-        self.pb_img.setObjectName("pb_img")
-        self.le_username = QtWidgets.QLineEdit(parent=account_popup)
-        self.le_username.setGeometry(QtCore.QRect(390, 270, 311, 22))
-        self.le_username.setObjectName("le_username")
-        self.lb_1 = QtWidgets.QLabel(parent=account_popup)
-        self.lb_1.setGeometry(QtCore.QRect(390, 250, 71, 16))
-        self.lb_1.setObjectName("lb_1")
-        self.le_email = QtWidgets.QLineEdit(parent=account_popup)
-        self.le_email.setGeometry(QtCore.QRect(390, 170, 311, 21))
-        self.le_email.setObjectName("le_email")
-        self.lb_3 = QtWidgets.QLabel(parent=account_popup)
-        self.lb_3.setGeometry(QtCore.QRect(390, 150, 61, 16))
-        self.lb_3.setObjectName("lb_3")
-        self.lb_4 = QtWidgets.QLabel(parent=account_popup)
-        self.lb_4.setGeometry(QtCore.QRect(560, 90, 81, 16))
-        self.lb_4.setObjectName("lb_4")
-        self.le_name = QtWidgets.QLineEdit(parent=account_popup)
-        self.le_name.setGeometry(QtCore.QRect(562, 110, 141, 22))
-        self.le_name.setText("")
-        self.le_name.setObjectName("le_name")
-        self.le_userId = QtWidgets.QLineEdit(parent=account_popup)
-        self.le_userId.setGeometry(QtCore.QRect(390, 110, 131, 22))
-        self.le_userId.setText("")
-        self.le_userId.setObjectName("le_userId")
-        self.lb_2 = QtWidgets.QLabel(parent=account_popup)
-        self.lb_2.setGeometry(QtCore.QRect(390, 90, 61, 16))
-        self.lb_2.setObjectName("lb_2")
-        self.lb_action = QtWidgets.QLabel(parent=account_popup)
-        self.lb_action.setGeometry(QtCore.QRect(50, 30, 71, 21))
-        self.lb_action.setObjectName("lb_action")
-        self.pb_save = QtWidgets.QPushButton(parent=account_popup)
-        self.pb_save.setGeometry(QtCore.QRect(720, 430, 171, 51))
-        self.pb_save.setObjectName("pb_save")
-        self.le_password = QtWidgets.QLineEdit(parent=account_popup)
-        self.le_password.setGeometry(QtCore.QRect(390, 320, 311, 22))
-        self.le_password.setObjectName("le_password")
-        self.lb_5 = QtWidgets.QLabel(parent=account_popup)
-        self.lb_5.setGeometry(QtCore.QRect(390, 300, 71, 16))
-        self.lb_5.setObjectName("lb_5")
-        self.le_confirmPw = QtWidgets.QLineEdit(parent=account_popup)
-        self.le_confirmPw.setGeometry(QtCore.QRect(390, 370, 311, 22))
-        self.le_confirmPw.setObjectName("le_confirmPw")
-        self.lb_6 = QtWidgets.QLabel(parent=account_popup)
-        self.lb_6.setGeometry(QtCore.QRect(390, 350, 101, 16))
-        self.lb_6.setObjectName("lb_6")
-        self.le_phone = QtWidgets.QLineEdit(parent=account_popup)
-        self.le_phone.setGeometry(QtCore.QRect(390, 220, 311, 22))
-        self.le_phone.setObjectName("le_phone")
-        self.lb_7 = QtWidgets.QLabel(parent=account_popup)
-        self.lb_7.setGeometry(QtCore.QRect(390, 200, 71, 16))
-        self.lb_7.setObjectName("lb_7")
-        self.rb_true = QtWidgets.QRadioButton(parent=account_popup)
-        self.rb_true.setGeometry(QtCore.QRect(770, 170, 89, 20))
-        self.rb_true.setObjectName("rb_true")
-        self.rb_bg = QtWidgets.QButtonGroup(account_popup)
-        self.rb_bg.setObjectName("rb_bg")
-        self.rb_bg.addButton(self.rb_true)
-        self.rb_false = QtWidgets.QRadioButton(parent=account_popup)
-        self.rb_false.setGeometry(QtCore.QRect(770, 200, 89, 20))
-        self.rb_false.setObjectName("rb_false")
-        self.rb_bg.addButton(self.rb_false)
-        self.lb_2fa = QtWidgets.QLabel(parent=account_popup)
-        self.lb_2fa.setGeometry(QtCore.QRect(770, 140, 91, 16))
-        self.lb_2fa.setObjectName("lb_2fa")
-        self.cb_role = QtWidgets.QComboBox(parent=account_popup)
-        self.cb_role.setGeometry(QtCore.QRect(120, 400, 121, 22))
-        self.cb_role.setObjectName("cb_role")
-        self.cb_role.addItem("")
-        self.cb_role.addItem("")
+        self.label_2.raise_()
+        self.label.raise_()
+        self.gb_main.raise_()
+        self.pb_save.raise_()
+        self.pb_img.raise_()
+        self.lb_userImg.raise_()
+        self.cb_role.raise_()
+        self.lb_action.raise_()
+        self.pb_close.raise_()
 
         self.retranslateUi(account_popup)
         QtCore.QMetaObject.connectSlotsByName(account_popup)
@@ -118,22 +338,26 @@ class Ui_account_popup(object):
     def retranslateUi(self, account_popup):
         _translate = QtCore.QCoreApplication.translate
         account_popup.setWindowTitle(_translate("account_popup", "Form"))
-        self.lb_userImg.setText(_translate("account_popup", "Placeholder"))
-        self.pb_img.setText(_translate("account_popup", "Select Image"))
-        self.lb_1.setText(_translate("account_popup", "Username"))
-        self.lb_3.setText(_translate("account_popup", "Email"))
-        self.lb_4.setText(_translate("account_popup", "Name"))
-        self.lb_2.setText(_translate("account_popup", "User Id"))
-        self.lb_action.setText(_translate("account_popup", "Item Details"))
-        self.pb_save.setText(_translate("account_popup", "Save"))
-        self.lb_5.setText(_translate("account_popup", "Password"))
         self.lb_6.setText(_translate("account_popup", "Confirm Password"))
+        self.lb_5.setText(_translate("account_popup", "Password"))
+        self.le_username.setPlaceholderText(_translate("account_popup", "Ex. Denmar \'di naligo"))
+        self.lb_1.setText(_translate("account_popup", "Username"))
+        self.le_phone.setPlaceholderText(_translate("account_popup", "Ex. 09123456789"))
         self.lb_7.setText(_translate("account_popup", "Phone"))
-        self.rb_true.setText(_translate("account_popup", "True"))
+        self.le_email.setPlaceholderText(_translate("account_popup", "Ex. email@example.com"))
+        self.lb_3.setText(_translate("account_popup", "Email"))
+        self.lb_2.setText(_translate("account_popup", "User Id"))
+        self.le_name.setPlaceholderText(_translate("account_popup", "Ex. Jeian Baho"))
+        self.lb_4.setText(_translate("account_popup", "Name"))
         self.rb_false.setText(_translate("account_popup", "False"))
+        self.rb_true.setText(_translate("account_popup", "True"))
         self.lb_2fa.setText(_translate("account_popup", "Two Factor Auth"))
+        self.pb_save.setText(_translate("account_popup", "Save"))
+        self.pb_img.setText(_translate("account_popup", "Select Image"))
+        self.lb_userImg.setText(_translate("account_popup", "Placeholder"))
         self.cb_role.setItemText(0, _translate("account_popup", "Admin"))
         self.cb_role.setItemText(1, _translate("account_popup", "Cashier"))
+        self.lb_action.setText(_translate("account_popup", "Choose Role"))
 
 
 if __name__ == "__main__":

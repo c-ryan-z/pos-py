@@ -35,6 +35,21 @@ class SalesController(Qtw.QWidget):
         self.last_key_time = time.time()
         self.key_sequence = ""
 
+        self.buttons = {
+            self.ui.pb_dashboard: self.ui.pb_dashboard.styleSheet(),
+            self.ui.pb_history: self.ui.pb_history.styleSheet(),
+            self.ui.pb_activity_logs: self.ui.pb_activity_logs.styleSheet()
+        }
+
+        self.ui.pb_dashboard.setStyleSheet("""
+            background: #ff7cdc;
+            border: 1px solid #c0c4cc;
+            border-radius: 37px;
+        """)
+
+        for button in self.buttons.keys():
+            button.clicked.connect(self.change_button_style)
+
         self.ui.pb_dashboard.clicked.connect(lambda: self.tab_change(0))
         self.ui.pb_history.clicked.connect(lambda: self.tab_change(1))
         self.ui.pb_activity_logs.clicked.connect(lambda: self.tab_change(2))
@@ -63,3 +78,18 @@ class SalesController(Qtw.QWidget):
         self.history.clear_data()
         self.activity_logs.clear_data()
         print("Sales data cleared")
+
+    def change_button_style(self):
+        clicked_button_style = """
+            background: #ff7cdc;
+            border: 1px solid #c0c4cc;
+            border-radius: 37px;
+        """
+
+        clicked_button = self.sender()
+
+        for button, default_style in self.buttons.items():
+            if button == clicked_button:
+                button.setStyleSheet(clicked_button_style)
+            else:
+                button.setStyleSheet(default_style)
