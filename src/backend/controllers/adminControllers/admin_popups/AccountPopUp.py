@@ -3,7 +3,7 @@ import re
 
 from PyQt6 import QtWidgets as Qtw, QtCore as Qtc, QtGui
 
-from src.backend.database.admin.accounts import get_max_user_id, add_user, set_user_image, edit_initial_data
+from src.backend.database.admin.accounts import get_max_user_id, add_user, set_user_image, edit_initial_data, edit_user
 from src.frontend.admin.AccountEdit import Ui_account_popup
 from src.setup_paths import Paths
 
@@ -16,7 +16,6 @@ class AccountPopUp(Qtw.QDialog):
         self.ui.setupUi(self)
         self.main_app = main_app
         self.old_details = None
-        self.editInfo = None
         self.image_path = None
         self.user_id = None
         self.mode = None
@@ -67,10 +66,32 @@ class AccountPopUp(Qtw.QDialog):
     def edit_user(self, user_id):
         if user_id is None:
             return
-        
-        self.editInfo = edit_initial_data(user_id)
-        self.line_edit_listener()
+
+        self.user_id = user_id
         self.mode = "edit"
+        self.ui.pb_save.setEnabled(False)
+        editInfo = edit_initial_data(user_id)
+        self.ui.le_userId.setText(str(user_id))
+        self.ui.le_name.setText(editInfo[0])
+        self.ui.le_phone.setText(editInfo[1])
+        self.ui.le_email.setText(editInfo[2])
+        self.ui.le_username.setText(editInfo[3])
+        self.ui.cb_role.setCurrentIndex(editInfo[4] - 1)
+        if editInfo[5]:
+            self.ui.rb_true.setChecked(True)
+        else:
+            self.ui.rb_false.setChecked(True)
+        self.line_edit_listener()
+
+        self.old_details = (
+            self.ui.le_name.text(),
+            self.ui.le_email.text(),
+            self.ui.le_phone.text(),
+            self.ui.le_username.text(),
+            self.ui.le_password.text(),
+            self.ui.le_confirmPw.text(),
+        )
+
         return self.exec() == Qtw.QDialog.DialogCode.Accepted
 
     def set_img(self, image):
@@ -88,10 +109,12 @@ class AccountPopUp(Qtw.QDialog):
             pixmap = QtGui.QPixmap(file_name)
             self.ui.lb_userImg.setPixmap(pixmap)
             self.image_path = file_name
+            if self.mode == "edit":
+                self.edit_validation()
 
     def line_edit_listener(self):
-        validation_function = self.check_required_fields if self.mode == 'add' \
-            else self.check_required_fields_and_changes
+        validation_function = self.add_validation if self.mode == 'add' \
+            else self.edit_validation
         self.ui.le_name.textChanged.connect(validation_function)
         self.ui.le_email.textChanged.connect(validation_function)
         self.ui.le_phone.textChanged.connect(validation_function)
@@ -101,7 +124,7 @@ class AccountPopUp(Qtw.QDialog):
         self.ui.cb_role.currentIndexChanged.connect(validation_function)
         self.ui.rb_bg.buttonClicked.connect(validation_function)
 
-    def check_required_fields(self):
+    def add_validation(self):
         fields = [self.ui.le_name, self.ui.le_email, self.ui.le_phone, self.ui.le_username, self.ui.le_password,
                   self.ui.le_confirmPw]
 
@@ -139,14 +162,28 @@ class AccountPopUp(Qtw.QDialog):
 
         self.ui.pb_save.setEnabled(True)
 
-    def check_required_fields_and_changes(self):
-        fields = [self.ui.le_name, self.ui.le_email, self.ui.le_phone, self.ui.le_username, self.ui.le_password,
-                  self.ui.le_confirmPw]
+    def edit_validation(self):
+        fields = [self.ui.le_name, self.ui.le_email, self.ui.le_phone, self.ui.le_username]
 
         for field in fields:
             if not field.text():
                 self.ui.pb_save.setEnabled(False)
                 return
+
+        email = self.ui.le_email.text()
+        if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", email):
+            self.ui.pb_save.setEnabled(False)
+            return
+
+        phone = self.ui.le_phone.text()
+        if not re.match(r"^\+?(\d{1,3})?[-. (]*(\d{1,3})?[-. )]*(\d{1,4})[-. ]*(\d{1,4})[-. ]*(\d{1,9})$", phone):
+            self.ui.pb_save.setEnabled(False)
+            return
+
+        password = self.ui.le_password.text()
+        if password and len(password) < 10:
+            self.ui.pb_save.setEnabled(False)
+            return
 
         if self.ui.le_password.text() != self.ui.le_confirmPw.text():
             self.ui.pb_save.setEnabled(False)
@@ -158,9 +195,12 @@ class AccountPopUp(Qtw.QDialog):
             self.ui.le_phone.text(),
             self.ui.le_username.text(),
             self.ui.le_password.text(),
-            self.ui.le_confirmPw.text(),
-            self.image_path
+            self.ui.le_confirmPw.text()
         )
+
+        if self.image_path:
+            self.ui.pb_save.setEnabled(True)
+            return
 
         if new_details != self.old_details:
             self.ui.pb_save.setEnabled(True)
@@ -190,9 +230,38 @@ class AccountPopUp(Qtw.QDialog):
             set_user_image(user_id, self.image_path)
 
         self.close()
+        self.image_path = None
         self.ui.pb_save.setEnabled(False)
 
     def handle_save_edit(self):
+        fields = {}
+
+        new_name = self.ui.le_name.text()
+        if new_name != self.old_details[0]:
+            fields["name"] = new_name
+
+        new_email = self.ui.le_email.text()
+        if new_email != self.old_details[1]:
+            fields["email"] = new_email
+
+        new_phone = self.ui.le_phone.text()
+        if new_phone != self.old_details[2]:
+            fields["phone"] = new_phone
+
+        new_username = self.ui.le_username.text()
+        if new_username != self.old_details[3]:
+            fields["username"] = new_username
+
+        password = self.ui.le_password.text()
+        if password and password != self.old_details[4]:
+            hashed_password = hashlib.sha256(password.encode()).hexdigest()
+            fields["password"] = hashed_password
+
+        if fields:
+            edit_user(fields, self.user_id)
+
+        if self.image_path:
+            set_user_image(self.user_id, self.image_path)
+
         self.close()
         self.ui.pb_save.setEnabled(False)
-        pass

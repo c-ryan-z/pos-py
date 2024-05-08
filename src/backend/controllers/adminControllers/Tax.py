@@ -18,7 +18,11 @@ class Tax(Qtw.QWidget):
         self.main_app.mainLoggedIn.connect(self.initialize_tax)
         self.ui.pb_edit.clicked.connect(self.edit_tax)
 
-    def initialize_tax(self):
+    def initialize_tax(self, user_info):
+        user_role = user_info[2]
+        if user_role != "admin":
+            return
+
         self.tax_rate = get_tax()[0]
         self.ui.le_tax.setText(str(self.tax_rate))
 
@@ -39,3 +43,8 @@ class Tax(Qtw.QWidget):
         else:
             self.ui.le_tax.setEnabled(True)
             self.ui.le_tax.setFocus()
+
+    def clear_data(self):
+        self.ui.le_tax.clear()
+        self.tax_rate = 0
+        self.ui.le_tax.setEnabled(False)

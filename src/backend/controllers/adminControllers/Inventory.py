@@ -20,7 +20,11 @@ class Inventory(Qtw.QWidget):
         self.ui.pb_add.clicked.connect(self.handle_add)
         self.ui.pb_remove.clicked.connect(self.handle_remove)
 
-    def initialize_table(self):
+    def initialize_table(self, user_info):
+        user_role = user_info[2]
+        if user_role != "admin":
+            return
+
         inventory_data = get_inventory()
         self.model = InventoryModel(inventory_data)
         self.ui.tv_items.setModel(self.model)
@@ -77,3 +81,15 @@ class Inventory(Qtw.QWidget):
         item_name = self.ui.le_name.text()
         delete_product(item_name)
         self.initialize_table()
+
+    def clear_data(self):
+        self.model.clear_data()
+        self.ui.tv_items.setModel(None)
+
+        self.ui.le_name.clear()
+        self.ui.le_price.clear()
+        self.ui.le_category.clear()
+        self.ui.le_stock.clear()
+        self.ui.lb_itemImg.clear()
+
+        self.item_data = None

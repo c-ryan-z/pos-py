@@ -1,9 +1,11 @@
 from PyQt6 import QtWidgets as Qtw, QtGui
 
+from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
 from src.backend.controllers.adminControllers.admin_models.AccountModel import AccountModel
 from src.backend.controllers.adminControllers.admin_popups.AccountPopUp import AccountPopUp
-from src.backend.database.admin.accounts import get_user_accounts, get_user_info
+from src.backend.database.admin.accounts import get_user_accounts, get_user_info, deactivate_user
 from src.frontend.admin.AdminAccounts import Ui_admin_accounts
+from src.setup_paths import Paths
 
 
 class Accounts(Qtw.QWidget):
@@ -18,6 +20,7 @@ class Accounts(Qtw.QWidget):
         self.main_app.mainLoggedIn.connect(self.initialize_table)
         self.ui.pb_add.clicked.connect(self.handle_add)
         self.ui.pb_edit.clicked.connect(self.handle_edit)
+        self.ui.pb_remove.clicked.connect(self.handle_delete)
 
     def initialize_table(self):
         data = get_user_accounts()
@@ -50,17 +53,46 @@ class Accounts(Qtw.QWidget):
             pixmap = QtGui.QPixmap.fromImage(image)
             self.ui.lb_img.setPixmap(pixmap)
         else:
-            self.ui.lb_img.clear()
+            pixmap = QtGui.QPixmap(Paths.image("user.svg"))
+            self.ui.lb_img.setPixmap(pixmap)
 
     def on_row_clicked(self, index):
         first_column_value = self.model.data(self.model.index(index.row(), 0))
         user_data = get_user_info(first_column_value)
         self.set_user_details(user_data)
 
+    def update_table(self):
+        self.initialize_table()
+        self.initialize_user()
+
     def handle_add(self):
         pop_up = AccountPopUp(self, self.main_app)
+        pop_up.finished.connect(self.update_table)
         pop_up.add_user()
 
     def handle_edit(self):
         pop_up = AccountPopUp(self, self.main_app)
+        pop_up.finished.connect(self.update_table)
         pop_up.edit_user(self.current_user)
+
+    def handle_delete(self):
+        user_id = self.current_user
+
+        message = CustomMessageBox(self, self.main_app)
+        if message.confirmAction("Delete User", "Are you sure you want to delete this user?"):
+            deactivate_user(user_id)
+            self.initialize_table()
+            self.initialize_user()
+            self.update_table()
+
+    def clear_data(self):
+        self.model.beginResetModel()
+        self.model._data = []
+        self.model.endResetModel()
+        self.ui.tv_accounts.setModel(None)
+
+        self.ui.lb_name.clear()
+        self.ui.lb_role.clear()
+        self.ui.lb_img.clear()
+
+        self.current_user = None

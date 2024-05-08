@@ -8,7 +8,8 @@ def get_user_accounts():
         SELECT employees.id, employees.name, username, email, r.name
         FROM employees
         JOIN  roles r ON employees.role_id = r.id
-        ORDER BY username
+        WHERE employees.active = TRUE
+        ORDER BY id
     """
     return execute_query(query, (1,), fetch=True, fetchall=True)
 
@@ -62,3 +63,30 @@ def edit_initial_data(user_id):
         WHERE id = %s
     """
     return execute_query(query, (user_id,), fetch=True)
+
+
+def edit_user(fields, user_id):
+    query_parts = []
+
+    for field in fields:
+        query_parts.append(f"{field} = %s")
+
+    set_clause = ", ".join(query_parts)
+
+    query = f"""
+        UPDATE employees
+        SET {set_clause}
+        WHERE id = %s
+    """
+    print(query)
+    values = tuple(fields.values()) + (user_id,)
+    return execute_query(query, values, commit=True)
+
+
+def deactivate_user(user_id):
+    query = """
+        UPDATE employees
+        SET active = FALSE
+        WHERE id = %s
+    """
+    return execute_query(query, (user_id,), commit=True)

@@ -63,3 +63,4 @@ class Receipt(Qtw.QWidget):
                 item.widget().setParent(None)
             elif item.layout() is not None:
                 self.clear_layout(item.layout())
+

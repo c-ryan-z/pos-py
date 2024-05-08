@@ -60,4 +60,4 @@ class LoginForm(Qtw.QWidget):
     def custom_box(self):
         message_box = CustomMessageBox(self, main_app=self.main_app)
         if message_box.notifyAction("Confirm", "Are you sure?","loading1.gif"):
-            print("ngi")
+            pass

@@ -20,7 +20,10 @@ class Reports(Qtw.QWidget):
         main_app.mainLoggedIn.connect(self.initialize_report)
         self.ui.cb_linechart.currentIndexChanged.connect(self.update_linechart)
 
-    def initialize_report(self):
+    def initialize_report(self, user_info):
+        if user_info[2] != "admin":
+            return
+
         self.ui.lb_monthly.setText(get_monthly_sales())
         self.ui.lb_weekly.setText(get_weekly_sales())
         self.ui.lb_daily.setText(get_daily_sales())
@@ -74,8 +77,9 @@ class Reports(Qtw.QWidget):
 
     def update_linechart(self):
         year = self.ui.cb_linechart.currentText()
-        linechart = get_yearly_sum(year)
-        self.show_sales_chart(linechart)
+        if year:
+            linechart = get_yearly_sum(year)
+            self.show_sales_chart(linechart)
 
     def top_products(self, data=None):
         series = QPieSeries()
@@ -96,3 +100,21 @@ class Reports(Qtw.QWidget):
         chart_view = QChartView(chart)
 
         self.ui.layout_piechart.addWidget(chart_view)
+
+    def clear_data(self):
+        if self.chart_view is not None:
+            self.chart_view.chart().removeAllSeries()
+            self.ui.layout_linechart.removeWidget(self.chart_view)
+            self.chart_view = None
+
+        self.ui.lb_monthly.clear()
+        self.ui.lb_weekly.clear()
+        self.ui.lb_daily.clear()
+        self.ui.lb_annual.clear()
+
+        self.ui.cb_linechart.clear()
+
+        for i in reversed(range(self.ui.layout_piechart.count())):
+            widgetToRemove = self.ui.layout_piechart.itemAt(i).widget()
+            self.ui.layout_piechart.removeWidget(widgetToRemove)
+            widgetToRemove.setParent(None)

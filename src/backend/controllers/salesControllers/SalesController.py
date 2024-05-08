@@ -2,6 +2,7 @@ import time
 
 from PyQt6 import QtWidgets as Qtw, QtCore
 
+from src.backend.controllers.salesControllers.CashierLogs import CashierLogs
 from src.backend.controllers.salesControllers.CashierDashboard import CashierDashboard
 from src.backend.controllers.salesControllers.CashierHistory import CashierHistory
 from src.frontend.sales.SalesController import Ui_w_cashier
@@ -25,14 +26,18 @@ class SalesController(Qtw.QWidget):
         self.dashboard = CashierDashboard(self, self.main_app, self.user_info_widget)
         self.ui.sw_sales.addWidget(self.dashboard)
 
-        self.history = CashierHistory(self, self.main_app, user_widget)
+        self.history = CashierHistory(self, self.main_app, self.user_info_widget)
         self.ui.sw_sales.addWidget(self.history)
+
+        self.activity_logs = CashierLogs(self.main_app, self.user_info_widget)
+        self.ui.sw_sales.addWidget(self.activity_logs)
 
         self.last_key_time = time.time()
         self.key_sequence = ""
 
         self.ui.pb_dashboard.clicked.connect(lambda: self.tab_change(0))
         self.ui.pb_history.clicked.connect(lambda: self.tab_change(1))
+        self.ui.pb_activity_logs.clicked.connect(lambda: self.tab_change(2))
 
     def tab_change(self, index):
         self.ui.sw_sales.setCurrentIndex(index)
@@ -52,3 +57,9 @@ class SalesController(Qtw.QWidget):
             self.key_sequence = ""
         elif event.key() == QtCore.Qt.Key.Key_Return:
             self.key_sequence = ""
+
+    def clear_data(self):
+        self.dashboard.clear_data()
+        self.history.clear_data()
+        self.activity_logs.clear_data()
+        print("Sales data cleared")

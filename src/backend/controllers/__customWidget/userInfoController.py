@@ -1,4 +1,4 @@
-from PyQt6 import QtWidgets as Qtw
+from PyQt6 import QtWidgets as Qtw, QtCore
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap, QImage, QBitmap, QPainter
 
@@ -10,6 +10,7 @@ from src.setup_paths import Paths
 
 
 class UserInfoWidget(Qtw.QWidget):
+    loggedOut = QtCore.pyqtSignal()
 
     def __init__(self, main_app, instance, parent=None):
         super().__init__(parent)
@@ -87,3 +88,5 @@ class UserInfoWidget(Qtw.QWidget):
         self.ui.lb_role.clear()
         self.ui.lb_userImage.clear()
         self.main_app.setCurrentWidget('login')
+
+        self.loggedOut.emit()

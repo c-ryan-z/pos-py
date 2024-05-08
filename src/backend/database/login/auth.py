@@ -8,7 +8,7 @@ def login_user(username, password):
         employees.twofactorauthentication, employees.email
         FROM employees
         INNER JOIN roles ON employees.role_id = roles.id
-        WHERE username = %s AND password = %s
+        WHERE username = %s AND password = %s AND employees.active = TRUE
     """
     return execute_query(query, (username, password), fetch=True)
 
@@ -27,7 +27,7 @@ def check_db_for_user(username):
     query = """
         SELECT id, username
         FROM employees
-        WHERE username = %s
+        WHERE username = %s AND active = TRUE
     """
     return execute_query(query, (username,), fetch=True)
 

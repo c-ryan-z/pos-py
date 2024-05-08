@@ -26,7 +26,10 @@ class MainApp(Qtw.QWidget):
         self.setWindowIcon(QtGui.QIcon(Paths.image("logo_u2.png")))
 
         self.userInfoControllerAdmin = UserInfoWidget(self, "admin")
+        self.userInfoControllerAdmin.loggedOut.connect(self.clearAdminData)
+
         self.userInfoControllerSales = UserInfoWidget(self, "cashier")
+        self.userInfoControllerSales.loggedOut.connect(self.clearSalesData)
 
         self.stacked_widget = Qtw.QStackedWidget()
         self.stacked_widget.setSizePolicy(Qtw.QSizePolicy.Policy.Expanding, Qtw.QSizePolicy.Policy.Expanding)
@@ -94,6 +97,13 @@ class MainApp(Qtw.QWidget):
                 self.userInfoControllerSales.user_info = None
 
         super().closeEvent(event)
+
+    def clearSalesData(self):
+        self.salesController.clear_data()
+        print("Sales data cleared")
+
+    def clearAdminData(self):
+        self.admin.clear_data()
 
 
 if __name__ == '__main__':

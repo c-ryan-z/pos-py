@@ -57,3 +57,8 @@ class InventoryModel(QtCore.QAbstractTableModel):
         self.beginResetModel()
         self._data = new_data
         self.endResetModel()
+
+    def clear_data(self):
+        self.beginResetModel()
+        self._data = []
+        self.endResetModel()

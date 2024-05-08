@@ -142,6 +142,12 @@ class CashierDashboard(Qtw.QWidget):
         self.ui.le_cash.clear()
 
     def handle_cash(self):
+        cash_text = self.ui.le_cash.text()
+        if not cash_text:
+            message = CustomMessageBox(self, self.main_app)
+            message.notifyAction("Invalid Input", "Please enter a valid cash amount")
+            return None, None
+
         cash = float(self.ui.le_cash.text())
         if cash < float(self.sub_total):
             message = CustomMessageBox(self, self.main_app)
@@ -173,3 +179,24 @@ class CashierDashboard(Qtw.QWidget):
         current_date_time = QDateTime.currentDateTime()
         formatted_date_time = current_date_time.toString("dddd MMM dd, yyyy hh:mm:ss ap")
         self.ui.lb_date_no.setText(formatted_date_time)
+
+    def clear_data(self):
+        for item_id, item_widget in self.scanned_widgets.items():
+            self.ui.list_layout.removeWidget(item_widget)
+            item_widget.setParent(None)
+        self.scanned_widgets.clear()
+
+        for product_id, layout in self.overview_layouts.items():
+            for i in reversed(range(layout.count())):
+                layout.itemAt(i).widget().deleteLater()
+            self.ui.overview_layout.removeItem(layout)
+        self.overview_layouts.clear()
+        self.quantity_labels.clear()
+
+        self.sub_total = 0
+        self.total = 0
+        self.ui.lb_subtotal.setText("0.00")
+        self.ui.lb_tax.setText("0.00")
+        self.ui.lb_total.setText("0.00")
+
+        self.ui.le_cash.clear()

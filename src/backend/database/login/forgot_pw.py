@@ -7,7 +7,7 @@ def verify_email(email):
     query = """
         SELECT id, username
         FROM employees
-        WHERE email = %s
+        WHERE email = %s AND active = TRUE
     """
     return execute_query(query, (email,), fetch=True)
 

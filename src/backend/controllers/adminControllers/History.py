@@ -17,8 +17,6 @@ class History(Qtw.QWidget):
         self.model = None
         self.paginator = None
 
-        self.main_app.mainLoggedIn.connect(self.initialize_table)
-
         self.ui.tv_history.verticalHeader().setDefaultSectionSize(60)
         self.ui.tv_history.verticalScrollBar().valueChanged.connect(self.table_scroll_position)
         self.ui.tv_history.clicked.connect(self.handle_row_click)
@@ -36,6 +34,7 @@ class History(Qtw.QWidget):
         layout.setContentsMargins(0, 0, 0, 0)
         self.ui.receipt_placeholder.setLayout(layout)
 
+        self.main_app.mainLoggedIn.connect(self.initialize_table)
         self.main_app.mainLoggedIn.connect(self.initialize_receipt)
 
         self.ui.tv_history.setStyleSheet("""
@@ -62,6 +61,10 @@ class History(Qtw.QWidget):
         """)
 
     def initialize_table(self, user_info):
+        user_role = user_info[2]
+        if user_role != "admin":
+            return
+
         cashier_id = user_info[0]
         query = cashier_transactions()
         params = (cashier_id,)
@@ -127,10 +130,24 @@ class History(Qtw.QWidget):
         self.ui.tv_history.setModel(new_model)
         self.set_column_sizes(True)
 
-    def initialize_receipt(self):
+    def initialize_receipt(self, user_info):
+        user_role = user_info[2]
+        if user_role != "admin":
+            return
+
         model = self.ui.tv_history.model()
         if model is not None and model.rowCount() > 0:
             first_column_data = model.data(model.index(0, 0))
             self.receipt_widget.set_data(first_column_data)
         else:
             print("The table is empty.")
+
+    def clear_data(self):
+        self.model.beginResetModel()
+        self.model._data = []
+        self.model.endResetModel()
+        self.ui.tv_history.setModel(None)
+
+        self.receipt_widget.clear_layout(self.receipt_widget.ui.list_layout)
+
+        self.paginator = None

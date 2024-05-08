@@ -26,6 +26,9 @@ class CustomCashierItem(Qtw.QWidget):
                 """)
 
         image = Paths.image("default.jpg")
+        self.handle_image(image)
+
+        print(product_details[2])
 
         self.ui.lb_name.setText(str(product_details[1]))
         self.ui.lb_price.setText(str(product_details[4]))
@@ -36,7 +39,6 @@ class CustomCashierItem(Qtw.QWidget):
 
         self.ui.pb_del.clicked.connect(self.remove_item)
         self.ui.sb_quantity.valueChanged.connect(self.handle_quantity)
-        self.handle_image(image)
 
     def remove_item(self):
         self.delete_item.emit(str(self.product_details[0]))

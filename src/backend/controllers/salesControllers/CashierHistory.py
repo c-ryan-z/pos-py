@@ -138,3 +138,14 @@ class CashierHistory(Qtw.QWidget):
             self.receipt_widget.set_data(first_column_data)
         else:
             print("The table is empty.")
+
+    def clear_data(self):
+        if self.model is not None:
+            self.model.beginResetModel()
+            self.model._data = []
+            self.model.endResetModel()
+            self.ui.tv_history.setModel(None)
+
+        self.receipt_widget.clear_layout(self.receipt_widget.ui.list_layout)
+
+        self.paginator = None
