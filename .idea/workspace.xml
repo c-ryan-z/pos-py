@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Admin Side Half Implemented" />
+    <list default="true" id="9540f251-0822-4fa3-bc1c-ce0be623749c" name="Changes" comment="Imports Fixed">
+      <change afterPath="$PROJECT_DIR$/src/frontend/__image/user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/frontend/admin/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/POS-PY.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/POS-PY.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/Accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/AccountEditPopUp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/controllers/adminControllers/admin_popups/AccountPopUp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend/database/admin/accounts.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend/database/admin/accounts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/admin/AccountEdit.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/admin/AccountEdit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/frontend/admin/AdminController.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/frontend/admin/AdminController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/AccountEdit.ui" beforeDir="false" afterPath="$PROJECT_DIR$/ui/AccountEdit.ui" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +86,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/abarq/PycharmProjects/POS-PY/ui&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/abarq/PycharmProjects/POS-PY/src/frontend/__image&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -82,7 +94,7 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;service.view.auto.scroll.from.source&quot;: &quot;true&quot;,
     &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.externalTools&quot;,
     &quot;sql.rename.search.for.storage.occurrences&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -98,17 +110,17 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__image" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\ui" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\database\sales" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__image\sales_elements" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__image" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__image\otp_elements" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\admin" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\adminControllers\admin_popups" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\adminControllers" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\backend\controllers\adminControllers\admin_models" />
-      <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\admin" />
       <recent name="C:\Users\abarq\PycharmProjects\POS-PY\src\frontend\__custom_widgets" />
     </key>
   </component>
@@ -141,8 +153,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
-        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-PY-241.15989.155" />
+        <option value="bundled-python-sdk-babbdf50b680-7c6932dee5e4-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.15989.155" />
       </set>
     </attachedChunks>
   </component>
@@ -431,6 +443,13 @@
       <workItem from="1715022713002" duration="90000" />
       <workItem from="1715022817693" duration="6210000" />
       <workItem from="1715058717214" duration="896000" />
+      <workItem from="1715081148378" duration="1871000" />
+      <workItem from="1715084116112" duration="2603000" />
+      <workItem from="1715095800894" duration="190000" />
+      <workItem from="1715096324644" duration="11737000" />
+      <workItem from="1715126907289" duration="75000" />
+      <workItem from="1715127122399" duration="2400000" />
+      <workItem from="1715129538479" duration="390000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit">
       <option name="closed" value="true" />
@@ -488,7 +507,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715059613515</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Imports Fixed">
+      <option name="closed" value="true" />
+      <created>1715081336353</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715081336353</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -513,7 +540,8 @@
     <MESSAGE value="Login with OTP" />
     <MESSAGE value="Login Bug Fixed" />
     <MESSAGE value="Admin Side Half Implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin Side Half Implemented" />
+    <MESSAGE value="Imports Fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Imports Fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -534,7 +562,7 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1715059072404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/POS_PY$main.coverage" NAME="main Coverage Results" MODIFIED="1715128980562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/POS_PY$database.coverage" NAME="database Coverage Results" MODIFIED="1706767322294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend" />
     <SUITE FILE_PATH="coverage/POS_PY$setup_paths.coverage" NAME="setup_paths Coverage Results" MODIFIED="1712084210125" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/POS_PY$cashier.coverage" NAME="cashier Coverage Results" MODIFIED="1712939758115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/backend/database/sales" />

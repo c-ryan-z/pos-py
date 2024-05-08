@@ -32,7 +32,7 @@ class Ui_account_popup(object):
 "}")
         self.pb_close.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\abarq\\PycharmProjects\\POS-PY\\ui\\../src/frontend/__image/circle-xmark.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("./src/frontend/__image/circle-xmark.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_close.setIcon(icon)
         self.pb_close.setIconSize(QtCore.QSize(30, 30))
         self.pb_close.setObjectName("pb_close")
@@ -106,6 +106,11 @@ class Ui_account_popup(object):
         self.lb_2fa = QtWidgets.QLabel(parent=account_popup)
         self.lb_2fa.setGeometry(QtCore.QRect(770, 140, 91, 16))
         self.lb_2fa.setObjectName("lb_2fa")
+        self.cb_role = QtWidgets.QComboBox(parent=account_popup)
+        self.cb_role.setGeometry(QtCore.QRect(120, 400, 121, 22))
+        self.cb_role.setObjectName("cb_role")
+        self.cb_role.addItem("")
+        self.cb_role.addItem("")
 
         self.retranslateUi(account_popup)
         QtCore.QMetaObject.connectSlotsByName(account_popup)
@@ -127,6 +132,8 @@ class Ui_account_popup(object):
         self.rb_true.setText(_translate("account_popup", "True"))
         self.rb_false.setText(_translate("account_popup", "False"))
         self.lb_2fa.setText(_translate("account_popup", "Two Factor Auth"))
+        self.cb_role.setItemText(0, _translate("account_popup", "Admin"))
+        self.cb_role.setItemText(1, _translate("account_popup", "Cashier"))
 
 
 if __name__ == "__main__":

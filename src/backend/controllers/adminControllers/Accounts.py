@@ -1,6 +1,7 @@
 from PyQt6 import QtWidgets as Qtw, QtGui
 
 from src.backend.controllers.adminControllers.admin_models.AccountModel import AccountModel
+from src.backend.controllers.adminControllers.admin_popups.AccountPopUp import AccountPopUp
 from src.backend.database.admin.accounts import get_user_accounts, get_user_info
 from src.frontend.admin.AdminAccounts import Ui_admin_accounts
 
@@ -15,6 +16,8 @@ class Accounts(Qtw.QWidget):
         self.model = None
 
         self.main_app.mainLoggedIn.connect(self.initialize_table)
+        self.ui.pb_add.clicked.connect(self.handle_add)
+        self.ui.pb_edit.clicked.connect(self.handle_edit)
 
     def initialize_table(self):
         data = get_user_accounts()
@@ -53,3 +56,11 @@ class Accounts(Qtw.QWidget):
         first_column_value = self.model.data(self.model.index(index.row(), 0))
         user_data = get_user_info(first_column_value)
         self.set_user_details(user_data)
+
+    def handle_add(self):
+        pop_up = AccountPopUp(self, self.main_app)
+        pop_up.add_user()
+
+    def handle_edit(self):
+        pop_up = AccountPopUp(self, self.main_app)
+        pop_up.edit_user(self.current_user)

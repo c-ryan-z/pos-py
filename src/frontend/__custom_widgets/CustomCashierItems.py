@@ -45,7 +45,7 @@ class Ui_cashier_item(object):
 "    border-radius: 12px;\n"
 "}")
         self.lb_image.setText("")
-        self.lb_image.setPixmap(QtGui.QPixmap("C:\\Users\\abarq\\PycharmProjects\\POS-PY\\ui\\../src/frontend/__image/default.jpg"))
+        self.lb_image.setPixmap(QtGui.QPixmap("./src/frontend/__image/default.jpg"))
         self.lb_image.setScaledContents(True)
         self.lb_image.setObjectName("lb_image")
         self.verticalLayout.addWidget(self.lb_image)
@@ -163,7 +163,7 @@ class Ui_cashier_item(object):
         self.label = QtWidgets.QLabel(parent=self.gb_item)
         self.label.setGeometry(QtCore.QRect(810, 30, 31, 31))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("C:\\Users\\abarq\\PycharmProjects\\POS-PY\\ui\\../src/frontend/__image/sales_elements/peso-green.svg"))
+        self.label.setPixmap(QtGui.QPixmap("./src/frontend/__image/sales_elements/peso-green.svg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
 

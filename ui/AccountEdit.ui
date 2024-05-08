@@ -46,7 +46,7 @@ QPushButton {
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../src/frontend/__image/circle-xmark.png</normaloff>../src/frontend/__image/circle-xmark.png</iconset>
+     <normaloff>../src/frontend/__image/peso-sign.svg</normaloff>../src/frontend/__image/peso-sign.svg</iconset>
    </property>
    <property name="iconSize">
     <size>
@@ -321,6 +321,26 @@ QPushButton {
    <property name="text">
     <string>Two Factor Auth</string>
    </property>
+  </widget>
+  <widget class="QComboBox" name="cb_role">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>400</y>
+     <width>121</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>Admin</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Cashier</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

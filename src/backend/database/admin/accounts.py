@@ -1,3 +1,5 @@
+import psycopg2
+
 from src.backend.database.query_executor import execute_query
 
 
@@ -17,5 +19,46 @@ def get_user_info(user_id):
         FROM employees
         JOIN  roles r ON employees.role_id = r.id
         WHERE employees.id = %s
+    """
+    return execute_query(query, (user_id,), fetch=True)
+
+
+def get_max_user_id():
+    query = """
+        SELECT MAX(id)
+        FROM employees
+    """
+    result = execute_query(query, (1,), fetch=True)
+    return result[0] if result else None
+
+
+def add_user(name, phone, email, username, password, role_id, twofactorauthentication):
+    query = """
+        INSERT INTO employees (name, phone, email, username, password, role_id, twofactorauthentication)
+        VALUES (%s, %s, %s, %s, %s, %s, %s)
+        RETURNING id
+    """
+    return execute_query(query, (name, phone, email, username, password, role_id, twofactorauthentication),
+                         fetch=True, commit=True)
+
+
+def set_user_image(user_id, image):
+    query = """
+        UPDATE employees
+        SET employeeimage = %s
+        WHERE id = %s
+    """
+
+    with open(image, 'rb') as file:
+        image_data = file.read()
+
+    return execute_query(query, (psycopg2.Binary(image_data), user_id), commit=True)
+
+
+def edit_initial_data(user_id):
+    query = """
+        SELECT name, phone, email, username, role_id, twofactorauthentication
+        FROM employees
+        WHERE id = %s
     """
     return execute_query(query, (user_id,), fetch=True)

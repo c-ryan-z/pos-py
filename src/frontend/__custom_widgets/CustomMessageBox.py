@@ -32,7 +32,7 @@ class Ui_custom_modal(object):
 "}")
         self.pb_close.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\abarq\\PycharmProjects\\POS-PY\\ui\\../src/frontend/__image/circle-xmark.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("./src/frontend/__image/circle-xmark.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_close.setIcon(icon)
         self.pb_close.setIconSize(QtCore.QSize(30, 30))
         self.pb_close.setObjectName("pb_close")

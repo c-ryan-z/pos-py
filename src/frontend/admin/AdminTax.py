@@ -223,7 +223,7 @@ class Ui_admin_tax(object):
 "}")
         self.pb_edit.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\abarq\\PycharmProjects\\POS-PY\\ui\\../src/frontend/__image/admin_elements/tax/edit.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/tax/edit.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_edit.setIcon(icon)
         self.pb_edit.setIconSize(QtCore.QSize(42, 42))
         self.pb_edit.setObjectName("pb_edit")
