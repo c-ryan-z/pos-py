@@ -60,7 +60,7 @@ def set_user_image(user_id, image):
 
 def edit_initial_data(user_id):
     query = """
-        SELECT name, phone, email, username, role_id, twofactorauthentication
+        SELECT name, phone, email, username, role_id, twofactorauthentication, employeeimage
         FROM employees
         WHERE id = %s
     """

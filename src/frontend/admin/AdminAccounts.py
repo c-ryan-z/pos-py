@@ -27,6 +27,20 @@ class Ui_admin_accounts(object):
         self.admin_MainContainer.setObjectName("admin_MainContainer")
         self.gb_container = QtWidgets.QGroupBox(parent=self.admin_MainContainer)
         self.gb_container.setGeometry(QtCore.QRect(70, 40, 1521, 971))
+        self.gb_container.setStyleSheet("/* Container 102 */\n"
+".QGroupBox#gb_container {\n"
+"  position: absolute; \n"
+"  top: 72px; \n"
+"  left: 338px; \n"
+"  width: 1522px; \n"
+"  height: 972px; \n"
+"  background: rgba(248,249,250,1); /* neutral-150 */\n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 17px 35px rgba(248, 249, 250, 0.24), 0px 0px 2px rgba(248, 249, 250, 0.12); /* shadow-xl */\n"
+"}")
         self.gb_container.setTitle("")
         self.gb_container.setObjectName("gb_container")
         self.tv_accounts = QtWidgets.QTableView(parent=self.gb_container)
@@ -44,30 +58,154 @@ class Ui_admin_accounts(object):
         self.tv_accounts.horizontalHeader().setDefaultSectionSize(300)
         self.tv_accounts.horizontalHeader().setMinimumSectionSize(0)
         self.gb_cashier_details = QtWidgets.QGroupBox(parent=self.gb_container)
-        self.gb_cashier_details.setGeometry(QtCore.QRect(60, 150, 361, 541))
+        self.gb_cashier_details.setGeometry(QtCore.QRect(110, 240, 271, 391))
+        self.gb_cashier_details.setStyleSheet("QGroupBox {\n"
+"      background: rgba(255,255,255,1); /* white */\n"
+"  border-radius: 6px; /* border-l */\n"
+"  border-width: 1px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"}")
         self.gb_cashier_details.setTitle("")
         self.gb_cashier_details.setObjectName("gb_cashier_details")
         self.lb_img = QtWidgets.QLabel(parent=self.gb_cashier_details)
-        self.lb_img.setGeometry(QtCore.QRect(100, 80, 171, 171))
+        self.lb_img.setGeometry(QtCore.QRect(50, 60, 171, 171))
+        self.lb_img.setStyleSheet("QLabel {\n"
+"    border-radius: 83px;\n"
+"    border: 1px solid#1D2128;\n"
+"}")
+        self.lb_img.setText("")
         self.lb_img.setScaledContents(True)
         self.lb_img.setObjectName("lb_img")
         self.lb_role = QtWidgets.QLabel(parent=self.gb_cashier_details)
-        self.lb_role.setGeometry(QtCore.QRect(90, 360, 141, 31))
+        self.lb_role.setGeometry(QtCore.QRect(0, 270, 271, 31))
         self.lb_role.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lb_role.setObjectName("lb_role")
         self.pb_edit = QtWidgets.QPushButton(parent=self.gb_cashier_details)
-        self.pb_edit.setGeometry(QtCore.QRect(120, 430, 75, 24))
+        self.pb_edit.setGeometry(QtCore.QRect(60, 320, 151, 41))
+        self.pb_edit.setStyleSheet(".QPushButton {\n"
+"  padding: 0 12px; \n"
+"  font-family: Inter; \n"
+"  font-size: 14px; \n"
+"  line-height: 22px; \n"
+"  font-weight: 400; \n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(144,149,160,1); /* neutral-500 */\n"
+"  opacity: 1; \n"
+"  border: none; \n"
+"  border-radius: 4px; /* border-m */\n"
+"}\n"
+"/* Hover */\n"
+".button:hover {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(110,119,135,1); /* neutral-550 */\n"
+"}\n"
+"/* Pressed */\n"
+".QPushButton:hover {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(86,94,108,1); /* neutral-600 */\n"
+"}\n"
+"/* Disabled */\n"
+".QPushButton:disabled {\n"
+"  opacity: 0.4; \n"
+"}")
         self.pb_edit.setObjectName("pb_edit")
         self.lb_name = QtWidgets.QLabel(parent=self.gb_cashier_details)
-        self.lb_name.setGeometry(QtCore.QRect(90, 320, 141, 31))
+        self.lb_name.setGeometry(QtCore.QRect(0, 240, 271, 31))
         self.lb_name.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lb_name.setObjectName("lb_name")
         self.pb_add = QtWidgets.QPushButton(parent=self.gb_container)
-        self.pb_add.setGeometry(QtCore.QRect(120, 740, 75, 24))
+        self.pb_add.setGeometry(QtCore.QRect(40, 720, 161, 51))
+        self.pb_add.setStyleSheet("/* Button 59 */\n"
+".QPushButton {\n"
+"  position: absolute; \n"
+"  top: 330px; \n"
+"  left: 65px; \n"
+"  height: 44px; \n"
+"  padding: 0 16px; \n"
+"  display: flex; \n"
+"  align-items: center; \n"
+"  justify-content: center; \n"
+"  font-family: Inter; \n"
+"  font-size: 16px; \n"
+"  line-height: 26px; \n"
+"  font-weight: 400; \n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(29,215,91,1); /* tertiary3-500 */\n"
+"  opacity: 1; \n"
+"  border: none; \n"
+"  border-radius: 4px; /* border-m */\n"
+"}\n"
+"/* Hover */\n"
+".button:hover {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(219,61,61,1); /* tertiary3-550 */\n"
+"}\n"
+"/* Pressed */\n"
+".button:hover:active {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(184,34,34,1); /* tertiary3-650 */\n"
+"}\n"
+"/* Disabled */\n"
+".button:disabled {\n"
+"  opacity: 0.4; \n"
+"}")
         self.pb_add.setObjectName("pb_add")
         self.pb_remove = QtWidgets.QPushButton(parent=self.gb_container)
-        self.pb_remove.setGeometry(QtCore.QRect(280, 740, 75, 24))
+        self.pb_remove.setGeometry(QtCore.QRect(280, 720, 161, 51))
+        self.pb_remove.setStyleSheet("/* Button 59 */\n"
+".QPushButton {\n"
+"  position: absolute; \n"
+"  top: 330px; \n"
+"  left: 65px; \n"
+"  height: 44px; \n"
+"  padding: 0 16px; \n"
+"  display: flex; \n"
+"  align-items: center; \n"
+"  justify-content: center; \n"
+"  font-family: Inter; \n"
+"  font-size: 16px; \n"
+"  line-height: 26px; \n"
+"  font-weight: 400; \n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(224,88,88,1); /* tertiary3-500 */\n"
+"  opacity: 1; \n"
+"  border: none; \n"
+"  border-radius: 4px; /* border-m */\n"
+"}\n"
+"/* Hover */\n"
+".button:hover {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(219,61,61,1); /* tertiary3-550 */\n"
+"}\n"
+"/* Pressed */\n"
+".button:hover:active {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(184,34,34,1); /* tertiary3-650 */\n"
+"}\n"
+"/* Disabled */\n"
+".button:disabled {\n"
+"  opacity: 0.4; \n"
+"}")
         self.pb_remove.setObjectName("pb_remove")
+        self.label = QtWidgets.QLabel(parent=self.gb_container)
+        self.label.setGeometry(QtCore.QRect(-20, 80, 581, 561))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/accounts/img_3.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(parent=self.gb_container)
+        self.label_2.setGeometry(QtCore.QRect(80, 370, 431, 341))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("./src/frontend/__image/admin_elements/accounts/img_2.png"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setObjectName("label_2")
+        self.label.raise_()
+        self.label_2.raise_()
+        self.tv_accounts.raise_()
+        self.gb_cashier_details.raise_()
+        self.pb_add.raise_()
+        self.pb_remove.raise_()
 
         self.retranslateUi(admin_accounts)
         QtCore.QMetaObject.connectSlotsByName(admin_accounts)
@@ -75,12 +213,11 @@ class Ui_admin_accounts(object):
     def retranslateUi(self, admin_accounts):
         _translate = QtCore.QCoreApplication.translate
         admin_accounts.setWindowTitle(_translate("admin_accounts", "Form"))
-        self.lb_img.setText(_translate("admin_accounts", "TextLabel"))
         self.lb_role.setText(_translate("admin_accounts", "Role"))
-        self.pb_edit.setText(_translate("admin_accounts", "Edit"))
+        self.pb_edit.setText(_translate("admin_accounts", "Edit Account"))
         self.lb_name.setText(_translate("admin_accounts", "Name"))
         self.pb_add.setText(_translate("admin_accounts", "Add"))
-        self.pb_remove.setText(_translate("admin_accounts", "Delete"))
+        self.pb_remove.setText(_translate("admin_accounts", "Delete Account"))
 
 
 if __name__ == "__main__":

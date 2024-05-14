@@ -27,6 +27,20 @@ class Ui_admin_inventory(object):
         self.admin_MainContainer.setObjectName("admin_MainContainer")
         self.gb_inventory = QtWidgets.QGroupBox(parent=self.admin_MainContainer)
         self.gb_inventory.setGeometry(QtCore.QRect(70, 50, 1531, 945))
+        self.gb_inventory.setStyleSheet("/* Container 102 */\n"
+".QGroupBox {\n"
+"  position: absolute; \n"
+"  top: 67px; \n"
+"  left: 323px; \n"
+"  width: 1531px; \n"
+"  height: 945px; \n"
+"  background: rgba(248,249,250,1); /* neutral-150 */\n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 17px 35px rgba(248, 249, 250, 0.24), 0px 0px 2px rgba(248, 249, 250, 0.12); /* shadow-xl */\n"
+"}")
         self.gb_inventory.setTitle("")
         self.gb_inventory.setObjectName("gb_inventory")
         self.gb_container = QtWidgets.QGroupBox(parent=self.gb_inventory)
@@ -79,6 +93,35 @@ class Ui_admin_inventory(object):
         self.le_sort.setObjectName("le_sort")
         self.gb_item = QtWidgets.QGroupBox(parent=self.gb_inventory)
         self.gb_item.setGeometry(QtCore.QRect(70, 240, 621, 471))
+        self.gb_item.setStyleSheet("/* Container 155 */\n"
+".QGroupBox {\n"
+"  position: absolute; \n"
+"  top: 303px; \n"
+"  left: 94px; \n"
+"  width: 616px; \n"
+"  height: 462px; \n"
+"  background: rgba(255,255,255,1); \n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 4px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-xs */\n"
+"}\n"
+"\n"
+".QLineEdit {\n"
+"  position: absolute; \n"
+"  top: 303px; \n"
+"  left: 94px; \n"
+"  width: 616px; \n"
+"  height: 462px; \n"
+"  background: rgba(255,255,255,1); \n"
+"  border-radius: 8px; /* border-xl */\n"
+"  border-width: 4px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 0px 1px rgba(23, 26, 31, 0.07), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shado-xs */\n"
+"\n"
+"}")
         self.gb_item.setTitle("")
         self.gb_item.setObjectName("gb_item")
         self.lb_ = QtWidgets.QLabel(parent=self.gb_item)
@@ -89,37 +132,93 @@ class Ui_admin_inventory(object):
         self.lb_itemImg.setScaledContents(True)
         self.lb_itemImg.setObjectName("lb_itemImg")
         self.le_name = QtWidgets.QLineEdit(parent=self.gb_item)
-        self.le_name.setGeometry(QtCore.QRect(360, 110, 113, 22))
+        self.le_name.setGeometry(QtCore.QRect(310, 110, 203, 37))
         self.le_name.setObjectName("le_name")
         self.le_category = QtWidgets.QLineEdit(parent=self.gb_item)
-        self.le_category.setGeometry(QtCore.QRect(360, 170, 113, 22))
+        self.le_category.setGeometry(QtCore.QRect(310, 170, 203, 37))
         self.le_category.setObjectName("le_category")
         self.le_price = QtWidgets.QLineEdit(parent=self.gb_item)
-        self.le_price.setGeometry(QtCore.QRect(360, 230, 113, 22))
+        self.le_price.setGeometry(QtCore.QRect(310, 230, 203, 37))
         self.le_price.setObjectName("le_price")
         self.le_stock = QtWidgets.QLineEdit(parent=self.gb_item)
-        self.le_stock.setGeometry(QtCore.QRect(360, 290, 113, 22))
+        self.le_stock.setGeometry(QtCore.QRect(310, 290, 203, 37))
         self.le_stock.setObjectName("le_stock")
         self.lb_2 = QtWidgets.QLabel(parent=self.gb_item)
-        self.lb_2.setGeometry(QtCore.QRect(360, 90, 51, 16))
+        self.lb_2.setGeometry(QtCore.QRect(320, 90, 71, 16))
         self.lb_2.setObjectName("lb_2")
         self.lb_4 = QtWidgets.QLabel(parent=self.gb_item)
-        self.lb_4.setGeometry(QtCore.QRect(360, 150, 81, 16))
+        self.lb_4.setGeometry(QtCore.QRect(320, 150, 81, 16))
         self.lb_4.setObjectName("lb_4")
         self.lb_3 = QtWidgets.QLabel(parent=self.gb_item)
-        self.lb_3.setGeometry(QtCore.QRect(360, 210, 61, 16))
+        self.lb_3.setGeometry(QtCore.QRect(320, 210, 61, 16))
         self.lb_3.setObjectName("lb_3")
         self.lb_1 = QtWidgets.QLabel(parent=self.gb_item)
-        self.lb_1.setGeometry(QtCore.QRect(360, 270, 71, 16))
+        self.lb_1.setGeometry(QtCore.QRect(320, 270, 71, 16))
         self.lb_1.setObjectName("lb_1")
         self.pb_img = QtWidgets.QPushButton(parent=self.gb_item)
         self.pb_img.setGeometry(QtCore.QRect(90, 350, 171, 51))
+        self.pb_img.setStyleSheet("/* Button 56 */\n"
+".QPushButton {\n"
+"  position: absolute; \n"
+"  top: 388px; \n"
+"  left: 85px; \n"
+"  width: 185px; \n"
+"  height: 36px; \n"
+"  padding: 0 12px; \n"
+"  display: flex; \n"
+"  align-items: center; \n"
+"  justify-content: center; \n"
+"  font-family: Inter; \n"
+"  font-size: 14px; \n"
+"  line-height: 22px; \n"
+"  font-weight: 400; \n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(232,69,191,1); \n"
+"  opacity: 1; \n"
+"  border: none; \n"
+"  border-radius: 4px; /* border-m */\n"
+"}\n"
+"/* Hover */\n"
+".QPushButton:hover {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(173,21,135,1); \n"
+"}\n"
+"/* Pressed */\n"
+".QPushButton:hover:active {\n"
+"  color: rgba(255,255,255,1); /* white */\n"
+"  background: rgba(136,17,106,1); \n"
+"}\n"
+"/* Disabled */\n"
+".QPushButton:disabled {\n"
+"  opacity: 0.4; \n"
+"}")
         self.pb_img.setObjectName("pb_img")
         self.pb_add = QtWidgets.QPushButton(parent=self.gb_inventory)
-        self.pb_add.setGeometry(QtCore.QRect(190, 740, 131, 51))
+        self.pb_add.setGeometry(QtCore.QRect(160, 740, 184, 67))
+        self.pb_add.setStyleSheet("QPushButton {\n"
+" background: rgba(101,255,50,0.64); \n"
+"  border-radius: 11.55963302752294px; \n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 2px 5px rgba(23, 26, 31, 0.09), 0px 0px 2px rgba(23, 26, 31, 0.12); /* shadow-s */\n"
+"    }")
         self.pb_add.setObjectName("pb_add")
         self.pb_remove = QtWidgets.QPushButton(parent=self.gb_inventory)
-        self.pb_remove.setGeometry(QtCore.QRect(390, 740, 131, 51))
+        self.pb_remove.setGeometry(QtCore.QRect(410, 740, 184, 67))
+        self.pb_remove.setStyleSheet("QPushButton {\n"
+"  position: absolute; \n"
+"  top: 822px; \n"
+"  left: 406px; \n"
+"  width: 184px; \n"
+"  height: 67px; \n"
+"  background: rgba(224,88,88,0.64); /* tertiary3-500 */\n"
+"  border-radius: 11.55963302752294px; \n"
+"  border-width: 3px; \n"
+"  border-color: rgba(29,33,40,1); /* neutral-800 */\n"
+"  border-style: solid; \n"
+"  box-shadow: 0px 2px 5px rgba(23, 26, 31, 0.09), 0px 0px 2px rgba(23, 26, 31, 0.12); \n"
+"}")
         self.pb_remove.setObjectName("pb_remove")
         self.horizontalLayoutWidget = QtWidgets.QWidget(parent=self.gb_inventory)
         self.horizontalLayoutWidget.setGeometry(QtCore.QRect(70, 50, 621, 91))

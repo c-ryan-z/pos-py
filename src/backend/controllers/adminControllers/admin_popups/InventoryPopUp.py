@@ -112,4 +112,3 @@ class InventoryPopUp(Qtw.QDialog):
         self.close()
         self.ui.pb_save.setEnabled(False)
         self.parent().popup_update()
-

@@ -60,7 +60,7 @@ class AdminController(Qtw.QWidget):
         self.ui.pb_reports.setStyleSheet("""
                     background: #ff7cdc;
                     border: 1px solid #c0c4cc;
-                    border-radius: 37px;
+                    border-radius: 28px;
                 """)
 
         for button in self.buttons.keys():

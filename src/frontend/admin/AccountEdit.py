@@ -227,7 +227,8 @@ class Ui_account_popup(object):
         self.lb_2fa.setObjectName("lb_2fa")
         self.pb_save = QtWidgets.QPushButton(parent=account_popup)
         self.pb_save.setGeometry(QtCore.QRect(1290, 890, 171, 51))
-        self.pb_save.setStyleSheet(" font-family: Inter; \n"
+        self.pb_save.setStyleSheet(" QPushButton {\n"
+"font-family: Inter; \n"
 "  font-size: 16px; \n"
 "  line-height: 26px; \n"
 "  font-weight: 700; \n"
@@ -235,7 +236,22 @@ class Ui_account_popup(object):
 "  background: rgba(69,232,123,1); \n"
 "  opacity: 1; \n"
 "  border: none; \n"
-"  border-radius: 6px; /* border-l */")
+"  border-radius: 6px;\n"
+"}\n"
+"\n"
+"QPushButton:disabled {\n"
+"font-family: Inter; \n"
+"  font-size: 16px; \n"
+"  line-height: 26px; \n"
+"  font-weight: 700; \n"
+"  color: rgba(180,170,180,1); \n"
+"  background: rgba(50,50,50,1); \n"
+"  opacity: 1; \n"
+"  border: none; \n"
+"  border-radius: 6px;\n"
+"}\n"
+"\n"
+"")
         self.pb_save.setObjectName("pb_save")
         self.pb_img = QtWidgets.QPushButton(parent=account_popup)
         self.pb_img.setGeometry(QtCore.QRect(300, 660, 160, 44))
@@ -277,6 +293,7 @@ class Ui_account_popup(object):
 "    width: 52px;\n"
 "    height: 52px;\n"
 "}\n"
+"\n"
 "QComboBox:focus {\n"
 "    color: rgba(23,26,31,1);\n"
 "    background: rgba(255,127,223,0.46);\n"

@@ -49,6 +49,7 @@ class AccountPopUp(Qtw.QDialog):
 
     def add_user(self):
         self.mode = "add"
+        self.ui.pb_save.setEnabled(False)
         next_id = get_max_user_id() + 1
         self.ui.le_userId.setText(str(next_id))
         pixmap = QtGui.QPixmap(Paths.image("user.svg"))
@@ -85,6 +86,12 @@ class AccountPopUp(Qtw.QDialog):
             self.ui.rb_false.setChecked(True)
         self.line_edit_listener()
 
+        if editInfo[6]:
+            self.set_img(editInfo[6])
+        else:
+            pixmap = QtGui.QPixmap(Paths.image("user.svg"))
+            self.ui.lb_userImg.setPixmap(pixmap)
+
         self.old_details = (
             self.ui.le_name.text(),
             self.ui.le_email.text(),
@@ -92,6 +99,8 @@ class AccountPopUp(Qtw.QDialog):
             self.ui.le_username.text(),
             self.ui.le_password.text(),
             self.ui.le_confirmPw.text(),
+            self.ui.cb_role.currentIndex() + 1,
+            self.ui.rb_bg.checkedButton().text()
         )
 
         return self.exec() == Qtw.QDialog.DialogCode.Accepted
@@ -197,7 +206,9 @@ class AccountPopUp(Qtw.QDialog):
             self.ui.le_phone.text(),
             self.ui.le_username.text(),
             self.ui.le_password.text(),
-            self.ui.le_confirmPw.text()
+            self.ui.le_confirmPw.text(),
+            self.ui.cb_role.currentIndex() + 1,
+            self.ui.rb_bg.checkedButton().text()
         )
 
         if self.image_path:
@@ -261,6 +272,14 @@ class AccountPopUp(Qtw.QDialog):
         if password and password != self.old_details[4]:
             hashed_password = hashlib.sha256(password.encode()).hexdigest()
             fields["password"] = hashed_password
+
+        new_role = self.ui.cb_role.currentIndex() + 1
+        if new_role != self.old_details[5]:
+            fields["role_id"] = new_role
+
+        new_2fa = self.ui.rb_bg.checkedButton().text()
+        if new_2fa != self.old_details[6]:
+            fields["twofactorauthentication"] = new_2fa
 
         if fields:
             edit_user(fields, self.user_id)

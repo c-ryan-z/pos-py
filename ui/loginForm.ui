@@ -138,7 +138,7 @@ QPushButton#pb_logIn {
 }
 
 QPushButton:disabled {
-	color: 5E5E5E;
+	color: #5E5E5E;
 	background-color:#2E2E2E;
 }
 

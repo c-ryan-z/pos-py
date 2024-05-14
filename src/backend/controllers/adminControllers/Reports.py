@@ -86,18 +86,17 @@ class Reports(Qtw.QWidget):
     def top_products(self, data=None):
         series = QPieSeries()
 
-        # Define your colors
-        colors = [QColor(173, 216, 230),  # light blue
-                  QColor(144, 238, 144),  # light green
-                  QColor(255, 165, 0),  # orangy yellow
-                  QColor(255, 182, 193),  # light red
-                  QColor(75, 0, 130)]  # dark purple
+        colors = [QColor(0, 107, 243),
+                  QColor(127, 255, 0),
+                  QColor(232, 174, 9),
+                  QColor(219, 0, 0),
+                  QColor(138, 50, 222)]
 
         for i, (product, sales) in enumerate(data):
             pie_element = QPieSlice()
             pie_element.setLabel(product)
             pie_element.setValue(sales)
-            pie_element.setColor(colors[i % len(colors)])  # Set color
+            pie_element.setColor(colors[i % len(colors)])
             series.append(pie_element)
 
         series.setLabelsPosition(QPieSlice.LabelPosition.LabelOutside)

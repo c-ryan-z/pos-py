@@ -37,10 +37,12 @@ class LoginForm(Qtw.QWidget):
     def startLoginThread(self):
         if self.ui.pb_logIn.isEnabled():
             self.ui.pb_logIn.setEnabled(False)
+            self.main_app.showDarkener()
             self.login_thread.start()
             print("Login Thread Started")
 
     def on_handle_login_finished(self):
+        self.main_app.hideDarkener()
         self.ui.pb_logIn.setEnabled(True)
 
     def handle_otp_signal(self, otp_tuple):
