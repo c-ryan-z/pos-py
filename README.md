@@ -1,6 +1,7 @@
 SETUP
 
-Git 3.9
+Git 
+Python 3.9
 Pycharm Community Edition
 Database: PostgreSQL
 ------------------------------------------------
