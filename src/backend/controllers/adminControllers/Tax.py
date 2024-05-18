@@ -1,7 +1,7 @@
 from PyQt6 import QtWidgets as Qtw, QtCore
 
 from src.backend.controllers.__customWidget.CustomMessageBox import CustomMessageBox
-from src.backend.database.admin.tax import get_tax, update_tax
+from src.backend.database.admin.tax import get_tax, update_tax, log_tax
 from src.frontend.admin.AdminTax import Ui_admin_tax
 
 

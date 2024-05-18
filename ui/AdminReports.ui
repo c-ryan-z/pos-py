@@ -122,6 +122,13 @@
 
 QComboBox::drop-down {
     border: none;
+}
+
+QComboBox::down-arrow {
+    image: url(./src/frontend/__image/angle-down.svg);
+	width: 12px;
+	height: 12px;
+	margin-right: 6px;
 }</string>
      </property>
     </widget>

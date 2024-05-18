@@ -12,7 +12,32 @@ class Receipt(Qtw.QWidget):
         self.data = None
 
         self.ui.list_layout.setAlignment(QtCore.Qt.AlignmentFlag.AlignTop | QtCore.Qt.AlignmentFlag.AlignHCenter)
-        self.ui.items_list.setStyleSheet("border: none;")
+        self.ui.items_list.setStyleSheet("""
+            QScrollArea {
+                border: none;
+            }
+            QScrollBar:vertical {
+                border: none;
+                background: rgba(0, 0, 0, 0);
+                width: 10px;
+                margin: 15px 0 15px 0;
+                border-radius: 0px;
+             }
+             QScrollBar::handle:vertical {
+                background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                stop: 0 rgb(76,77,86), stop: 0.5 rgb(76,77,86), stop:1 rgb(76,77,86));
+                min-height: 12px;
+                border-radius: 7px;
+             }
+             QScrollBar::add-line:vertical {
+                border: none;
+                background: none;
+             }
+             QScrollBar::sub-line:vertical {
+                border: none;
+                background: none;
+             }
+        """)
 
     def set_data(self, transaction_id):
         self.data = retrieve_receipt(transaction_id)
@@ -35,9 +60,13 @@ class Receipt(Qtw.QWidget):
         self.ui.lb_change.setText(str(self.data[9]))
 
     def initialize_list(self, items):
+        self.clear_layout(self.ui.list_layout)
+
         if not items:
             print("No items found")
             return
+
+        print("Items found: ", items)
 
         for item in items:
             layout = Qtw.QHBoxLayout()
@@ -47,7 +76,7 @@ class Receipt(Qtw.QWidget):
             name = Qtw.QLabel(item[1])
             name.setFixedWidth(130)
             price = Qtw.QLabel(str(item[2]))
-            price.setFixedWidth(100)
+            price.setFixedWidth(80)
             total = Qtw.QLabel(str(float(item[0]) * float(item[2])))
             total.setFixedWidth(100)
 

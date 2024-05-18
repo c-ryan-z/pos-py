@@ -69,6 +69,13 @@ class Ui_admin_reports(object):
 "\n"
 "QComboBox::drop-down {\n"
 "    border: none;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    image: url(./src/frontend/__image/angle-down.svg);\n"
+"    width: 12px;\n"
+"    height: 12px;\n"
+"    margin-right: 6px;\n"
 "}")
         self.cb_linechart.setObjectName("cb_linechart")
         self.layoutWidget = QtWidgets.QWidget(parent=self.admin_MainContainer)

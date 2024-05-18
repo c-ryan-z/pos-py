@@ -31,12 +31,37 @@ def record_transaction(cashier_id, subtotal, tax, discount, total, amount_paid, 
 
 
 def record_transaction_items(transaction_id, items):
+    for product_id, quantity in items:
+        existing_item = retrieve_transaction_item(transaction_id, product_id)
+        if existing_item:
+            update_transaction_item(transaction_id, product_id, quantity)
+        else:
+            insert_transaction_item(transaction_id, product_id, quantity)
+
+
+def retrieve_transaction_item(transaction_id, product_id):
+    query = """
+        SELECT * FROM transaction_items
+        WHERE transaction_id = %s AND product_id = %s
+    """
+    return execute_query(query, (transaction_id, product_id), fetch=True)
+
+
+def update_transaction_item(transaction_id, product_id, quantity):
+    query = """
+        UPDATE transaction_items
+        SET quantity = quantity + %s
+        WHERE transaction_id = %s AND product_id = %s
+    """
+    return execute_query(query, (quantity, transaction_id, product_id), commit=True)
+
+
+def insert_transaction_item(transaction_id, product_id, quantity):
     query = """
         INSERT INTO transaction_items (transaction_id, product_id, quantity)
         VALUES (%s, %s, %s)
     """
-    params = [(transaction_id, product_id, quantity) for product_id, quantity in items]
-    return execute_query(query, params, commit=True, executemany=True)
+    return execute_query(query, (transaction_id, product_id, quantity), commit=True)
 
 
 def transaction_checkout(cashier_id, subtotal, tax, discount, total, amount_paid, change_due, items, session_id):
@@ -83,3 +108,39 @@ def void_transaction(user_id, activity_type, details, session_id):
     """
     return execute_query(query, (user_id, datetime.now(), activity_type, "Sales", details, session_id),
                          commit=True)
+
+
+def interleave_transaction(cashier_id, subtotal, tax, discount, total):
+    query = """
+        INSERT INTO transactions (cashier_id, sub_total, tax, discount, total,
+         date_time, is_successful)
+        VALUES (%s, %s, %s, %s, %s, NOW(), FALSE)
+        RETURNING id
+    """
+    return execute_query(query, (cashier_id, subtotal, tax, discount, total), commit=True, fetch=True)
+
+
+def retrieve_interleaved_transactions():
+    query = """
+        SELECT id FROM transactions
+        WHERE is_successful = FALSE
+    """
+    return execute_query(query, (1,), fetch=True, fetchall=True)
+
+
+def retrieve_transaction_items(transaction_id):
+    query = """
+        SELECT product_id, quantity FROM transaction_items
+        WHERE transaction_id = %s
+    """
+    return execute_query(query, (transaction_id,), fetch=True, fetchall=True)
+
+
+def update_transaction(transaction_id, subtotal, tax, discount, total, amount_paid, change_due):
+    query = """
+        UPDATE transactions
+        SET sub_total = %s, tax = %s, discount = %s, total = %s, amount_paid = %s, change_due = %s, is_successful = TRUE
+        WHERE id = %s;
+    """
+    execute_query(query, (subtotal, tax, discount, total, amount_paid, change_due, transaction_id), commit=True)
+    return transaction_id
