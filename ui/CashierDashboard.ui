@@ -857,9 +857,10 @@ QWidget#overview {
    </property>
    <property name="styleSheet">
     <string notr="true">QLineEdit {
-	border: none;
+	border: 1px solid #2F2F2F;
 	background: rgba(243,244,246,1);
 	padding: 4px;
+	border-radius: 12px;
 }</string>
    </property>
    <property name="placeholderText">

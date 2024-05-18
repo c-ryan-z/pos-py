@@ -38,8 +38,6 @@ class CustomMessageBox(Qtw.QDialog):
                 self.main_app.showDarkener()
 
     def confirmAction(self, title, question, movie=None):
-        self.setFixedHeight(565)
-        self.ui.sw_messagebox.setFixedHeight(551)
         self.ui.sw_messagebox.setCurrentIndex(0)
         self.disableChoices()
 
@@ -59,8 +57,6 @@ class CustomMessageBox(Qtw.QDialog):
         return self.exec() == Qtw.QDialog.DialogCode.Accepted
 
     def notifyAction(self, title, message, movie=None):
-        self.setFixedHeight(565)
-        self.ui.sw_messagebox.setFixedHeight(551)
         self.ui.sw_messagebox.setCurrentIndex(0)
         self.disableChoices()
 
@@ -82,8 +78,6 @@ class CustomMessageBox(Qtw.QDialog):
         return self.exec() == Qtw.QDialog.DialogCode.Accepted
 
     def multipleChoices(self, title, question, choices):
-        self.setFixedHeight(565)
-        self.ui.sw_messagebox.setFixedHeight(551)
         self.ui.sw_messagebox.setCurrentIndex(0)
         self.ui.lb_title.setText(title)
         self.ui.lb_message.setText(question)
@@ -110,12 +104,12 @@ class CustomMessageBox(Qtw.QDialog):
         self.ui.pb_choice_4.setVisible(False)
 
     def show_receipt(self, transaction_id):
-        self.setFixedHeight(681)
         self.ui.sw_messagebox.setCurrentIndex(1)
         self.receipt = Receipt(self)
         self.receipt.set_data(transaction_id)
 
-        self.ui.receipt_layout.addWidget(self.receipt)
-        self.ui.receipt_layout.setContentsMargins(0, 0, 0, 0)
+        vbox = Qtw.QVBoxLayout()
+        vbox.addWidget(self.receipt)
+        self.ui.receipt_layout.addLayout(vbox)
 
         return self.exec()

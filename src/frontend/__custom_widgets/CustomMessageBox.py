@@ -32,7 +32,7 @@ class Ui_custom_modal(object):
 "}")
         self.pb_close.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("/src/frontend/__image/circle-xmark.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("./src/frontend/__image/circle-xmark.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pb_close.setIcon(icon)
         self.pb_close.setIconSize(QtCore.QSize(30, 30))
         self.pb_close.setObjectName("pb_close")
@@ -145,12 +145,43 @@ class Ui_custom_modal(object):
         self.sw_messagebox.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
-        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.page_2)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(30, 40, 421, 621))
-        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
-        self.receipt_layout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
-        self.receipt_layout.setContentsMargins(0, 0, 0, 0)
+        self.receipt = QtWidgets.QScrollArea(parent=self.page_2)
+        self.receipt.setGeometry(QtCore.QRect(30, 20, 421, 631))
+        self.receipt.setFocusPolicy(QtCore.Qt.FocusPolicy.NoFocus)
+        self.receipt.setStyleSheet("QScrollArea#receipt {\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QWidget#receipt_widget {\n"
+"    border-radius:10px;\n"
+"}")
+        self.receipt.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.receipt.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.receipt.setWidgetResizable(True)
+        self.receipt.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.receipt.setObjectName("receipt")
+        self.receipt_widget = QtWidgets.QWidget()
+        self.receipt_widget.setGeometry(QtCore.QRect(0, 0, 421, 631))
+        self.receipt_widget.setObjectName("receipt_widget")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.receipt_widget)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.receipt_layout = QtWidgets.QVBoxLayout()
         self.receipt_layout.setObjectName("receipt_layout")
+        self.verticalLayout_2.addLayout(self.receipt_layout)
+        self.receipt.setWidget(self.receipt_widget)
+        self.pushButton = QtWidgets.QPushButton(parent=self.page_2)
+        self.pushButton.setGeometry(QtCore.QRect(180, 650, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Inter")
+        font.setPointSize(11)
+        font.setBold(True)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("QPushButton {\n"
+"    background: rgba(255,102,183,1); \n"
+"  border-radius: 4px; \n"
+"    border:none;\n"
+"}")
+        self.pushButton.setObjectName("pushButton")
         self.sw_messagebox.addWidget(self.page_2)
         self.lb_title.raise_()
         self.sw_messagebox.raise_()
@@ -172,6 +203,7 @@ class Ui_custom_modal(object):
         self.pb_choice_3.setText(_translate("custom_modal", "Yes"))
         self.pb_choice_2.setText(_translate("custom_modal", "Yes"))
         self.pb_choice_1.setText(_translate("custom_modal", "Yes"))
+        self.pushButton.setText(_translate("custom_modal", "Print Receipt"))
 
 
 if __name__ == "__main__":

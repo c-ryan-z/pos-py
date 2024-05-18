@@ -344,9 +344,10 @@ class Ui_cashier_dashboard(object):
         self.le_cash = CustomLeLeaveEvent(parent=cashier_dashboard)
         self.le_cash.setGeometry(QtCore.QRect(1180, 890, 341, 41))
         self.le_cash.setStyleSheet("QLineEdit {\n"
-"    border: none;\n"
+"    border: 1px solid #2F2F2F;\n"
 "    background: rgba(243,244,246,1);\n"
 "    padding: 4px;\n"
+"    border-radius: 12px;\n"
 "}")
         self.le_cash.setObjectName("le_cash")
         self.cb_transactions = QtWidgets.QComboBox(parent=cashier_dashboard)
@@ -368,7 +369,7 @@ class Ui_cashier_dashboard(object):
 "    image: url(./src/frontend/__image/angle-down.svg);\n"
 "    width: 20px;\n"
 "    height: 20px;\n"
-"    margin-right: 10px;\n"
+"    margin-right: 3px;\n"
 "}")
         self.cb_transactions.setEditable(False)
         self.cb_transactions.setObjectName("cb_transactions")
